@@ -1,6 +1,6 @@
 #include "SearchRecruitInfo.h"
 #include "../UserCollection.h"
-#include "../RecruitCollection.h"
+#include "../RecruitInfoCollection.h"
 
 SearchRecruitInfo::SearchRecruitInfo()
 {

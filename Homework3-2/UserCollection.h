@@ -1,25 +1,25 @@
+//
+// Created by 이태휘 on 2023/05/24.
+//
+
 #ifndef HOMEWORK3_2_USERCOLLECTION_H
 #define HOMEWORK3_2_USERCOLLECTION_H
+
 #include <iostream>
-#include <string>
-#include <vector>
-#include "NormalUser.h"
-#include "CompanyUser.h"
-
+#define MAX_COUNT 100
+#include "User.h"
+using namespace std;
 class UserCollection {
-private:
-    vector<User*> userList;
-public:
-    int signUpNormalUser(string name, int securityNumber, string id, string password);
-    int signUpCompanyUser(string name, int companyNumber, string id, string password);
-    void dropUser(string id); 
-    //void logOutUser();
-    User* validUser(string id, string password);
-//    void userStateChange(User* user); //이게머얌....
-    User* getUserByName(string name);
-    CompanyUser* getUserByCompanyNumber(int number);
-    vector<User*> getUserList();
+   private:
+    User* userList[MAX_COUNT];
+    int clientNumber;
 
+   public:
+    UserCollection() : clientNumber(0){};
+    void signUpNormalUser(int, string, string, string, string);
+    void signUpCompanyUser(int, string, string, string, string);
+    bool validUser(string, string);
+    int getClientNumber();
+    int getUserTypeById(string);
 };
-
-#endif //HOMEWORK3_2_USERCOLLECTION_H
+#endif  // HOMEWORK3_2_USERCOLLECTION_H

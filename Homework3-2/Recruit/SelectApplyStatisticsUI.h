@@ -1,6 +1,12 @@
+//
+// Created by 이태휘 on 2023/05/24.
+//
+
+#ifndef HOMEWORK3_2_SELECTAPPLYSTATISTICSUI_H
+#define HOMEWORK3_2_SELECTAPPLYSTATISTICSUI_H
 #include <iostream>
 #include <string>
-#include "SelectApplyStatics.h"
+#include "SelectApplyStatistics.h"
 using namespace std;
 
 class SelectApplyStatics;
@@ -14,3 +20,4 @@ public:
     SelectApplyStaticsUI(SelectApplyStatics *selectApplyStaticsControl);
     void selectApplyStatics();
 };
+#endif //HOMEWORK3_2_SELECTAPPLYSTATISTICSUI_H

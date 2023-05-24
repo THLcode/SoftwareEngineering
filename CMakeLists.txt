@@ -1,0 +1,73 @@
+cmake_minimum_required(VERSION 3.25)
+project(hw3)
+
+set(CMAKE_CXX_STANDARD 14)
+
+include_directories(Homework3-2)
+include_directories(Homework3-2/Recruit)
+include_directories(Homework3-2/User)
+
+add_executable(hw3
+        Homework3-2/Recruit/AddRecruit.cpp
+        Homework3-2/Recruit/AddRecruit.h
+        Homework3-2/Recruit/AddRecruitUI.cpp
+        Homework3-2/Recruit/AddRecruitUI.h
+        Homework3-2/Recruit/ApplyRecruit.cpp
+        Homework3-2/Recruit/ApplyRecruit.h
+        Homework3-2/Recruit/ApplyRecruitUI.cpp
+        Homework3-2/Recruit/ApplyRecruitUI.h
+        Homework3-2/Recruit/CancelApply.cpp
+        Homework3-2/Recruit/CancelApply.h
+        Homework3-2/Recruit/CancelApplyUI.cpp
+        Homework3-2/Recruit/CancelApplyUI.h
+        Homework3-2/Recruit/SearchRecruitInfo.cpp
+        Homework3-2/Recruit/SearchRecruitInfo.h
+        Homework3-2/Recruit/SearchRecruitInfoUI.cpp
+        Homework3-2/Recruit/SearchRecruitInfoUI.h
+        Homework3-2/Recruit/SelectApplyDetails.cpp
+        Homework3-2/Recruit/SelectApplyDetails.h
+        Homework3-2/Recruit/SelectApplyDetailsUI.cpp
+        Homework3-2/Recruit/SelectApplyDetailsUI.h
+        Homework3-2/Recruit/SelectApplyStatistics.cpp
+        Homework3-2/Recruit/SelectApplyStatistics.h
+        Homework3-2/Recruit/SelectApplyStatisticsUI.cpp
+        Homework3-2/Recruit/SelectApplyStatisticsUI.h
+        Homework3-2/Recruit/SelectRecruitStatistics.cpp
+        Homework3-2/Recruit/SelectRecruitStatistics.h
+        Homework3-2/Recruit/SelectRecruitStatisticsUI.cpp
+        Homework3-2/Recruit/SelectRecruitStatisticsUI.h
+        Homework3-2/Recruit/ShowRecruit.cpp
+        Homework3-2/Recruit/ShowRecruit.h
+        Homework3-2/Recruit/ShowRecruitUI.cpp
+        Homework3-2/Recruit/ShowRecruitUI.h
+        Homework3-2/User/DropUser.cpp
+        Homework3-2/User/DropUser.h
+        Homework3-2/User/DropUserUI.cpp
+        Homework3-2/User/DropUserUI.h
+        Homework3-2/User/Login.cpp
+        Homework3-2/User/Login.h
+        Homework3-2/User/LoginUI.cpp
+        Homework3-2/User/LoginUI.h
+        Homework3-2/User/Logout.cpp
+        Homework3-2/User/Logout.h
+        Homework3-2/User/LogoutUI.cpp
+        Homework3-2/User/LogoutUI.h
+        Homework3-2/User/SignUp.cpp
+        Homework3-2/User/SignUp.h
+        Homework3-2/User/SignUpUI.cpp
+        Homework3-2/User/SignUpUI.h
+        Homework3-2/ApplyInfoCollection.cpp
+        Homework3-2/ApplyInfoCollection.h
+        Homework3-2/CompanyUser.cpp
+        Homework3-2/CompanyUser.h
+        Homework3-2/main.cpp
+        Homework3-2/NormalUser.cpp
+        Homework3-2/NormalUser.h
+        Homework3-2/Recruit.cpp
+        Homework3-2/Recruit.h
+        Homework3-2/RecruitInfoCollection.cpp
+        Homework3-2/RecruitInfoCollection.h
+        Homework3-2/User.cpp
+        Homework3-2/User.h
+        Homework3-2/UserCollection.cpp
+        Homework3-2/UserCollection.h)

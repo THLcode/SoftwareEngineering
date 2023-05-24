@@ -1,10 +1,14 @@
-#include "SelectApplyStatics.h"
+#include "SelectApplyStatistics.h"
 
 SelectApplyStatics::SelectApplyStatics()
 {
 }
 
-vector<tuple<string, int, string, int, string>> SelectApplyStatics::showApplyStatics()
+//vector<tuple<string, int, string, int, string>> SelectApplyStatics::showApplyStatics()
+//{
+//}
+
+void SelectApplyStatics::showApplyStatics()
 {
 }
 

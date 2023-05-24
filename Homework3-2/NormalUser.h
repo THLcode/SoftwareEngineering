@@ -1,25 +1,22 @@
+//
+// Created by 이태휘 on 2023/05/24.
+//
+
 #ifndef HOMEWORK3_2_NORMALUSER_H
 #define HOMEWORK3_2_NORMALUSER_H
+#pragma once
 #include <iostream>
-#include <string>
+
 #include "User.h"
-#include "ApplyInfoCollection.h"
-
-using namespace std;
-
-class ApplyInfoCollection;
+#define MAX_COUNT 100
 
 class NormalUser : public User {
-private:
-    int securityNumber;
-    ApplyInfoCollection* applyInfoCollection;
-public:
-    GeneralUser(string name, int securityNumber, string id, string password);
-    string getUserType() override; // 이것도 바꿔야되지 안을까?...
-    int getSecurityNumber();
-    void setSecurityNumber(int securityNumber);
-    ApplyInfoCollection* getApplyInfoCollection();
+   private:
+    string normalName;
+    string securityNumber;
+    // ApplyInfoCollection applyInfoCollection;
+   public:
+    NormalUser(int, string, string, string, string);
+    // ApplyInfoCollection getApplyInfoCollection();
 };
-
-
-#endif //HOMEWORK3_2_NORMALUSER_H
+#endif  // HOMEWORK3_2_NORMALUSER_H

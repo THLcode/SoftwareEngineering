@@ -4,20 +4,20 @@
 
 #ifndef HOMEWORK3_2_LOGINUI_H
 #define HOMEWORK3_2_LOGINUI_H
-#include "Login.h"
 #include <iostream>
 #include <string>
 
-using namespace std;
+#include "Login.h"
+
 class Login;
 
+using namespace std;
 class LoginUI {
-private:
-    Login *loginControlRef;
-public:
-    LoginUI(Login* loginControlRef);
-    void startInterface();
-    void login();
-    Login* loginControl();
+   private:
+    // Login *loginControlRef;
+   public:
+    void startInterface(Login* login);
+    // void login(Login*, string, string);
+    // Login* loginControl();
 };
-#endif //HOMEWORK3_2_LOGINUI_H
+#endif  // HOMEWORK3_2_LOGINUI_H

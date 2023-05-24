@@ -5,6 +5,6 @@ ApplyRecruitUI::ApplyRecruitUI(ApplyRecruit *applyRecruitControl)
 {
 }
 
-void ApplyForRecruitmentUI::applyForRecruitment()
+void ApplyRecruitUI::applyRecruit()
 {
 }

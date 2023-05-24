@@ -5,19 +5,22 @@
 #ifndef HOMEWORK3_2_SINGUPUI_H
 #define HOMEWORK3_2_SINGUPUI_H
 #include <iostream>
-#include "SignUp.h"
 
-using namespace std;
+#include "SignUp.h"
 class SignUp;
 
-class SignUpUI{
-private:
-    //Control 클래스 포인터
-    SignUp* signUpControlRef;
-public:
-    SignUpUI(SignUp* signupControlRef); // 생성자를 통해 Control Class와 레퍼런스 교환
-    void startInterface(); // interface를 출력하는 함수
-    void submitInfo();
-    SignUp* signUpControl();
+using namespace std;
+
+class SignUpUI {
+   private:
+    // Control 클래스 포인터
+    // SignUp* signUpControlRef;
+
+   public:
+    // SignUpUI(SignUp* signupControlRef);  // 생성자를 통해 Control Class와
+    // 레퍼런스 교환
+    void startInterface(SignUp* signUp);
+    void submitInfo(SignUp* signUp, int, string, string, string, string);
+    // SignUp* signUpControl();
 };
-#endif //HOMEWORK3_2_SINGUPUI_H
+#endif  // HOMEWORK3_2_SINGUPUI_H

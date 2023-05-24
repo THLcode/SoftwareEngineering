@@ -10,6 +10,7 @@ ApplyRecruit::ApplyRecruit()
 void ApplyRecruit::addApplication()
 {
 }
+
 ApplyRecruitUI *ApplyRecruit::showApplyRecruitUI()
 {
 }

@@ -1,26 +1,21 @@
+//
+// Created by 이태휘 on 2023/05/24.
+//
+
 #ifndef HOMEWORK3_2_COMPANYUSER_H
 #define HOMEWORK3_2_COMPANYUSER_H
 #include <iostream>
-#include <string>
+
 #include "User.h"
-#include "RecruitInfoCollection.h"
 using namespace std;
-
-class RecruitInfoCollection;
-
 class CompanyUser : public User {
-private:
+   private:
+    string companyName;
     string companyNumber;
-    RecruitInfoCollection* recruitInfoCollection;
-public:
-    CompanyUser(string name, int companyNumber, string id, string password);
-    string getUserType() override;
-    int getCompanyNumber();
-    void setCompanyNumber(int companyNumber);
-    RecruitInfoCollection* getRecruitInfoCollection();
-
-    pair<string, int> getCompanyUserDetails(); //바꿔야될것같음...
-
+    // RecruitInfoCollection recruitInfoCollection;
+   public:
+    CompanyUser(int, string, string, string, string);
+    // RecruitInfoCollection getRecruitInfoCollection();
+    // Pair getCompanyUserDetails();
 };
-
-#endif //HOMEWORK3_2_COMPANYUSER_H
+#endif  // HOMEWORK3_2_COMPANYUSER_H

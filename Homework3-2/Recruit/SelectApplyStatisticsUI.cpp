@@ -1,4 +1,4 @@
-#include "SelectApplyStaticsUI.h"
+#include "SelectApplyStatisticsUI.h"
 
 SelectApplyStaticsUI::SelectApplyStaticsUI(SelectApplyStatics *selectApplyStaticsControl)
 {

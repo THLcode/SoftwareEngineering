@@ -1,62 +1,39 @@
 #include "UserCollection.h"
 
-int UserCollection::signUpNormalUser(string name, int securityNumber, string id, string password){
-    for (auto it = userList.begin(); it != userList.end(); ++it) {
-        if ((*it)->getId() == id) {
-            return -1;
+#include "CompanyUser.h"
+#include "NormalUser.h"
+
+void UserCollection::signUpNormalUser(int userType, string name, string number, string id,
+                                      string password) {
+    User* pUser = NULL;
+    pUser = new NormalUser(userType, name, number, id, password);
+    // 일반 회원을 userList에 저장
+    userList[clientNumber++] = pUser;
+}
+void UserCollection::signUpCompanyUser(int userType, string name, string number, string id,
+                                       string password) {
+    User* pUser = NULL;
+    pUser = new CompanyUser(userType, name, number, id, password);
+    // 회사 회원을 userList에 저장
+    userList[clientNumber++] = pUser;
+}
+
+bool UserCollection::validUser(string id, string password) {
+    for (int i = 0; i < clientNumber; i++) {
+        if (userList[i]->getUserId() == id &&
+            userList[i]->getUserPw() == password) {
+            return true;
         }
     }
-    NormalUser* newUser = new NormalUser(name, securityNumber, id, password);
-    userList.push_back(newUser);
+    return false;
+}
+int UserCollection::getClientNumber() { return clientNumber; }
+
+int UserCollection::getUserTypeById(string currentUser){
+    for (int i = 0; i < clientNumber; i++) {
+        if (userList[i]->getUserId() == currentUser) {
+            return userList[i]->getUserType();
+        }
+    }
     return 0;
-}
-
-int UserCollection::signUpCompanyUser(string name, int companyNumber, string id, string password) {
-    for (auto it = userList.begin(); it != userList.end(); ++it) {
-        if ((*it)->getId() == id) {
-            return -1;
-        }
-    }
-    CompanyUser* newUser = new CompanyUser(name, companyNumber, id, password);
-    userList.push_back(newUser);
-    return 0;
-}
-
-void UserCollection::dropUser(string id) { //바까야댈것가타염
-    extern int isLogin;
-    extern User* currentUser; // main 함수에 선언된 isLogin, currentLoginUser 사용
-    for (auto it = userList.begin(); it != userList.end(); ++it) { // userList vector에 저장 된 모든 정보를 순회
-        if ((*it)->getId() == id) { // 인자로 받은 지울 id와 같다면
-            delete* it; // 메모리 확보
-            userList.erase(it); // userLiddst에서 삭제
-            isLogin = 0; // 회원이 탈퇴하였으므로 현재 로그인 상태를 0으로 설정
-            currentUser = nullptr; // 회원이 탈퇴하였으므로 현재 유저 상태를 null로 설정
-            return;
-        }
-    }
-}
-
-User* UserCollection::validUser(string id, string password) { //바꾸댜
-    for (const auto& user : userList) {
-        if (user->getId() == id && user->getPW() == pw) {
-            return user;
-        }
-    }
-    return nullptr;
-}
-//    void userStateChange(User* user); //이게머얌....
-User* UserCollection::getUserByName(string name) {
-    for (User* user : userList) {
-        if (name == user->getName())
-            return user;
-    }
-    return nullptr;
-}
-CompanyUser* UserCollection::getUserByCompanyNumber(int number) {
-    for (User* user : userList) {
-        CompanyUser* CUser = (CompanyUser*)user;
-        if (number == CUser->getCompanyNumber())
-            return CUser;
-    }
-    return nullptr;
 }

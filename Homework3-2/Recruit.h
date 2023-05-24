@@ -10,6 +10,11 @@ using namespace std;
 class CompanyUser;
 
 class Recruit {
+private:
+    string job;
+    int peopleNum;
+    string dueDate;
+    string companyNumber;
 
 };
 

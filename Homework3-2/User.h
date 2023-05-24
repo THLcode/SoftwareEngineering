@@ -1,19 +1,22 @@
-#include <iostream>
-#include <string>
+//
+// Created by 이태휘 on 2023/05/24.
+//
 
+#ifndef HOMEWORK3_2_USER_H
+#define HOMEWORK3_2_USER_H
+#pragma once
+#include <iostream>
 using namespace std;
 
 class User {
-private:
-	string id;
-	string password;
-public:
-	User(string name, string id, string password);
-	virtual string getUserType() = 0;
-	string getName();
-	string getID();
-	string getPassword();
-	void setName(string name);
-	void setID(string id);
-	void setPassword(string password);
+   private:
+	int userType;
+    string id;
+    string password;
+   public:
+    User(int, string, string);
+    string getUserId();
+    string getUserPw();
+	int getUserType();
 };
+#endif  // HOMEWORK3_2_USER_H

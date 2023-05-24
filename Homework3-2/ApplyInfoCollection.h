@@ -10,22 +10,11 @@ class Recruit;
 
 class ApplyInfoCollection {
 private:
-    vector<Recruit*> applyInfoCollection;
+    Recruit* applyInfo;
 public:
     void addApplyInfo(Recruit* recruit);
     vector<Recruit*> getApplyInfoList();
-    string deleteApplyInfo(Recruit* recruit);
+    string cancelApplyInfo(Recruit* recruit);
 };
-/*
-class Recruit;
-
-class ApplyInfoCollection {
-private:
-    vector<Recruit*> recruit;
-public:
-    void addApplyInfo(string job, int peopleNum, string dueDate);
-    vector<Recruit*> getApplyInfoList();
-};
-*/
 
 #endif //HOMEWORK3_2_APPLYINFOCOLLECTION_H

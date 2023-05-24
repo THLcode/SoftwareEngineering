@@ -3,15 +3,19 @@
 //
 #include "Login.h"
 
-Login::Login(){
+#include "LoginUI.h"
+#include "../UserCollection.h"
+Login::Login() {
+    LoginUI loginUI;
 
-} // 생성자
-
-void Login::validUser(){
-
+    loginUI.startInterface(this);
 }
 
-//UI로 넘김
-LoginUI* Login::loginUI(){
-    return this->logInUIRef;
+bool Login::validUser(UserCollection userList, string id, string password) {
+    return userList.validUser(id, password);
 }
+
+// UI로 넘김
+//  LoginUI* Login::loginUI(){
+//      return this->logInUIRef;
+//  }

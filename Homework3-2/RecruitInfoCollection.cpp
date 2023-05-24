@@ -1,12 +1,12 @@
 #include "RecruitInfoCollection.h"
 
-void RecruitInfoCollection::addRecruit(string job, int peopeNum, string dueDate) {
-	extern User* User;
-
-	Recruit* newRecruit = new Recruit(job, peopleNum, dueDate, (CompanyUser*)User);
-	this->recruit.push_back(newRecruit);
+void RecruitInfoCollection::addRecruit(Recruit* recruit) {
 }
 
-vector<Recruit*> RecruitInfoCollection::getRecruitDetails() {
-	return this->recruit;
+Recruit* RecruitInfoCollection::getRecruitList(){
+
+}
+
+tuple<string, int, string, int, string> RecruitInfoCollection::getRecruitDetails(){
+
 }
