@@ -10,13 +10,15 @@
 #include "User.h"
 #define MAX_COUNT 100
 
-class NormalUser : public User {
-   private:
+class NormalUser : public User
+{
+private:
     string normalName;
     string securityNumber;
     // ApplyInfoCollection applyInfoCollection;
-   public:
+public:
     NormalUser(int, string, string, string, string);
+    string getSecurityNumber() { return this->securityNumber; };
     // ApplyInfoCollection getApplyInfoCollection();
 };
-#endif  // HOMEWORK3_2_NORMALUSER_H
+#endif // HOMEWORK3_2_NORMALUSER_H

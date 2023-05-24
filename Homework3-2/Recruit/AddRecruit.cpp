@@ -8,13 +8,14 @@ AddRecruit::AddRecruit(AddRecruit *addRecruit, CompanyUser *companyUser)
     addRecruitUI.startInterface(addRecruit, companyUser);
 }
 
-void AddRecruit::addRecruit(string job, int peopleNum, string dueDate, string companyNumber)
+void AddRecruit::addRecruit(string job, int peopleNum, string dueDate, CompanyUser *companyUser)
 {
     Recruit *re = new Recruit();
     re->setJob(job);
     re->setPeopleNum(peopleNum);
     re->setDueDate(dueDate);
-    re->setCompanyNumber(companyNumber);
+    re->setCompanyNumber(companyUser->getCompanyNumber());
+    re->setCompanyName(companyUser->getCompanyName());
 
     RecruitInfoCollection rc;
     rc.pushRecruit(re);

@@ -13,7 +13,7 @@ class AddRecruitUI
 {
 public:
     void startInterface(AddRecruit *addRecruit, CompanyUser *companyUser);
-    void createRecruit(AddRecruit *, string, int, string, string);
+    void createRecruit(AddRecruit *, string, int, string, CompanyUser *);
 };
 
 #endif // HOMEWORK3_2_ADDRECRUITUI_H

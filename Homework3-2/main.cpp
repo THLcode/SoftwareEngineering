@@ -16,6 +16,8 @@
 #include "Recruit/AddRecruit.h"
 #include "Recruit/ShowRecruitUI.h"
 #include "Recruit/ShowRecruit.h"
+#include "Recruit/ShowApplyUI.h"
+#include "Recruit/ShowApply.h"
 using namespace std;
 
 #define MAX_STRING 32
@@ -91,13 +93,13 @@ void AddRecruitUI::startInterface(AddRecruit *addRecruit, CompanyUser *companyUs
     fscanf(in_fp, "%s %d %s", job, peopleNum, dueDate);
     // 변수 선언 후 정보 저장
 
-    createRecruit(addRecruit, job, peopleNum, dueDate, companyUser->getCompanyNumber());
+    createRecruit(addRecruit, job, peopleNum, dueDate, companyUser);
     // control로 정보 전달
 }
 
-void AddRecruitUI::createRecruit(AddRecruit *addRecruit, string job, int peopleNum, string dueDate, string companyNumber)
+void AddRecruitUI::createRecruit(AddRecruit *addRecruit, string job, int peopleNum, string dueDate, CompanyUser *companyUser)
 {
-    addRecruit->addRecruit(job, peopleNum, dueDate, companyNumber);
+    addRecruit->addRecruit(job, peopleNum, dueDate, companyUser);
     // control 함수 호출
 }
 
@@ -118,6 +120,19 @@ void ShowRecruitUI::getRecruitList(ShowRecruit *showRecruit, string companyNumbe
     {
         cout << "{ [" << reList[i]->getJob() << "] [" << reList[i]->getPeopleNum() << "] [" << reList[i]->getDueDate() << "] }\n";
     }
+}
+
+/*************************************
+    4.3. 지원 정보 조회 UI Boundary Class
+**************************************/
+void ShowApplyUI::startInterface(ShowApply *showApply, NormalUser *normalUser)
+{
+    selectApplyList(showApply, normalUser);
+}
+
+void ShowApplyUI::selectApplyList(ShowApply *showApply, NormalUser *normalUser)
+{
+    showApply->showApplyList(normalUser);
 }
 
 int main()
