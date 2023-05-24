@@ -1,0 +1,8 @@
+# ninja log v5
+1	474	1684899955968225039	CMakeFiles/implementation.dir/ApplyInfoCollection.cpp.o	e57075bf51bb4da4
+2	474	1684899955968290330	CMakeFiles/implementation.dir/NormalUser.cpp.o	e3e6b905686ef2aa
+1	475	1684899955968226331	CMakeFiles/implementation.dir/CompanyUser.cpp.o	79c0444a5aa38e14
+2	475	1684899955968286580	CMakeFiles/implementation.dir/Recruit.cpp.o	5a4945dca3b32c1d
+475	515	1684899956014695139	CMakeFiles/implementation.dir/UserCollection.cpp.o	5b69ec3090b2c32c
+474	515	1684899956015023674	CMakeFiles/implementation.dir/RecruitInfoCollection.cpp.o	51f1c41b048d57c3
+1	247	1684899982542528473	CMakeFiles/implementation.dir/User.cpp.o	59f58260189109d5
