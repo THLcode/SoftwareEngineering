@@ -1,8 +1,19 @@
-//
-// Created by 이태휘 on 2023/05/24.
-//
+#include <iostream>
+#include <string>
+#include <vector>
+#include "SelectApplyStaticsUI.h"
+#include "../UserCollection.h"
+using namespace std;
 
-#ifndef HOMEWORK3_2_SELECTAPPLYSTATISTICS_H
-#define HOMEWORK3_2_SELECTAPPLYSTATISTICS_H
+class SelectApplyStaticsUI;
 
-#endif //HOMEWORK3_2_SELECTAPPLYSTATISTICS_H
+class SelectApplyStatics
+{
+private:
+    SelectApplyStaticsUI *selectApplyStaticsUI;
+
+public:
+    SelectApplyStatics();
+    void showApplyStatics(); // return type change
+    SelectApplyStaticsUI *showSelectApplyStaticsUI();
+};

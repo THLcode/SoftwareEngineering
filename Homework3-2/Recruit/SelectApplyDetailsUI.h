@@ -1,8 +1,16 @@
-//
-// Created by 이태휘 on 2023/05/24.
-//
+#include <iostream>
+#include <string>
+#include "SelectApplyDetails.h"
 
-#ifndef HOMEWORK3_2_SELECTAPPLYDETAILSUI_H
-#define HOMEWORK3_2_SELECTAPPLYDETAILSUI_H
+using namespace std;
+class SelectApplyDetails;
 
-#endif //HOMEWORK3_2_SELECTAPPLYDETAILSUI_H
+class SelectApplyDetailsUI
+{
+private:
+    SelectApplyDetails *selectApplyDetailsControl;
+
+public:
+    SelectApplyDetailsUI(SelectApplyDetails *selectApplyDetailsControl);
+    void selectApplyDetailsList();
+};

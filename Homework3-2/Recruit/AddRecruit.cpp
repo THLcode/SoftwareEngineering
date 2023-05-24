@@ -1,3 +1,13 @@
-//
-// Created by 이태휘 on 2023/05/24.
-//
+#include "AddRecruit.h"
+
+AddRecruit::AddRecruit()
+{
+}
+
+void AddRecruit::addRecruit(/*매개 변수 추가하기*/)
+{
+}
+
+AddRecruitUI *AddRecruit::showAddRecruitUI()
+{
+}

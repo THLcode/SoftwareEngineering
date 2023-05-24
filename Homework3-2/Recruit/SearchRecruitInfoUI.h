@@ -1,8 +1,16 @@
-//
-// Created by 이태휘 on 2023/05/24.
-//
+#include <iostream>
+#include <string>
+#include "SearchRecruitInfo.h"
+using namespace std;
 
-#ifndef HOMEWORK3_2_SEARCHRECRUITINFOUI_H
-#define HOMEWORK3_2_SEARCHRECRUITINFOUI_H
+class SearchRecruitInfo;
 
-#endif //HOMEWORK3_2_SEARCHRECRUITINFOUI_H
+class SearchRecruitInfoUI
+{
+private:
+    SearchRecruitInfo *searchRecruitInfoControl;
+
+public:
+    SearchRecruitInfoUI(SearchRecruitInfo *SearchRecruitInfoControl);
+    void enterCompanyName(string companyName);
+};

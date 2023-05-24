@@ -1,3 +1,15 @@
-//
-// Created by 이태휘 on 2023/05/24.
-//
+#include "ApplyRecruit.h"
+#include "../UserCollection.h"
+#include "../RecruitInfoCollection.h"
+#include "../ApplyInfoCollection.h"
+
+ApplyRecruit::ApplyRecruit()
+{
+}
+
+void ApplyRecruit::addApplication()
+{
+}
+ApplyRecruitUI *ApplyRecruit::showApplyRecruitUI()
+{
+}

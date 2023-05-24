@@ -1,8 +1,14 @@
-//
-// Created by 이태휘 on 2023/05/24.
-//
+#include <iostream>
+#include <string>
+using namespace std;
+class AddRecruit;
 
-#ifndef HOMEWORK3_2_ADDRECRUITUI_H
-#define HOMEWORK3_2_ADDRECRUITUI_H
+class AddRecruitUI
+{
+private:
+    AddRecruit *addRecruitControl;
 
-#endif //HOMEWORK3_2_ADDRECRUITUI_H
+public:
+    AddRecruitUI(AddRecruit *addRecruitControl);
+    void addRecruit(/* params add plz */);
+};

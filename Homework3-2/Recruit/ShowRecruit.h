@@ -1,8 +1,18 @@
-//
-// Created by 이태휘 on 2023/05/24.
-//
+#include <iostream>
+#include <string>
+#include "ShowRecruitUI.h"
+#include "..//RecruitInfoCollection.h"
+using namespace std;
 
-#ifndef HOMEWORK3_2_SHOWRECRUIT_H
-#define HOMEWORK3_2_SHOWRECRUIT_H
+class ShowRecruitUI;
 
-#endif //HOMEWORK3_2_SHOWRECRUIT_H
+class ShowRecruit
+{
+private:
+    ShowRecruitUI *showRecruitUI;
+
+public:
+    ShowRecruit();
+    void showRecruit(); // return type 변경 요망
+    ShowRecruitUI *showShowRecruitUI();
+};

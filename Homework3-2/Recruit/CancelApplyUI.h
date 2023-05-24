@@ -1,8 +1,17 @@
-//
-// Created by 이태휘 on 2023/05/24.
-//
+#include <iostream>
+#include <string>
+#include "CancelApply.h"
+using namespace std;
 
-#ifndef HOMEWORK3_2_CANCELAPPLYUI_H
-#define HOMEWORK3_2_CANCELAPPLYUI_H
+class CancelApply;
 
-#endif //HOMEWORK3_2_CANCELAPPLYUI_H
+class CancelApplyUI
+{
+private:
+    CancelApply *cancelApplyControl;
+
+public:
+    CancelApplyUI(CancelApply *cancelApplyControl);
+    void cancelApply();
+    cancelApply *showCancelApplyUI();
+};

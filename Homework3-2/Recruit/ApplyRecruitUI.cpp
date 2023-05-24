@@ -1,3 +1,10 @@
-//
-// Created by 이태휘 on 2023/05/24.
-//
+#include "ApplyRecruitUI.h"
+using namespace std;
+
+ApplyRecruitUI::ApplyRecruitUI(ApplyRecruit *applyRecruitControl)
+{
+}
+
+void ApplyForRecruitmentUI::applyForRecruitment()
+{
+}

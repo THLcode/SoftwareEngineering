@@ -1,8 +1,16 @@
-//
-// Created by 이태휘 on 2023/05/24.
-//
+#include <iostream>
+#include "SearchRecruitInfoUI.h"
+#include "../Recruit.h"
+using namespace std;
+class SearchRecruitInfoUI;
 
-#ifndef HOMEWORK3_2_SEARCHRECRUITINFO_H
-#define HOMEWORK3_2_SEARCHRECRUITINFO_H
+class SearchRecruitInfo
+{
+private:
+    SearchRecruitInfoUI *searchRecruitInfoUI;
 
-#endif //HOMEWORK3_2_SEARCHRECRUITINFO_H
+public:
+    SearchRecruitInfo();
+    void showRecruitment(); // 리턴 타입, 파라미터 타입 변경 요망
+    SearchRecruitInfoUI *showSearchRecruitInfoUI();
+};

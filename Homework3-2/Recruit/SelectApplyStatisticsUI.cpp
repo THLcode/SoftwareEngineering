@@ -1,3 +1,9 @@
-//
-// Created by 이태휘 on 2023/05/24.
-//
+#include "SelectApplyStaticsUI.h"
+
+SelectApplyStaticsUI::SelectApplyStaticsUI(SelectApplyStatics *selectApplyStaticsControl)
+{
+}
+
+void SelectApplyStaticsUI::selectApplyStatics()
+{
+}

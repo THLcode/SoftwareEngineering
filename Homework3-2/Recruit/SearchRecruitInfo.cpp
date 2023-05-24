@@ -1,3 +1,14 @@
-//
-// Created by 이태휘 on 2023/05/24.
-//
+#include "SearchRecruitInfo.h"
+#include "../UserCollection.h"
+#include "../RecruitCollection.h"
+
+SearchRecruitInfo::SearchRecruitInfo()
+{
+}
+
+void SearchRecruitInfo::showRecruitment()
+{
+}
+SearchRecruitInfoUI *SearchRecruitInfo::showSearchRecruitInfoUI()
+{
+}

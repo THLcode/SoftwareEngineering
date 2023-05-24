@@ -1,8 +1,18 @@
-//
-// Created by 이태휘 on 2023/05/24.
-//
+#include <iostream>
+#include <string>
+#include "SelectApplyDetailsUI.h"
+#include "../UserCollection.h"
+using namespace std;
 
-#ifndef HOMEWORK3_2_SELECTAPPLYDETAILS_H
-#define HOMEWORK3_2_SELECTAPPLYDETAILS_H
+class SelectApplyDetailsUI;
 
-#endif //HOMEWORK3_2_SELECTAPPLYDETAILS_H
+class SelectApplyDetails
+{
+private:
+    SelectApplyDetailsUI *selectApplyDetailsUI;
+
+public:
+    SelectApplyDetails();
+    void showSelectApplyDetails(); // 리턴 타입
+    SelectApplyDetailsUI *showSelectApplyDetailsUI();
+};

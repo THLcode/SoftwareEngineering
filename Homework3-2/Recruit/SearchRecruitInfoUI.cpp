@@ -1,3 +1,14 @@
-//
-// Created by 이태휘 on 2023/05/24.
-//
+#include "SearchRecruitInfoUI.h"
+using namespace std;
+
+SearchRecruitInfoUI::SearchRecruitInfoUI(SearchRecruitInfo *SearchRecruitInfoControl)
+{
+}
+
+void SearchRecruitInfoUI::startInterface()
+{
+}
+
+void SearchRecruitInfoUI::enterCompanyName(string companyName)
+{
+}

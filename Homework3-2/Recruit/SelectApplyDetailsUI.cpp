@@ -1,3 +1,9 @@
-//
-// Created by 이태휘 on 2023/05/24.
-//
+#include "SelectApplyDetailsUI.h"
+
+SelectApplyDetailsUI::SelectApplyDetailsUI(SelectApplyDetails *selectApplyDetailsControl)
+{
+}
+
+void SelectApplyDetailsUI::selectApplyDetailsList()
+{
+}

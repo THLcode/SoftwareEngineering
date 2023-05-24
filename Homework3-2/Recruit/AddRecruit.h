@@ -1,8 +1,16 @@
-//
-// Created by 이태휘 on 2023/05/24.
-//
+#include "AddRecruitUI.h"
+#include "../CompanyUser.h"
+#include <string>
+using namespace std;
+class AddRecruitUI;
 
-#ifndef HOMEWORK3_2_ADDRECRUIT_H
-#define HOMEWORK3_2_ADDRECRUIT_H
+class AddRecruit
+{
+private:
+    AddRecruitUI *addRecruitUI;
 
-#endif //HOMEWORK3_2_ADDRECRUIT_H
+public:
+    AddRecruit();
+    void addRecruit(); // 매개변수 채워야합니다
+    AddRecruitUI *showAddRecruitUI();
+};

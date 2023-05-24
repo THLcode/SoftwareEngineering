@@ -1,8 +1,18 @@
-//
-// Created by 이태휘 on 2023/05/24.
-//
+#include <iostream>
+#include <stdio.h>
+#include <string>
+#include <vector>
+#include "SelectRecruitStatistics.h"
 
-#ifndef HOMEWORK3_2_SELECTRECRUITSTATISTICSUI_H
-#define HOMEWORK3_2_SELECTRECRUITSTATISTICSUI_H
+using namespace std;
+class SelectRecruitStatistics;
 
-#endif //HOMEWORK3_2_SELECTRECRUITSTATISTICSUI_H
+class SelectRecruitStatisticsUI
+{
+private:
+    SelectRecruitStatistics *selectRecruitStatisticsControl;
+
+public:
+    SelectRecruitStatisticsUI(SelectRecruitStatistics *selectRecruitStatisticsControl);
+    void selectRecruitStatistics();
+};
