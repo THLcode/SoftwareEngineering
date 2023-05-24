@@ -1,12 +1,14 @@
 #include "RecruitInfoCollection.h"
 
-void RecruitInfoCollection::addRecruit(Recruit* recruit) {
+void RecruitInfoCollection::pushRecruit(Recruit *recruit)
+{
+    recruitInfo.push_back(recruit);
 }
 
-Recruit* RecruitInfoCollection::getRecruitList(){
-
+Recruit *RecruitInfoCollection::getRecruitList()
+{
 }
 
-tuple<string, int, string, int, string> RecruitInfoCollection::getRecruitDetails(){
-
+tuple<string, int, string, int, string> RecruitInfoCollection::getRecruitDetails()
+{
 }
