@@ -1,22 +1,25 @@
 #include "Recruit.h"
 
-Recruit::Recruit(string job, int peopleNum, string dueDate, CompanyUser* companyUser) {
+Recruit::Recruit(string job, int peopleNum, string dueDate, string companyNumber)
+{
 	this->job = job;
 	this->peopleNum = peopleNum;
 	this->dueDate = dueDate;
-	this->companyUser = companyUser;
+	this->companyNumber = companyNumber;
 }
 
-tuple<string, int, string, int, string>Recruit::getRecruitDetails() {
+tuple<string, int, string, int, string> Recruit::getRecruitDetails()
+{
 	int companyNumber;
 	string companyName;
-	tie(companyName, companyNumber) = this->companyUser->getCompanyUserDetails(); //바꿔야될것같음....
+	tie(companyName, companyNumber) = this->companyUser->getCompanyUserDetails(); // 바꿔야될것같음....
 
-	return {
-	companyName,
-	companyNumber,
-	this->job,
-	this->peopleNum,
-	this->dueDate;
+	return
+	{
+		companyName,
+			companyNumber,
+			this->job,
+			this->peopleNum,
+			this->dueDate;
 	};
 }

@@ -9,8 +9,17 @@ using namespace std;
 
 class CompanyUser;
 
-class Recruit {
+class Recruit
+{
+private:
+    string job;
+    int peopleNum;
+    string dueDate;
+    string companyNumber;
 
+public:
+    Recruit(string, int, string, string);
+    vector<Recruit *> getRecruitDetails();
 };
 
-#endif //HOMEWORK3_2_RECRUIT_H
+#endif // HOMEWORK3_2_RECRUIT_H
