@@ -1,4 +1,4 @@
-//test
+
 // 헤더 선언
 #include <iostream>
 #include <string>
