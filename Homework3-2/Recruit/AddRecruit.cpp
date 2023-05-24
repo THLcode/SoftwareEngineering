@@ -25,3 +25,11 @@ void AddRecruit::addRecruit(string job, int peopleNum, string dueDate, string co
 // }
 
 // control -> Recruit -> RecruitCollection
+
+/*  1. addRecruit 매개변수 넣어서 생성자로 호출
+    2. UI startInterface 실행되고
+    3. boundary 실행
+    4. control 실행
+    5. Recruit 객체 만들어짐
+    6. RecruitCollection vector에 삽입됨
+*/
