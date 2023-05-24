@@ -20,10 +20,6 @@ void AddRecruit::addRecruit(string job, int peopleNum, string dueDate, string co
     rc.pushRecruit(re);
 }
 
-// AddRecruitUI *AddRecruit::showAddRecruitUI()
-// {
-// }
-
 // control -> Recruit -> RecruitCollection
 
 /*  1. addRecruit 매개변수 넣어서 생성자로 호출

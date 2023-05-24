@@ -14,6 +14,8 @@
 
 #include "Recruit/AddRecruitUI.h"
 #include "Recruit/AddRecruit.h"
+#include "Recruit/ShowRecruitUI.h"
+#include "Recruit/ShowRecruit.h"
 using namespace std;
 
 #define MAX_STRING 32
@@ -75,9 +77,9 @@ void LoginUI::startInterface(Login *login)
     �α׾ƿ� UI Boundary Class
 *****************************/
 
-/********************************
+/*************************************
     3.1. 채용 정보 등록 UI Boundary Class
-*********************************/
+**************************************/
 void AddRecruitUI::startInterface(AddRecruit *addRecruit, CompanyUser *companyUser)
 {
     // companyNumber가 필요해서 Companyuser도 매개변수로 넘겨받습니다.
@@ -97,6 +99,25 @@ void AddRecruitUI::createRecruit(AddRecruit *addRecruit, string job, int peopleN
 {
     addRecruit->addRecruit(job, peopleNum, dueDate, companyNumber);
     // control 함수 호출
+}
+
+/*****************************************
+    3.2. 등록 채용 정보 조회 UI Boundary Class
+******************************************/
+void ShowRecruitUI::startInterface(ShowRecruit *showRecruit, CompanyUser *companyUser)
+{
+    getRecruitList(showRecruit, companyUser->getCompanyNumber());
+}
+
+void ShowRecruitUI::getRecruitList(ShowRecruit *showRecruit, string companyNumber)
+{
+    vector<Recruit *> reList = showRecruit->showRecruitList(companyNumber);
+    // control 함수 호출
+
+    for (int i = 0; i < reList.size(); i++)
+    {
+        cout << "{ [" << reList[i]->getJob() << "] [" << reList[i]->getPeopleNum() << "] [" << reList[i]->getDueDate() << "] }\n";
+    }
 }
 
 int main()

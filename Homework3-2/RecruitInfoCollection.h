@@ -18,7 +18,7 @@ private:
 
 public:
     void pushRecruit(Recruit *recruit);
-    Recruit *getRecruitList();
+    vector<Recruit *> getRecruitList(string);
     tuple<string, int, string, int, string> getRecruitDetails();
 };
 #endif // HOMEWORK3_2_RECRUITINFOCOLLECTION_H

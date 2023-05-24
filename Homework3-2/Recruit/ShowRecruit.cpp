@@ -1,13 +1,16 @@
 #include "ShowRecruit.h"
+#include "../RecruitInfoCollection.h"
 
-ShowRecruit::ShowRecruit()
+ShowRecruit::ShowRecruit(ShowRecruit *showRecruit, CompanyUser *companyUser)
 {
+    ShowRecruitUI showRecruitUI;
+    showRecruitUI.startInterface(showRecruit, companyUser);
 }
 
-void ShowRecruit::showRecruit()
+vector<Recruit *> ShowRecruit::showRecruitList(string companyNumber)
 {
-}
+    RecruitInfoCollection rc;
+    vector<Recruit *> Rlist = rc.getRecruitList(companyNumber);
 
-ShowRecruitUI *ShowRecruit::showShowRecruitUI()
-{
+    return Rlist;
 }

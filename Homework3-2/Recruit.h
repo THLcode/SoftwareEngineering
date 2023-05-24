@@ -22,6 +22,11 @@ public:
     void setPeopleNum(int n) { this->peopleNum = n; };
     void setDueDate(string d) { this->dueDate = d; };
     void setCompanyNumber(string cn) { this->companyNumber = cn; };
+
+    string getJob() { return this->job; };
+    int getPeopleNum() { return this->peopleNum; };
+    string getDueDate() { return this->dueDate; };
+    string getCompanyNumber() { return this->companyNumber; };
 };
 
 #endif // HOMEWORK3_2_RECRUIT_H
