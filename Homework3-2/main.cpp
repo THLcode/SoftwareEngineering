@@ -244,6 +244,7 @@ void ShowApplyUI::selectApplyList(ShowApply *showApply, NormalUser *normalUser)
 /*************************************
   4.4. CancelApplyUI Boundary Class
 *************************************/
+void CancelApplyUI::cancelApply() {}
 void CancelApplyUI::startInterface(CancelApply *cancelApply)
 {
     char companyNumber[MAX_STRING];
@@ -268,7 +269,7 @@ void SelectRecruitStatisticsUI::startInterface(SelectRecruitStatistics *selectRe
 
 void SelectRecruitStatisticsUI::selectRecruitStatistics(SelectRecruitStatistics *selectRecruitStatisticsControl, string currentLoginClient) {
     //배열로 리턴해야함 여러개일 수 있어
-    vector<Recruit *> rList = rc.getRecruitListById(currentLoginClient);
+    vector<Recruit *> rList = selectRecruitStatisticsControl->showRecruitStatistics(currentLoginClient);
     map<string, int> jobCount = selectRecruitStatisticsControl->getRecruitNumByJob(rList);
     printOutput(jobCount);
 }
@@ -289,7 +290,7 @@ void SelectApplyStatisticsUI::startInterface(SelectApplyStatistics *selectApplyS
 }
 
 void SelectApplyStatisticsUI::selectApplyStatistics(SelectApplyStatistics *, string currentLoginClient) {
-    vector<Recruit *> rList = ac.getApplyListById(currentLoginClient);
+    vector<Recruit *> rList = selectApplyStatisticsControl->showApplyStatistics(currentLoginClient);
     map<string, int> jobCount = selectApplyStatisticsControl->getApplyNumByJob(rList);
     printOutput(jobCount);
 }

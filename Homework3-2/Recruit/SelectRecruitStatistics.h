@@ -20,8 +20,7 @@ private:
 
 public:
     SelectRecruitStatistics();
-//    void showRecruitStatistics(); // 리턴 타입 변경
-//    SelectRecruitStatisticsUI *showSelectRecruitStatisticsUI();
+    vector<Recruit *> showRecruitStatistics(string);
     map<string, int> getRecruitNumByJob(vector<Recruit *>);
 };
 #endif //HOMEWORK3_2_SELECTRECRUITSTATISTICS_H

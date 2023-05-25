@@ -19,7 +19,7 @@ private:
 public:
 //    CancelApplyUI(CancelApply *cancelApplyControl);
     void cancelApply();
-    CancelApply *showCancelApplyUI();
+//    CancelApply *showCancelApplyUI();
     void startInterface(CancelApply*);
     void printOutput(tuple<string, string, string>);
 };

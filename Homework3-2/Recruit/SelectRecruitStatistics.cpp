@@ -7,13 +7,11 @@ SelectRecruitStatistics::SelectRecruitStatistics()
     selectRecruitStatisticsUI.startInterface(this);
 }
 
-//void SelectRecruitStatistics::showRecruitStatistics()
-//{
-//}
-//
-//SelectRecruitStatisticsUI *SelectRecruitStatistics::showSelectRecruitStatisticsUI()
-//{
-//}
+vector<Recruit *> SelectRecruitStatistics::showRecruitStatistics(string currentLoginClient){
+    RecruitInfoCollection rc;
+    vector<Recruit *> rList = rc.getRecruitListById(currentLoginClient);
+    return rList;
+}
 
 map<string, int> SelectRecruitStatistics::getRecruitNumByJob(vector<Recruit *> rList){
     map<string, int> jobCount;

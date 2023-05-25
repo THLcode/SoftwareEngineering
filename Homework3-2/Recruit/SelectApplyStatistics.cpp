@@ -1,4 +1,5 @@
 #include "SelectApplyStatistics.h"
+#include "ApplyInfoCollection.h"
 
 SelectApplyStatistics::SelectApplyStatistics()
 {
@@ -11,8 +12,12 @@ SelectApplyStatistics::SelectApplyStatistics()
 //{
 //}
 
-void SelectApplyStatistics::showApplyStatistics()
+vector<Recruit*> SelectApplyStatistics::showApplyStatistics(string currentLoginClient)
 {
+    ApplyInfoCollection ac;
+    vector<Recruit *> RList = ac.getApplyListById(currentLoginClient);
+
+    return RList;
 }
 map<string, int> SelectApplyStatistics::getApplyNumByJob(vector<Recruit *> rList){
     map<string, int> jobCount;

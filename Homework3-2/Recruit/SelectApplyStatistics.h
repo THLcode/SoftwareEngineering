@@ -21,8 +21,7 @@ private:
 
 public:
     SelectApplyStatistics();
-    void showApplyStatistics(); // return type change
-//    SelectApplyStatisticsUI *showSelectApplyStatisticsUI();
+    vector<Recruit*> showApplyStatistics(string); //
     map<string, int> getApplyNumByJob(vector<Recruit *>);
 };
 
