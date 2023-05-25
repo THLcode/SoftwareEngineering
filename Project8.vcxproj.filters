@@ -1,0 +1,221 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="소스 파일">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="헤더 파일">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="리소스 파일">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="소스 파일\User">
+      <UniqueIdentifier>{f6de0cef-6380-4c4c-acd0-2709d33a9e2e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Recruit">
+      <UniqueIdentifier>{cbde1272-6de9-4c0e-9070-6dd65a2ef3eb}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="ApplyInfoCollection.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="CompanyUser.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="NormalUser.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Recruit.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="RecruitInfoCollection.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="User.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="AddRecruit.cpp">
+      <Filter>소스 파일\Recruit</Filter>
+    </ClCompile>
+    <ClCompile Include="AddRecruitUI.cpp">
+      <Filter>소스 파일\Recruit</Filter>
+    </ClCompile>
+    <ClCompile Include="ApplyRecruit.cpp">
+      <Filter>소스 파일\Recruit</Filter>
+    </ClCompile>
+    <ClCompile Include="ApplyRecruitUI.cpp">
+      <Filter>소스 파일\Recruit</Filter>
+    </ClCompile>
+    <ClCompile Include="CancelApply.cpp">
+      <Filter>소스 파일\Recruit</Filter>
+    </ClCompile>
+    <ClCompile Include="CancelApplyUI.cpp">
+      <Filter>소스 파일\Recruit</Filter>
+    </ClCompile>
+    <ClCompile Include="DropUser.cpp">
+      <Filter>소스 파일\User</Filter>
+    </ClCompile>
+    <ClCompile Include="DropUserUI.cpp">
+      <Filter>소스 파일\User</Filter>
+    </ClCompile>
+    <ClCompile Include="Login.cpp">
+      <Filter>소스 파일\User</Filter>
+    </ClCompile>
+    <ClCompile Include="LoginUI.cpp">
+      <Filter>소스 파일\User</Filter>
+    </ClCompile>
+    <ClCompile Include="Logout.cpp">
+      <Filter>소스 파일\User</Filter>
+    </ClCompile>
+    <ClCompile Include="LogoutUI.cpp">
+      <Filter>소스 파일\User</Filter>
+    </ClCompile>
+    <ClCompile Include="SignUp.cpp">
+      <Filter>소스 파일\User</Filter>
+    </ClCompile>
+    <ClCompile Include="SignUpUI.cpp">
+      <Filter>소스 파일\User</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\바탕 화면\새 폴더\SoftwareEngineering-dev\Homework3-2\Recruit\SelectApplyStatistics.cpp">
+      <Filter>소스 파일\Recruit</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\바탕 화면\새 폴더\SoftwareEngineering-dev\Homework3-2\Recruit\SelectApplyStatisticsUI.cpp">
+      <Filter>소스 파일\Recruit</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\바탕 화면\새 폴더\SoftwareEngineering-dev\Homework3-2\Recruit\SelectRecruitStatistics.cpp">
+      <Filter>소스 파일\Recruit</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\바탕 화면\새 폴더\SoftwareEngineering-dev\Homework3-2\Recruit\SelectRecruitStatisticsUI.cpp">
+      <Filter>소스 파일\Recruit</Filter>
+    </ClCompile>
+    <ClCompile Include="UserCollection.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="SearchRecruitInfo.cpp">
+      <Filter>소스 파일\Recruit</Filter>
+    </ClCompile>
+    <ClCompile Include="SearchRecruitInfoUI.cpp">
+      <Filter>소스 파일\Recruit</Filter>
+    </ClCompile>
+    <ClCompile Include="ShowApply.cpp">
+      <Filter>소스 파일\Recruit</Filter>
+    </ClCompile>
+    <ClCompile Include="ShowApplyUI.cpp">
+      <Filter>소스 파일\Recruit</Filter>
+    </ClCompile>
+    <ClCompile Include="ShowRecruit.cpp">
+      <Filter>소스 파일\Recruit</Filter>
+    </ClCompile>
+    <ClCompile Include="ShowRecruitUI.cpp">
+      <Filter>소스 파일\Recruit</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ApplyInfoCollection.h">
+      <Filter>소스 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="CompanyUser.h">
+      <Filter>소스 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="NormalUser.h">
+      <Filter>소스 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Recruit.h">
+      <Filter>소스 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="RecruitInfoCollection.h">
+      <Filter>소스 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="User.h">
+      <Filter>소스 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="UserCollection.h">
+      <Filter>소스 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="AddRecruit.h">
+      <Filter>소스 파일\Recruit</Filter>
+    </ClInclude>
+    <ClInclude Include="AddRecruitUI.h">
+      <Filter>소스 파일\Recruit</Filter>
+    </ClInclude>
+    <ClInclude Include="ApplyRecruit.h">
+      <Filter>소스 파일\Recruit</Filter>
+    </ClInclude>
+    <ClInclude Include="ApplyRecruitUI.h">
+      <Filter>소스 파일\Recruit</Filter>
+    </ClInclude>
+    <ClInclude Include="CancelApply.h">
+      <Filter>소스 파일\Recruit</Filter>
+    </ClInclude>
+    <ClInclude Include="CancelApplyUI.h">
+      <Filter>소스 파일\Recruit</Filter>
+    </ClInclude>
+    <ClInclude Include="DropUser.h">
+      <Filter>소스 파일\User</Filter>
+    </ClInclude>
+    <ClInclude Include="DropUserUI.h">
+      <Filter>소스 파일\User</Filter>
+    </ClInclude>
+    <ClInclude Include="Login.h">
+      <Filter>소스 파일\User</Filter>
+    </ClInclude>
+    <ClInclude Include="Logout.h">
+      <Filter>소스 파일\User</Filter>
+    </ClInclude>
+    <ClInclude Include="LogoutUI.h">
+      <Filter>소스 파일\User</Filter>
+    </ClInclude>
+    <ClInclude Include="SignUp.h">
+      <Filter>소스 파일\User</Filter>
+    </ClInclude>
+    <ClInclude Include="SignUpUI.h">
+      <Filter>소스 파일\User</Filter>
+    </ClInclude>
+    <ClInclude Include="LoginUI.h">
+      <Filter>소스 파일\User</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\바탕 화면\새 폴더\SoftwareEngineering-dev\Homework3-2\Recruit\SelectApplyStatistics.h">
+      <Filter>소스 파일\Recruit</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\바탕 화면\새 폴더\SoftwareEngineering-dev\Homework3-2\Recruit\SelectApplyStatisticsUI.h">
+      <Filter>소스 파일\Recruit</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\바탕 화면\새 폴더\SoftwareEngineering-dev\Homework3-2\Recruit\SelectRecruitStatistics.h">
+      <Filter>소스 파일\Recruit</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\바탕 화면\새 폴더\SoftwareEngineering-dev\Homework3-2\Recruit\SelectRecruitStatisticsUI.h">
+      <Filter>소스 파일\Recruit</Filter>
+    </ClInclude>
+    <ClInclude Include="SearchRecruitInfo.h">
+      <Filter>소스 파일\Recruit</Filter>
+    </ClInclude>
+    <ClInclude Include="SearchRecruitInfoUI.h">
+      <Filter>소스 파일\Recruit</Filter>
+    </ClInclude>
+    <ClInclude Include="ShowApply.h">
+      <Filter>소스 파일\Recruit</Filter>
+    </ClInclude>
+    <ClInclude Include="ShowApplyUI.h">
+      <Filter>소스 파일\Recruit</Filter>
+    </ClInclude>
+    <ClInclude Include="ShowRecruit.h">
+      <Filter>소스 파일\Recruit</Filter>
+    </ClInclude>
+    <ClInclude Include="ShowRecruitUI.h">
+      <Filter>소스 파일\Recruit</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="input.txt">
+      <Filter>소스 파일</Filter>
+    </Text>
+  </ItemGroup>
+</Project>
