@@ -22,8 +22,18 @@ void ApplyInfoCollection::pushApply(Recruit* recruit)
     applyInfo.push_back(recruit);
 }
 
-vector<Recruit*> ApplyInfoCollection::getApplyInfoList() {
+vector<Recruit*> ApplyInfoCollection::getApplyListById(string applicantId) {
+    vector<Recruit*> resultList;
 
+    for (Recruit* recruit : applyInfo)
+    {
+        if (recruit->getApplicantId() == applicantId)
+        {
+            resultList.push_back(recruit);
+        }
+    }
+
+    return resultList;
 }
 
 string ApplyInfoCollection::cancelApplyInfo(Recruit* recruit) {

@@ -7,20 +7,23 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <map>
 #include "SelectApplyStatisticsUI.h"
 #include "../UserCollection.h"
 using namespace std;
 
-class SelectApplyStaticsUI;
+class SelectApplyStatisticsUI;
 
-class SelectApplyStatics
+class SelectApplyStatistics
 {
 private:
-    SelectApplyStaticsUI *selectApplyStaticsUI;
+    SelectApplyStatisticsUI *selectApplyStatisticsUI;
 
 public:
-    SelectApplyStatics();
-    void showApplyStatics(); // return type change
-    SelectApplyStaticsUI *showSelectApplyStaticsUI();
+    SelectApplyStatistics();
+    void showApplyStatistics(); // return type change
+//    SelectApplyStatisticsUI *showSelectApplyStatisticsUI();
+    map<string, int> getApplyNumByJob(vector<Recruit *>);
 };
+
 #endif //HOMEWORK3_2_SELECTAPPLYSTATISTICS_H

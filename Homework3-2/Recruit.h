@@ -18,6 +18,7 @@ private:
     string companyNumber;
     string companyName;
     string applicantId = "";
+    string companyId = "";
 
 public:
     void setJob(string job);
@@ -26,6 +27,7 @@ public:
     void setCompanyNumber(string cn);
     void setCompanyName(string cname);
     void setApplicantId(string id);
+    void setCompanyId(string id);
 
     string getJob();
     int getPeopleNum();
@@ -33,6 +35,7 @@ public:
     string getCompanyNumber();
     string getCompanyName();
     string getApplicantId();
+    string getCompanyId();
 };
 
 #endif // HOMEWORK3_2_RECRUIT_H

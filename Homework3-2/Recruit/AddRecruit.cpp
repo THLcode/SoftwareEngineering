@@ -21,6 +21,7 @@ void AddRecruit::addRecruit(string job, int peopleNum, string dueDate, string cu
     UserCollection uc;
     CompanyUser *u = uc.getUser(currendId);
 
+    re->setRecruitId(currendId);
     re->setJob(job);
     re->setPeopleNum(peopleNum);
     re->setDueDate(dueDate);

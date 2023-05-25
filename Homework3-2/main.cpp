@@ -29,6 +29,9 @@
 #include "Recruit/SearchRecruitInfo.h"
 #include "Recruit/ApplyRecruit.h"
 #include "Recruit/SelectRecruitStatistics.h"
+#include "Recruit/SelectApplyStatistics.h"
+#include "RecruitInfoCollection.h"
+#include "ApplyInfoCollection.h"
 
 using namespace std;
 
@@ -42,6 +45,8 @@ void program_exit();
 FILE *in_fp, *out_fp;
 string currentLoginClient = "None";
 UserCollection userList;
+ApplyInfoCollection ac;
+RecruitInfoCollection rc;
 int currentUserType = 0;
 
 /*****************************
@@ -249,18 +254,49 @@ void CancelApplyUI::startInterface(CancelApply *cancelApply)
     //    submitInfo(signUp, userType, name, number, id, password);
 }
 
-/*************************************
-   5.1. 지원 정보 통계 Boundary Class
-*************************************/
+/******************************************
+   5.1. 회사 회원 지원 정보 통계 Boundary Class
+******************************************/
 void SelectRecruitStatisticsUI::startInterface(SelectRecruitStatistics *selectRecruitStatisticsControl) {
     selectRecruitStatistics(selectRecruitStatisticsControl, currentLoginClient);
 }
 
 void SelectRecruitStatisticsUI::selectRecruitStatistics(SelectRecruitStatistics *selectRecruitStatisticsControl, string currentLoginClient) {
-//    RecruitInfoCollection rc;
-//    vector<Recruit *> Rlist = rc.getRecruitListByCompany(currentLoginClient);
-//    selectRecruitStatisticsControl->get
+    //배열로 리턴해야함 여러개일 수 있어
+    vector<Recruit *> rList = rc.getRecruitListById(currentLoginClient);
+    map<string, int> jobCount = selectRecruitStatisticsControl->getRecruitNumByJob(rList);
+    printOutput(jobCount);
 }
+
+void SelectRecruitStatisticsUI::printOutput(map<string, int> jobCount){
+    for (const auto& pair : jobCount) {
+        string job = pair.first;
+        int count = pair.second;
+        cout << "> " << job << " " << count << endl;
+    }
+}
+
+/******************************************
+   5.1. 일반 회원 지원 정보 통계 Boundary Class
+******************************************/
+void SelectApplyStatisticsUI::startInterface(SelectApplyStatistics *selectApplyStatisticsControl) {
+    selectApplyStatistics(selectApplyStatisticsControl, currentLoginClient);
+}
+
+void SelectApplyStatisticsUI::selectApplyStatistics(SelectApplyStatistics *, string currentLoginClient) {
+    vector<Recruit *> rList = ac.getApplyListById(currentLoginClient);
+    map<string, int> jobCount = selectApplyStatisticsControl->getApplyNumByJob(rList);
+    printOutput(jobCount);
+}
+
+void SelectApplyStatisticsUI::printOutput(map<string, int> jobCount){
+    for (const auto& pair : jobCount) {
+        string job = pair.first;
+        int count = pair.second;
+        cout << "> " << job << " " << count << endl;
+    }
+}
+
 
 
 int main()
@@ -410,6 +446,7 @@ void doTask()
                 else if (currentUserType == 2)
                 {
                     cout << "5.1. 일반 회원 지원 정보 통계" << endl;
+                    SelectApplyStatistics selectApplyStatistics;
                 }
                 else
                 {

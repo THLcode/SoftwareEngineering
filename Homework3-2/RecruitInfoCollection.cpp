@@ -2,7 +2,7 @@
 
 void RecruitInfoCollection::pushRecruit(Recruit* recruit)
 {
-    //recruitInfo.push_back(recruit);
+    recruitInfo.push_back(recruit);
 }
 vector<Recruit*> RecruitInfoCollection::recruitInfo;
 
@@ -13,11 +13,26 @@ vector<Recruit*> RecruitInfoCollection::getRecruitList(string companyNumber)
     {
         if (recruitInfo[i]->getCompanyNumber() == companyNumber)
         {
-            //recruitList.push_back(recruitInfo[i]);
+            recruitList.push_back(recruitInfo[i]);
         }
     }
 
     return recruitList;
+}
+
+vector<Recruit*> RecruitInfoCollection::getRecruitListById(string companyId)
+{
+    vector<Recruit*> resultList;
+
+    for (Recruit* recruit : recruitInfo)
+    {
+        if (recruit->getCompanyId() == companyId)
+        {
+            resultList.push_back(recruit);
+        }
+    }
+
+    return resultList;
 }
 
 vector<Recruit*> RecruitInfoCollection::getRecruitListByCompany(string companyName)

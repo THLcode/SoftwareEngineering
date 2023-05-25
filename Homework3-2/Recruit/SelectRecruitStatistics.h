@@ -6,6 +6,7 @@
 #define HOMEWORK3_2_SELECTRECRUITSTATISTICS_H
 #include <iostream>
 #include <string>
+#include <map>
 #include "SelectRecruitStatisticsUI.h"
 #include "../UserCollection.h"
 using namespace std;
@@ -19,7 +20,8 @@ private:
 
 public:
     SelectRecruitStatistics();
-    void showRecruitStatistics(); // 리턴 타입 변경
-    SelectRecruitStatisticsUI *showSelectRecruitStatisticsUI();
+//    void showRecruitStatistics(); // 리턴 타입 변경
+//    SelectRecruitStatisticsUI *showSelectRecruitStatisticsUI();
+    map<string, int> getRecruitNumByJob(vector<Recruit *>);
 };
 #endif //HOMEWORK3_2_SELECTRECRUITSTATISTICS_H

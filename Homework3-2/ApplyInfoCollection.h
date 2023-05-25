@@ -14,7 +14,7 @@ private:
 public:
     Recruit* addApplyInfo(Recruit*, string);
     void pushApply(Recruit* recruit);
-    vector<Recruit*> getApplyInfoList();
+    vector<Recruit*> getApplyListById(string);
     string cancelApplyInfo(Recruit* recruit);
 };
 

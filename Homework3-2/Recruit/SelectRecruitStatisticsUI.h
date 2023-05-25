@@ -22,5 +22,7 @@ public:
     SelectRecruitStatisticsUI();
     void startInterface(SelectRecruitStatistics *selectRecruitStatisticsControl);
     void selectRecruitStatistics(SelectRecruitStatistics *, string);
+    void printOutput(map<string, int> jobCount);
 };
 #endif //HOMEWORK3_2_SELECTRECRUITSTATISTICSUI_H
+서

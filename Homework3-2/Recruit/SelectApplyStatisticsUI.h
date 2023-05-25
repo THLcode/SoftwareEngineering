@@ -9,16 +9,17 @@
 #include "SelectApplyStatistics.h"
 using namespace std;
 
-class SelectApplyStatics;
+class SelectApplyStatistics;
 
-class SelectApplyStaticsUI
+class SelectApplyStatisticsUI
 {
 private:
-    SelectApplyStatics *selectApplyStaticsControl;
+    SelectApplyStatistics *selectApplyStatisticsControl;
 
 public:
-    SelectApplyStaticsUI();
-    void startInterface(SelectApplyStatics *selectApplyStaticsControl);
-    void selectApplyStatics();
+    SelectApplyStatisticsUI();
+    void startInterface(SelectApplyStatistics *selectApplyStatisticsControl);
+    void selectApplyStatistics(SelectApplyStatistics *, string);
+    void printOutput(map<string, int>);
 };
 #endif //HOMEWORK3_2_SELECTAPPLYSTATISTICSUI_H
