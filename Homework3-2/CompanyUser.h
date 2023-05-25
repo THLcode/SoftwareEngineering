@@ -8,14 +8,17 @@
 
 #include "User.h"
 using namespace std;
-class CompanyUser : public User {
-   private:
+class CompanyUser : public User
+{
+private:
     string companyName;
     string companyNumber;
     // RecruitInfoCollection recruitInfoCollection;
-   public:
+public:
     CompanyUser(int, string, string, string, string);
+    string getCompanyNumber() { return this->companyNumber; };
+    string getCompanyName() { return this->companyName; };
     // RecruitInfoCollection getRecruitInfoCollection();
     // Pair getCompanyUserDetails();
 };
-#endif  // HOMEWORK3_2_COMPANYUSER_H
+#endif // HOMEWORK3_2_COMPANYUSER_H

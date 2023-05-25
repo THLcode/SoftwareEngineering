@@ -11,12 +11,11 @@ class AddRecruit;
 
 class AddRecruitUI
 {
-private:
-    AddRecruit *addRecruitControl;
-
 public:
-    AddRecruitUI(AddRecruit *addRecruitControl);
-    void addRecruit(/* params add plz */);
+    void startInterface(AddRecruit *addRecruit, CompanyUser *companyUser);
+    void createRecruit(AddRecruit *, string, int, string, CompanyUser *);
 };
 
-#endif //HOMEWORK3_2_ADDRECRUITUI_H
+#endif // HOMEWORK3_2_ADDRECRUITUI_H
+
+// 지원정보 등록 클릭 -> UI통해서 정보 입력 받아서 -> control -> Recruit -> RecruitCollec

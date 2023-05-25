@@ -11,12 +11,14 @@
 using namespace std;
 class Recruit;
 
-class RecruitInfoCollection {
+class RecruitInfoCollection
+{
 private:
-    vector<Recruit*> recruitInfo;
+    static vector<Recruit *> recruitInfo;
+
 public:
-    void addRecruit(Recruit* recruit);
-    Recruit* getRecruitList();
+    void pushRecruit(Recruit *recruit);
+    vector<Recruit *> getRecruitList(string);
     tuple<string, int, string, int, string> getRecruitDetails();
 };
-#endif //HOMEWORK3_2_RECRUITINFOCOLLECTION_H
+#endif // HOMEWORK3_2_RECRUITINFOCOLLECTION_H

@@ -18,9 +18,8 @@ private:
     ShowRecruitUI *showRecruitUI;
 
 public:
-    ShowRecruit();
-    void showRecruit(); // return type 변경 요망
-    ShowRecruitUI *showShowRecruitUI();
+    ShowRecruit(ShowRecruit *showRecruit, CompanyUser *companyUser);
+    vector<Recruit *> showRecruitList(string); // return type 변경 요망
 };
 
-#endif //HOMEWORK3_2_SHOWRECRUIT_H
+#endif // HOMEWORK3_2_SHOWRECRUIT_H

@@ -12,9 +12,9 @@ private:
     AddRecruitUI *addRecruitUI;
 
 public:
-    AddRecruit();
-    void addRecruit(); // 매개변수 채워야합니다
-    AddRecruitUI *showAddRecruitUI();
+    AddRecruit(AddRecruit *, CompanyUser *);
+    void addRecruit(string, int, string, CompanyUser *); // 매개변수 채워야합니다
+    // AddRecruitUI *showAddRecruitUI();
 };
 
-#endif //HOMEWORK3_2_ADDRECRUIT_H
+#endif // HOMEWORK3_2_ADDRECRUIT_H

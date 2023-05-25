@@ -1,9 +1,9 @@
 #include "AddRecruitUI.h"
 
-AddRecruitUI::AddRecruitUI(AddRecruit *addRecruitControl)
-{
-}
+// AddRecruitUI::AddRecruitUI(AddRecruit *addRecruitControl)
+// {
+// }
 
-void AddRecruitUI::addRecruit()
-{
-}
+// void AddRecruitUI::createRecruit(string job, int peopleNum, string dueDate)
+// {
+// }

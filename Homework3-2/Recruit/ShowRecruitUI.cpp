@@ -1,7 +1,7 @@
 #include "ShowRecruitUI.h"
 
-//ShowRecruitUI::ShowRecruitUI(ShowRecruit *showRecruitControl)
+// ShowRecruitUI::ShowRecruitUI(ShowRecruit *showRecruitControl)
 //{
-//}
+// }
 
-void ShowRecruitUI::ShowRecruit() {}
+// void ShowRecruitUI::ShowRecruit() {}
