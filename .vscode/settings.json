@@ -22,9 +22,11 @@
     "**/.vscode/**"
   ],
   "files.associations": {
+    "*.cpp": "cpp",
     "iosfwd": "cpp",
     "__locale": "cpp",
     "locale": "cpp",
-    "iostream": "cpp"
+    "iostream": "cpp",
+    "vector": "cpp"
   }
 }

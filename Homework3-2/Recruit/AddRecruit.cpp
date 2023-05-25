@@ -9,11 +9,13 @@ AddRecruit::AddRecruit()
     addRecruitUI.startInterface(this);
 }
 
+// 채용 정보 등록 2.1 addRecruit()
 Recruit AddRecruit::addRecruit(string job, int peopleNum, string dueDate, string currendId)
 {
     Recruit re;
+    // 채용 정보 등록 2.1.1 Recruit()
     UserCollection uc;
-    CompanyUser* u = uc.getUser(currendId);
+    CompanyUser *u = uc.getUser(currendId);
 
     re.setCompanyId(currendId);
     re.setJob(job);
@@ -24,5 +26,6 @@ Recruit AddRecruit::addRecruit(string job, int peopleNum, string dueDate, string
 
     RecruitInfoCollection rc;
     rc.pushRecruit(re);
+    // 채용 정보 등록 2.1.2 pushRecruit()
     return re;
 }

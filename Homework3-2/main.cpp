@@ -41,9 +41,9 @@ using namespace std;
 void doTask();
 void program_exit();
 
-FILE* in_fp, * out_fp;
+FILE *in_fp, *out_fp;
 string currentLoginClient = "None";
-User* UserCollection::userList[MAX_COUNT] = { nullptr };
+User *UserCollection::userList[MAX_COUNT] = {nullptr};
 int UserCollection::clientNumber = 0;
 UserCollection userList;
 RecruitInfoCollection rc;
@@ -55,7 +55,7 @@ int currentUserType = 0;
 *****************************/
 
 // 회원가입 1. startInterface()
-void SignUpUI::startInterface(SignUp* signup)
+void SignUpUI::startInterface(SignUp *signup)
 {
     int memType = 0;
     char name[MAX_STRING], number[MAX_STRING], id[MAX_STRING],
@@ -76,8 +76,8 @@ void SignUpUI::startInterface(SignUp* signup)
 }
 
 // 회원가입 2. submitInfo()
-void SignUpUI::submitInfo(SignUp* signup, int memType, string name,
-    string number, string id, string password)
+void SignUpUI::submitInfo(SignUp *signup, int memType, string name,
+                          string number, string id, string password)
 {
     signup->signUpUser(userList, memType, name, number, id, password);
 }
@@ -87,7 +87,7 @@ void SignUpUI::submitInfo(SignUp* signup, int memType, string name,
 *****************************/
 
 // 회원탈퇴 1. startInterface()
-void DropUserUI::startInterface(DropUser* dropUser)
+void DropUserUI::startInterface(DropUser *dropUser)
 {
     selectDropUser(dropUser, currentLoginClient);
     fprintf(out_fp, "1.2. 회원탈퇴\n");
@@ -96,7 +96,7 @@ void DropUserUI::startInterface(DropUser* dropUser)
 }
 
 // 회원탈퇴 2. selectDropUser()
-void DropUserUI::selectDropUser(DropUser* dropUser, string id)
+void DropUserUI::selectDropUser(DropUser *dropUser, string id)
 {
     dropUser->deleteUser(userList, id);
 }
@@ -106,13 +106,14 @@ void DropUserUI::selectDropUser(DropUser* dropUser, string id)
 *****************************/
 
 // 로그인 1. startInterface()
-void LoginUI::startInterface(Login* login)
+void LoginUI::startInterface(Login *login)
 {
     loginUser(login);
 }
 
 // 로그인 2. loginUser()
-void LoginUI::loginUser(Login* login) {
+void LoginUI::loginUser(Login *login)
+{
     char id[MAX_STRING], password[MAX_STRING];
     fscanf(in_fp, "%s %s", id, password);
 
@@ -128,15 +129,16 @@ void LoginUI::loginUser(Login* login) {
 *****************************/
 
 // 로그아웃 1. startInterface()
-void LogoutUI::startInterface(Logout* logout)
+void LogoutUI::startInterface(Logout *logout)
 {
     logoutSelect(logout);
 }
 
 // 로그아웃 2. logoutSelect()
-void LogoutUI::logoutSelect(Logout* logout)
+void LogoutUI::logoutSelect(Logout *logout)
 {
-    if (logout->logoutUser()){
+    if (logout->logoutUser())
+    {
         fprintf(out_fp, "2.2. 로그아웃\n");
         fprintf(out_fp, "> %s\n\n", currentLoginClient.c_str());
         currentLoginClient = "None";
@@ -146,7 +148,8 @@ void LogoutUI::logoutSelect(Logout* logout)
 /*************************************
     3.1.채용 정보 등록 UI Boundary Class
 **************************************/
-void AddRecruitUI::startInterface(AddRecruit* addRecruit)
+// 채용 정보 등록 1. startInterface()
+void AddRecruitUI::startInterface(AddRecruit *addRecruit)
 {
     char job[MAX_STRING];
     int peopleNum = 0;
@@ -157,7 +160,8 @@ void AddRecruitUI::startInterface(AddRecruit* addRecruit)
     createRecruit(addRecruit, job, peopleNum, dueDate);
 }
 
-void AddRecruitUI::createRecruit(AddRecruit* addRecruit, string job, int peopleNum, string dueDate)
+// 채용 정보 등록 2. createRecruit()
+void AddRecruitUI::createRecruit(AddRecruit *addRecruit, string job, int peopleNum, string dueDate)
 {
     Recruit re;
     re = addRecruit->addRecruit(job, peopleNum, dueDate, currentLoginClient);
@@ -169,11 +173,13 @@ void AddRecruitUI::createRecruit(AddRecruit* addRecruit, string job, int peopleN
 /*****************************************
     3.2. 등록된 채용 정보 조회 UI Boundary Class
 ******************************************/
-void ShowRecruitUI::startInterface(ShowRecruit* showRecruit)
+// 등록 채용 정보 조회 2. startInterace()
+void ShowRecruitUI::startInterface(ShowRecruit *showRecruit)
 {
     getRecruitList(showRecruit);
 }
-void ShowRecruitUI::getRecruitList(ShowRecruit* showRecruit)
+// 등록 채용 정보 조회 3. getRecruitList()
+void ShowRecruitUI::getRecruitList(ShowRecruit *showRecruit)
 {
     vector<Recruit> reList = showRecruit->showRecruitList(currentLoginClient);
     fprintf(out_fp, "3.2. 등록된 채용 정보 조회\n");
@@ -187,14 +193,14 @@ void ShowRecruitUI::getRecruitList(ShowRecruit* showRecruit)
 /*************************************
    4.1. 채용 정보 검색 Boundary Class
 *************************************/
-void SearchRecruitInfoUI::startInterface(SearchRecruitInfo* searchRecruitInfoControl)
+void SearchRecruitInfoUI::startInterface(SearchRecruitInfo *searchRecruitInfoControl)
 {
     char companyName[MAX_STRING];
     fscanf(in_fp, "%s", companyName);
     enterCompanyName(searchRecruitInfoControl, companyName);
 }
 
-void SearchRecruitInfoUI::enterCompanyName(SearchRecruitInfo* searchRecruitInfoControl, string companyName)
+void SearchRecruitInfoUI::enterCompanyName(SearchRecruitInfo *searchRecruitInfoControl, string companyName)
 {
     vector<Recruit> reList = searchRecruitInfoControl->showRecruitInfoList(companyName);
     printOutput(reList);
@@ -221,7 +227,7 @@ void SearchRecruitInfoUI::printOutput(vector<Recruit> reList)
 /*************************************
      4.2. 채용 지원 Boundary Class
 *************************************/
-void ApplyRecruitUI::startInterface(ApplyRecruit* applyRecruit)
+void ApplyRecruitUI::startInterface(ApplyRecruit *applyRecruit)
 {
     char companyNumber[MAX_STRING];
     fscanf(in_fp, "%s", companyNumber);
@@ -229,7 +235,8 @@ void ApplyRecruitUI::startInterface(ApplyRecruit* applyRecruit)
     printOutput(applied);
 }
 
-void ApplyRecruitUI::printOutput(Recruit applied) {
+void ApplyRecruitUI::printOutput(Recruit applied)
+{
     fprintf(out_fp, "4.2. 채용 지원\n");
     fprintf(out_fp, "> %s %s %s \n\n", applied.getCompanyName().c_str(), applied.getCompanyNumber().c_str(), applied.getJob().c_str());
 }
@@ -237,7 +244,8 @@ void ApplyRecruitUI::printOutput(Recruit applied) {
 /*************************************
     4.3. 지원 정보 조회 UI Boundary Class
 **************************************/
-void ShowApplyUI::startInterface(ShowApply* showApply)
+// 지원 정보 조회 2.startInterface()
+void ShowApplyUI::startInterface(ShowApply *showApply)
 {
     selectApplyList(showApply);
 }
@@ -247,7 +255,8 @@ bool ShowApplyUI::compareByCompanyName(Recruit recruit1, Recruit recruit2)
     return recruit1.getCompanyName() < recruit2.getCompanyName();
 }
 
-void ShowApplyUI::selectApplyList(ShowApply* showApply)
+// 지원 정보 조회 3 selectApplyList()
+void ShowApplyUI::selectApplyList(ShowApply *showApply)
 {
     vector<Recruit> AList = showApply->showApplyList(currentLoginClient);
     sort(AList.begin(), AList.end(), ShowApplyUI::compareByCompanyName);
@@ -263,19 +272,21 @@ void ShowApplyUI::selectApplyList(ShowApply* showApply)
 *************************************/
 
 // 지원 취소 1. startInterface()
-void CancelApplyUI::startInterface(CancelApply* cancelApp)
+void CancelApplyUI::startInterface(CancelApply *cancelApp)
 {
     cancelApply(cancelApp);
 }
 
 // 지원 취소 2. cancelApply()
-void CancelApplyUI::cancelApply(CancelApply* cancelApply) {
+void CancelApplyUI::cancelApply(CancelApply *cancelApply)
+{
     char companyNumber[MAX_STRING];
     fscanf(in_fp, "%s", companyNumber);
     tuple<string, string, string> canceled = cancelApply->cancelApply(currentLoginClient, companyNumber);
     printOutput(canceled);
 }
-void CancelApplyUI::printOutput(tuple<string, string, string> canceled) {
+void CancelApplyUI::printOutput(tuple<string, string, string> canceled)
+{
     string companyName = get<0>(canceled);
     string companyNumber = get<1>(canceled);
     string job = get<2>(canceled);
@@ -288,19 +299,23 @@ void CancelApplyUI::printOutput(tuple<string, string, string> canceled) {
 *************************************/
 
 // 회사 회원 지원 정보 통계 1. startInterface()
-void SelectRecruitStatisticsUI::startInterface(SelectRecruitStatistics* selectRecruitStatisticsControl) {
+void SelectRecruitStatisticsUI::startInterface(SelectRecruitStatistics *selectRecruitStatisticsControl)
+{
     selectRecruitStatistics(selectRecruitStatisticsControl, currentLoginClient);
 }
 
 // 회사 회원 지원 정보 통계 2. selectRecruitStatistics()
-void SelectRecruitStatisticsUI::selectRecruitStatistics(SelectRecruitStatistics* selectRecruitStatisticsControl, string currentLoginClient) {
+void SelectRecruitStatisticsUI::selectRecruitStatistics(SelectRecruitStatistics *selectRecruitStatisticsControl, string currentLoginClient)
+{
     vector<Recruit> rList = selectRecruitStatisticsControl->showRecruitStatistics(currentLoginClient);
     map<string, int> jobCount = selectRecruitStatisticsControl->getRecruitNumByJob(rList);
     printOutput(jobCount);
 }
 
-void SelectRecruitStatisticsUI::printOutput(map<string, int> jobCount) {
-    for (const auto& pair : jobCount) {
+void SelectRecruitStatisticsUI::printOutput(map<string, int> jobCount)
+{
+    for (const auto &pair : jobCount)
+    {
         string job = pair.first;
         int count = pair.second;
         fprintf(out_fp, "> %s %d \n", job.c_str(), count);
@@ -310,18 +325,22 @@ void SelectRecruitStatisticsUI::printOutput(map<string, int> jobCount) {
 /******************************************
    5.1. 일반 회원 지원 정보 통계 Boundary Class
 ******************************************/
-void SelectApplyStatisticsUI::startInterface(SelectApplyStatistics* selectApplyStatisticsControl) {
+void SelectApplyStatisticsUI::startInterface(SelectApplyStatistics *selectApplyStatisticsControl)
+{
     selectApplyStatistics(selectApplyStatisticsControl, currentLoginClient);
 }
 
-void SelectApplyStatisticsUI::selectApplyStatistics(SelectApplyStatistics*, string currentLoginClient) {
+void SelectApplyStatisticsUI::selectApplyStatistics(SelectApplyStatistics *, string currentLoginClient)
+{
     vector<Recruit> rList = selectApplyStatisticsControl->showApplyStatistics(currentLoginClient);
     map<string, int> jobCount = selectApplyStatisticsControl->getApplyNumByJob(rList);
     printOutput(jobCount);
 }
 
-void SelectApplyStatisticsUI::printOutput(map<string, int> jobCount) {
-    for (const auto& pair : jobCount) {
+void SelectApplyStatisticsUI::printOutput(map<string, int> jobCount)
+{
+    for (const auto &pair : jobCount)
+    {
         string job = pair.first;
         int count = pair.second;
         fprintf(out_fp, "> %s %d \n", job.c_str(), count);
@@ -467,7 +486,6 @@ void doTask()
                 {
                     cout << "5.1. 회사 회원 지원 정보 통계" << endl;
                     SelectRecruitStatistics selectRecruitStatistics;
-
                 }
                 else if (currentUserType == 2)
                 {
@@ -497,7 +515,7 @@ void doTask()
             }
             break;
         }
-        return;
+            return;
         }
     }
 }

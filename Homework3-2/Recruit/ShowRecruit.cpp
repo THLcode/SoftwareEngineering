@@ -8,13 +8,15 @@ ShowRecruit::ShowRecruit()
     showRecruitUI.startInterface(this);
 }
 
+// 등록 채용 정보 조회 3.1 showRecruitList()
 vector<Recruit> ShowRecruit::showRecruitList(string currentLoginClient)
 {
     RecruitInfoCollection rc;
     extern UserCollection userList;
-    CompanyUser* u = userList.getUser(currentLoginClient);
+    CompanyUser *u = userList.getUser(currentLoginClient);
 
     vector<Recruit> Rlist = rc.getRecruitList(u->getCompanyNumber());
+    // 등록 채용 정보 조회 1.getRecruitList()
 
     return Rlist;
 }
