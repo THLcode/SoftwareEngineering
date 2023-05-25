@@ -33,8 +33,8 @@
 using namespace std;
 
 #define MAX_STRING 32
-#define INPUT_FILE_NAME "/Users/taehwi/Desktop/Hongik_Univ/Hongik_4-1/SWE/hw3/Homework3-2/input.txt"
-#define OUTPUT_FILE_NAME "/Users/taehwi/Desktop/Hongik_Univ/Hongik_4-1/SWE/hw3/Homework3-2/output.txt"
+#define INPUT_FILE_NAME "input.txt"
+#define OUTPUT_FILE_NAME "output.txt"
 
 void doTask();
 void program_exit();
@@ -168,21 +168,22 @@ void ShowRecruitUI::getRecruitList(ShowRecruit *showRecruit, string companyNumbe
 
     for (int i = 0; i < reList.size(); i++)
     {
-        cout << "{ [" << reList[i]->getJob() << "] [" << reList[i]->getPeopleNum() << "] [" << reList[i]->getDueDate() << "] }\n";
+        fprintf(out_fp, "3.2. 등록된 채용 정보 조회\n");
+        fprintf(out_fp, "> %s %d %s \n\n", reList[i]->getJob(), reList[i]->getPeopleNum(), reList[i]->getDueDate());
     }
 }
 
 /*************************************
    4.1. 채용 정보 검색 Boundary Class
 *************************************/
-void SearchRecruitInfoUI::startInterface(SearchRecruitInfo *searchRecruitInfoControl)
+void SearchRecruitInfoUI::startInterface(SearchRecruitInfo* searchRecruitInfoControl)
 {
     char companyName[MAX_STRING];
     fscanf(in_fp, "%s", companyName);
     enterCompanyName(searchRecruitInfoControl, companyName);
 }
 
-void SearchRecruitInfoUI::enterCompanyName(SearchRecruitInfo *searchRecruitInfoControl, string companyName)
+void SearchRecruitInfoUI::enterCompanyName(SearchRecruitInfo* searchRecruitInfoControl, string companyName)
 {
     cout << "채용 정보 검색하기: " << companyName << endl;
     vector<Recruit *> reList = searchRecruitInfoControl->showRecruitInfoList(companyName);
@@ -201,7 +202,8 @@ void SearchRecruitInfoUI::printOutput(vector<Recruit *> reList)
 
     for (int i = 0; i < reList.size(); i++)
     {
-        cout << "> " << reList[i]->getCompanyName() << " " << reList[i]->getCompanyNumber() << " " << reList[i]->getJob() << " " << reList[i]->getPeopleNum() << " " << reList[i]->getDueDate() << endl;
+        fprintf(out_fp, "4.1. 등록된 채용 정보 조회\n");
+        fprintf(out_fp, "> %s %s %s %d %s \n\n", reList[i]->getCompanyName(), reList[i]->getCompanyNumber(), reList[i]->getJob(), reList[i]->getPeopleNum(), reList[i]->getDueDate());
     }
 }
 
@@ -216,9 +218,9 @@ void ApplyRecruitUI::startInterface(ApplyRecruit *applyRecruit)
     printOutput(applied);
 }
 
-void ApplyRecruitUI::printOutput(Recruit *applied)
-{
-    cout << "> " << applied->getCompanyName() << " " << applied->getCompanyNumber() << " " << applied->getJob() << endl;
+void ApplyRecruitUI::printOutput(Recruit* applied) {
+    fprintf(out_fp, "4.2. 채용 지원\n");
+    fprintf(out_fp, "> %s %s %s \n\n", applied->getCompanyName(), applied->getCompanyNumber(), applied->getJob());
 }
 
 /*************************************
