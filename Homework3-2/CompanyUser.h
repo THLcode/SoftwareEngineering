@@ -20,7 +20,6 @@ public:
     CompanyUser(int, string, string, string, string);
     string getCompanyNumber();
     string getCompanyName();
-    Recruit* getRecruitInfoList();
     // Pair getCompanyUserDetails();
 };
 #endif // HOMEWORK3_2_COMPANYUSER_H

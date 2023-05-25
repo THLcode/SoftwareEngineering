@@ -1,27 +1,31 @@
 #include "AddRecruit.h"
 #include "../RecruitInfoCollection.h"
 #include "../Recruit.h"
+#include "../UserCollection.h"
 
-AddRecruit::AddRecruit(AddRecruit *addRecruit, CompanyUser *companyUser)
+AddRecruit::AddRecruit()
 {
     AddRecruitUI addRecruitUI;
-    addRecruitUI.startInterface(addRecruit, companyUser);
+    addRecruitUI.startInterface(this);
 }
 
-//AddRecruit::AddRecruit() {
-//    AddRecruitUI addRecruitUI;
+// AddRecruit::AddRecruit() {
+//     AddRecruitUI addRecruitUI;
 //
-//    addRecruitUI.startInterface(this);
-//}
+//     addRecruitUI.startInterface(this);
+// }
 
-void AddRecruit::addRecruit(string job, int peopleNum, string dueDate, CompanyUser *companyUser)
+void AddRecruit::addRecruit(string job, int peopleNum, string dueDate, string currendId)
 {
     Recruit *re = new Recruit();
+    UserCollection uc;
+    CompanyUser *u = uc.getUser(currendId);
+
     re->setJob(job);
     re->setPeopleNum(peopleNum);
     re->setDueDate(dueDate);
-    re->setCompanyNumber(companyUser->getCompanyNumber());
-    re->setCompanyName(companyUser->getCompanyName());
+    re->setCompanyNumber(u->getCompanyNumber());
+    re->setCompanyName(u->getCompanyName());
 
     RecruitInfoCollection rc;
     rc.pushRecruit(re);

@@ -14,7 +14,7 @@ private:
 public:
     AddRecruit();
     AddRecruit(AddRecruit *, CompanyUser *);
-    void addRecruit(string, int, string, CompanyUser *); // 매개변수 채워야합니다
+    void addRecruit(string, int, string, string); // 매개변수 채워야합니다
     // AddRecruitUI *showAddRecruitUI();
 };
 

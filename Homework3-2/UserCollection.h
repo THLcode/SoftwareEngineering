@@ -9,12 +9,13 @@
 #define MAX_COUNT 100
 #include "User.h"
 using namespace std;
-class UserCollection {
-   private:
-    User* userList[MAX_COUNT];
+class UserCollection
+{
+private:
+    User *userList[MAX_COUNT];
     int clientNumber;
 
-   public:
+public:
     UserCollection() : clientNumber(0){};
     void signUpNormalUser(int, string, string, string, string);
     void signUpCompanyUser(int, string, string, string, string);
@@ -22,5 +23,6 @@ class UserCollection {
     int getClientNumber();
     int getUserTypeById(string);
     void deleteUsers(string id);
+    CompanyUser *getUser(string id);
 };
-#endif  // HOMEWORK3_2_USERCOLLECTION_H
+#endif // HOMEWORK3_2_USERCOLLECTION_H
