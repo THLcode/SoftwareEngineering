@@ -169,7 +169,7 @@ void ShowRecruitUI::getRecruitList(ShowRecruit *showRecruit, string companyNumbe
     for (int i = 0; i < reList.size(); i++)
     {
         fprintf(out_fp, "3.2. 등록된 채용 정보 조회\n");
-        fprintf(out_fp, "> %s %d %s \n\n", reList[i]->getJob(), reList[i]->getPeopleNum(), reList[i]->getDueDate());
+        fprintf(out_fp, "> %s %d %s \n\n", reList[i]->getJob().c_str(), reList[i]->getPeopleNum(), reList[i]->getDueDate().c_str());
     }
 }
 
@@ -203,7 +203,7 @@ void SearchRecruitInfoUI::printOutput(vector<Recruit *> reList)
     for (int i = 0; i < reList.size(); i++)
     {
         fprintf(out_fp, "4.1. 등록된 채용 정보 조회\n");
-        fprintf(out_fp, "> %s %s %s %d %s \n\n", reList[i]->getCompanyName(), reList[i]->getCompanyNumber(), reList[i]->getJob(), reList[i]->getPeopleNum(), reList[i]->getDueDate());
+        fprintf(out_fp, "> %s %s %s %d %s \n\n", reList[i]->getCompanyName().c_str(), reList[i]->getCompanyNumber().c_str(), reList[i]->getJob().c_str(), reList[i]->getPeopleNum(), reList[i]->getDueDate().c_str());
     }
 }
 
@@ -220,7 +220,7 @@ void ApplyRecruitUI::startInterface(ApplyRecruit *applyRecruit)
 
 void ApplyRecruitUI::printOutput(Recruit* applied) {
     fprintf(out_fp, "4.2. 채용 지원\n");
-    fprintf(out_fp, "> %s %s %s \n\n", applied->getCompanyName(), applied->getCompanyNumber(), applied->getJob());
+    fprintf(out_fp, "> %s %s %s \n\n", applied->getCompanyName().c_str(), applied->getCompanyNumber().c_str(), applied->getJob().c_str());
 }
 
 /*************************************

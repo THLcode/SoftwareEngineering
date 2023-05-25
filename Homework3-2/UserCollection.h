@@ -8,6 +8,7 @@
 #include <iostream>
 #define MAX_COUNT 100
 #include "User.h"
+#include "CompanyUser.h"
 using namespace std;
 class UserCollection
 {

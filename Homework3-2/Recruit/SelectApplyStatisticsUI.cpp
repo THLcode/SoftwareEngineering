@@ -1,9 +1,9 @@
-#include "SelectApplyStatisticsUI.h"
-
-SelectApplyStaticsUI::SelectApplyStaticsUI(SelectApplyStatics *selectApplyStaticsControl)
-{
-}
-
-void SelectApplyStaticsUI::selectApplyStatics()
-{
-}
+//#include "SelectApplyStatisticsUI.h"
+//
+//SelectApplyStaticsUI::SelectApplyStaticsUI(SelectApplyStatics *selectApplyStaticsControl)
+//{
+//}
+//
+//void SelectApplyStaticsUI::selectApplyStatics()
+//{
+//}

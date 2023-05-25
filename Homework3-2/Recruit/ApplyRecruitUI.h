@@ -7,6 +7,7 @@
 #include <iostream>
 #include <string>
 #include "ApplyRecruit.h"
+#include "Recruit.h"
 using namespace std;
 
 class ApplyRecruit;
