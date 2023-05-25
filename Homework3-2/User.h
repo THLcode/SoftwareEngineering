@@ -8,15 +8,18 @@
 #include <iostream>
 using namespace std;
 
-class User {
-   private:
-	int userType;
+class User
+{
+private:
+    int userType;
     string id;
     string password;
-   public:
+
+public:
+    User();
     User(int, string, string);
     string getUserId();
     string getUserPw();
-	int getUserType();
+    int getUserType();
 };
-#endif  // HOMEWORK3_2_USER_H
+#endif // HOMEWORK3_2_USER_H
