@@ -17,9 +17,8 @@ private:
     SearchRecruitInfo *searchRecruitInfoControl;
 
 public:
-    SearchRecruitInfoUI(SearchRecruitInfo *SearchRecruitInfoControl);
-    void enterCompanyName(string companyName);
-    void startInterface();
-    
+    void enterCompanyName(SearchRecruitInfo *searchRecruitInfoControl, string companyName);
+    void startInterface(SearchRecruitInfo *searchRecruitInfoControl);
+    void printOutput(vector<Recruit*> reList);
 };
 #endif //HOMEWORK3_2_SEARCHRECRUITINFOUI_H

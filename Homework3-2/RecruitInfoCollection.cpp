@@ -20,6 +20,22 @@ vector<Recruit*> RecruitInfoCollection::getRecruitList(string companyNumber)
     return recruitList;
 }
 
+vector<Recruit*> RecruitInfoCollection::getRecruitListByCompany(string companyName)
+{
+    vector<Recruit*> resultList;
+
+    for (Recruit* recruit : recruitInfo)
+    {
+        if (recruit->getCompanyName() == companyName)
+        {
+            resultList.push_back(recruit);
+        }
+    }
+
+    return resultList;
+}
+
+
 tuple<string, int, string, int, string> RecruitInfoCollection::getRecruitDetails()
 {
 }

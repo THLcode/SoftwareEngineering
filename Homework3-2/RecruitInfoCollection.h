@@ -19,5 +19,6 @@ public:
     void pushRecruit(Recruit*);
     vector<Recruit *> getRecruitList(string);
     tuple<string, int, string, int, string> getRecruitDetails();
+    vector<Recruit*> getRecruitListByCompany(string companyName);
 };
 #endif // HOMEWORK3_2_RECRUITINFOCOLLECTION_H

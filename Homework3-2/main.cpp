@@ -24,11 +24,14 @@
 #include "Recruit/ShowApplyUI.h"
 #include "Recruit/ShowApply.h"
 #include "CompanyUser.h"
+#include "SearchRecruitInfoUI.h"
+#include "SearchRecruitInfo.h"
+
 using namespace std;
 
 #define MAX_STRING 32
-#define INPUT_FILE_NAME "input.txt"
-#define OUTPUT_FILE_NAME "output.txt"
+#define INPUT_FILE_NAME "/Users/taehwi/Desktop/Hongik_Univ/Hongik_4-1/SWE/hw3/Homework3-2/input.txt"
+#define OUTPUT_FILE_NAME "/Users/taehwi/Desktop/Hongik_Univ/Hongik_4-1/SWE/hw3/Homework3-2/output.txt"
 
 void doTask();
 void program_exit();
@@ -43,28 +46,28 @@ int currentUserType = 0;
 /*****************************
   1.1. SignUpUI Boundary Class
 *****************************/
-// È¸¿ø°¡ÀÔ 1. startInterface()
+// È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 1. startInterface()
 void SignUpUI::startInterface(SignUp* signup) {
     int memType = 0;
     char name[MAX_STRING], number[MAX_STRING], id[MAX_STRING],
         password[MAX_STRING];
 
     fscanf(in_fp, "%d %s %s %s %s", &memType, name, number, id, password);  //
-    // °¡ÀÔ À¯Çü ÀÐ¾î¿À±â
-    // È¸¿ø°¡ÀÔ 2. submitInfo()
+    // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ð¾ï¿½ï¿½ï¿½ï¿½
+    // È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 2. submitInfo()
     submitInfo(signup, memType, name, number, id, password);
     if (memType == 1) {
-        fprintf(out_fp, "1.1. È¸¿ø°¡ÀÔ\n");
+        fprintf(out_fp, "1.1. È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\n");
         fprintf(out_fp, "> 1 %s %s %s %s\n\n", name, number, id, password);
     }
     else if (memType == 2) {
-        fprintf(out_fp, "1.1. È¸¿ø°¡ÀÔ\n");
+        fprintf(out_fp, "1.1. È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\n");
         fprintf(out_fp, "> 2 %s %s %s %s\n\n", name, number, id, password);
     }
 }
 void SignUpUI::submitInfo(SignUp* signup, int memType, string name,
     string number, string id, string password) {
-    // È¸¿ø°¡ÀÔ 2.1 signUpUser()
+    // È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 2.1 signUpUser()
     signup->signUpUser(userList, memType, name, number, id, password);
 
 }
@@ -76,71 +79,71 @@ void LoginUI::startInterface(Login* login) {
     char id[MAX_STRING], password[MAX_STRING], test1[MAX_STRING],
         test2[MAX_STRING];
     fscanf(in_fp, "%s %s", id, password);
-    // Á¤º¸ ÀúÀå
+    // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
     currentLoginClient = std::string(id);
-    // ·Î±×ÀÎ 2.1 validUser()
+    // ï¿½Î±ï¿½ï¿½ï¿½ 2.1 validUser()
     if (login->validUser(userList, id, password)) {  // true
-        fprintf(out_fp, "2.1. ·Î±×ÀÎ\n");
+        fprintf(out_fp, "2.1. ï¿½Î±ï¿½ï¿½ï¿½\n");
         fprintf(out_fp, "> %s %s\n\n", id, password);
     }
 };
 /*****************************
-    ·Î±×¾Æ¿ô UI Boundary Class
+    ï¿½Î±×¾Æ¿ï¿½ UI Boundary Class
 *****************************/
-//·Î±×¾Æ¿ô 1. startInterface
+//ï¿½Î±×¾Æ¿ï¿½ 1. startInterface
 void LogoutUI::startInterface(Logout* logout) {
-    // ·Î±×¾Æ¿ô 2.1 logoutSelect()
+    // ï¿½Î±×¾Æ¿ï¿½ 2.1 logoutSelect()
     logoutSelect(logout);
 };
 
 void LogoutUI::logoutSelect(Logout* logout) {
-    //2.1.1 ·Î±×¾Æ¿ô
-    if (logout->logoutUser()) { //·Î±×¾Æ¿ô(¹«Á¶°Ç ¼º°ø)
-        fprintf(out_fp, "2.2. ·Î±×¾Æ¿ô\n");
+    //2.1.1 ï¿½Î±×¾Æ¿ï¿½
+    if (logout->logoutUser()) { //ï¿½Î±×¾Æ¿ï¿½(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½)
+        fprintf(out_fp, "2.2. ï¿½Î±×¾Æ¿ï¿½\n");
         fprintf(out_fp, "> %s\n\n", currentLoginClient.c_str());
         currentLoginClient = "None";
     }
 }
 
 /*****************************
-    È¸¿øÅ»Åð UI Boundary Class
+    È¸ï¿½ï¿½Å»ï¿½ï¿½ UI Boundary Class
 *****************************/
 void DropUserUI::startInterface(DropUser* dropUser) {
     selectDropUser(dropUser, currentLoginClient);
-    fprintf(out_fp, "1.2. È¸¿øÅ»Åð\n");
+    fprintf(out_fp, "1.2. È¸ï¿½ï¿½Å»ï¿½ï¿½\n");
     cout << currentLoginClient << endl;
-    fprintf(out_fp, "> %s\n\n", currentLoginClient);
+    fprintf(out_fp, "> %s\n\n", &currentLoginClient);
     currentLoginClient = "None";
 }
 void DropUserUI::selectDropUser(DropUser* dropUser, string id) {
     dropUser->deleteUser(userList, id);
 }
 /*************************************
-    3.1. Ã¤¿ë Á¤º¸ µî·Ï UI Boundary Class
+    3.1. Ã¤ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ UI Boundary Class
 **************************************/
 void AddRecruitUI::startInterface(AddRecruit* addRecruit, CompanyUser* companyUser)
 {
-    // companyNumber°¡ ÇÊ¿äÇØ¼­ Companyuserµµ ¸Å°³º¯¼ö·Î ³Ñ°Ü¹Þ½À´Ï´Ù.
+    // companyNumberï¿½ï¿½ ï¿½Ê¿ï¿½ï¿½Ø¼ï¿½ Companyuserï¿½ï¿½ ï¿½Å°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ñ°Ü¹Þ½ï¿½ï¿½Ï´ï¿½.
     char job[MAX_STRING];
     int peopleNum = 0;
     char dueDate[MAX_STRING];
     //    CompanyUser *companyUser;
 
     fscanf(in_fp, "%s %d %s", job, peopleNum, dueDate);
-    // º¯¼ö ¼±¾ð ÈÄ Á¤º¸ ÀúÀå
+    // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
     createRecruit(addRecruit, job, peopleNum, dueDate, companyUser);
-    // control·Î Á¤º¸ Àü´Þ
+    // controlï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 }
 
 void AddRecruitUI::createRecruit(AddRecruit* addRecruit, string job, int peopleNum, string dueDate, CompanyUser* companyUser)
 {
     addRecruit->addRecruit(job, peopleNum, dueDate, companyUser);
-    // control ÇÔ¼ö È£Ãâ
+    // control ï¿½Ô¼ï¿½ È£ï¿½ï¿½
 }
 
 /*****************************************
-    3.2. µî·Ï Ã¤¿ë Á¤º¸ Á¶È¸ UI Boundary Class
+    3.2. ï¿½ï¿½ï¿½ Ã¤ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¸ UI Boundary Class
 ******************************************/
 void ShowRecruitUI::startInterface(ShowRecruit* showRecruit, CompanyUser* companyUser)
 {
@@ -150,7 +153,7 @@ void ShowRecruitUI::startInterface(ShowRecruit* showRecruit, CompanyUser* compan
 void ShowRecruitUI::getRecruitList(ShowRecruit* showRecruit, string companyNumber)
 {
     vector<Recruit*> reList = showRecruit->showRecruitList(companyNumber);
-    // control ÇÔ¼ö È£Ãâ
+    // control ï¿½Ô¼ï¿½ È£ï¿½ï¿½
 
     for (int i = 0; i < reList.size(); i++)
     {
@@ -159,7 +162,31 @@ void ShowRecruitUI::getRecruitList(ShowRecruit* showRecruit, string companyNumbe
 }
 
 /*************************************
-    4.3. Áö¿ø Á¤º¸ Á¶È¸ UI Boundary Class
+   4.1. ì±„ìš© ì •ë³´ ê²€ìƒ‰ Boundary Class
+*************************************/
+void SearchRecruitInfoUI::startInterface(SearchRecruitInfo *searchRecruitInfoControl)
+{
+    char companyName[MAX_STRING];
+    fscanf(in_fp, "%s", companyName);
+    enterCompanyName(searchRecruitInfoControl, companyName);
+}
+
+void SearchRecruitInfoUI::enterCompanyName(SearchRecruitInfo *searchRecruitInfoControl, string companyName)
+{
+    cout << "ì±„ìš© ì •ë³´ ê²€ìƒ‰í•˜ê¸°: " << companyName << endl;
+    vector<Recruit*> reList = searchRecruitInfoControl->showRecruitInfoList(companyName);
+    printOutput(reList);
+}
+
+void SearchRecruitInfoUI::printOutput(vector<Recruit*> reList){
+    for (int i = 0; i < reList.size(); i++)
+    {
+        cout << "> " << reList[i]->getCompanyName() << " " << reList[i]->getCompanyNumber() << " " << reList[i]->getJob() << " " << reList[i]->getPeopleNum() << " " << reList[i]->getDueDate() << endl;
+    }
+}
+
+/*************************************
+    4.3. ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¸ UI Boundary Class
 **************************************/
 void ShowApplyUI::startInterface(ShowApply* showApply, NormalUser* normalUser)
 {
@@ -178,8 +205,8 @@ void CancelApplyUI::startInterface(CancelApply* cancelApply) {
     int userType = 0;
     char name[MAX_STRING], number[MAX_STRING], id[MAX_STRING], password[MAX_STRING];
     fscanf(in_fp, "%d %s %s %s %s", &userType, name, number, id, password);  //
-    // °¡ÀÔ À¯Çü ÀÐ¾î¿À±â
-    // È¸¿ø°¡ÀÔ 2. submitInfo()
+    // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ð¾ï¿½ï¿½ï¿½ï¿½
+    // È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 2. submitInfo()
 //    submitInfo(signUp, userType, name, number, id, password);
 }
 
@@ -213,15 +240,15 @@ void doTask()
         case 1: {
             switch (menu_level_2) {
             case 1: {
-                // È¸¿ø°¡ÀÔ
-                // signup »ý¼ºÀÚ¸¦ ½ÇÇàÇÏ¸é¼­ ½ÃÀÛ
-                cout << "1.1.È¸¿ø°¡ÀÔ" << endl;
+                // íšŒì›ê°€ìž…
+                // signup ï¿½ï¿½ï¿½ï¿½ï¿½Ú¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¸é¼­ ï¿½ï¿½ï¿½ï¿½
+                cout << "1.1 íšŒì›ê°€ìž…" << endl;
                 SignUp signUp;
                 break;
             }
             case 2: {
-                // È¸¿ø Å»Åð
-                cout << "1.2. È¸¿øÅ»Åð" << endl;
+                // íšŒì›íƒˆí‡´
+                cout << "1.2. íšŒì›íƒˆí‡´" << endl;
                 DropUser dropUser;
                 break;
             }
@@ -231,14 +258,14 @@ void doTask()
         case 2: {
             switch (menu_level_2) {
             case 1: {
-                // ·Î±×ÀÎ
-                cout << "2.1. ·Î±×ÀÎ" << endl;
+                // ë¡œê·¸ì¸
+                cout << "2.1. ë¡œê·¸ì¸" << endl;
                 Login login;
                 break;
             }
             case 2: {
-                // ·Î±×¾Æ¿ô
-                cout << "2.2. ·Î±×¾Æ¿ô" << endl;
+                // ë¡œê·¸ì•„ì›ƒ
+                cout << "2.2. ë¡œê·¸ì•„ì›ƒ" << endl;
                 Logout logout;
                 break;
             }
@@ -248,13 +275,14 @@ void doTask()
         case 3: {
             switch (menu_level_2) {
             case 1: {
-                // Ã¤¿ë Á¤º¸ µî·Ï
-                cout << "3.1. Ã¤¿ë Á¤º¸ µî·Ï" << endl;
+                // ì±„ìš© ì •ë³´ ë“±ë¡
+                cout << "3.1. ì±„ìš© ì •ë³´ ë“±ë¡" << endl;
+//                AddRecruit addRecruit;
                 break;
             }
             case 2: {
-                // µî·ÏµÈ Ã¤¿ë Á¤º¸ Á¶È¸
-                cout << "3.2. µî·ÏµÈ Ã¤¿ë Á¤º¸ Á¶È¸" << endl;
+                // ë“±ë¡ëœ ì±„ìš© ì •ë³´ ì¡°íšŒ
+                cout << "3.2. ë“±ë¡ëœ ì±„ìš© ì •ë³´ ì¡°íšŒ" << endl;
                 break;
             }
             }
@@ -263,24 +291,26 @@ void doTask()
         case 4: {
             switch (menu_level_2) {
             case 1: {
-                // Ã¤¿ë Á¤º¸ °Ë»ö
-                cout << "4.1. Ã¤¿ë Á¤º¸ °Ë»ö" << endl;
+                // ì±„ìš©ì •ë³´ ê²€ìƒ‰
+                cout << "4.1. ì±„ìš© ì •ë³´ ê²€ìƒ‰" << endl;
+                SearchRecruitInfo searchRecruitInfo;
                 break;
             }
             case 2: {
-                // Ã¤¿ë Áö¿ø
-                cout << "4.2. Ã¤¿ë Áö¿ø" << endl;
+                // Ã¤ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+                cout << "4.2. ì±„ìš© ì§€ì›" << endl;
                 break;
             }
             case 3: {
-                // Áö¿ø Á¤º¸ Á¶È¸
-                cout << "4.3. Áö¿ø Á¤º¸ Á¶È¸" << endl;
+                // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¸
+                cout << "4.3. ì§€ì› ì •ë³´ ì¡°íšŒ" << endl;
                 break;
             }
             case 4: {
-                // Áö¿ø Ãë¼Ò
-                cout << "ÇöÀç ·Î±×ÀÎ µÈ °í°´" << currentLoginClient << endl;
-                cout << "4.4. Áö¿ø Ãë¼Ò" << endl;
+                // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
+                cout << "í˜„ìž¬ ë¡œê·¸ì¸ëœ ê³ ê° : " << currentLoginClient << endl;
+                cout << "4.4. ì§€ì› ì·¨ì†Œ" << endl;
+                CancelApply cancelApply;
                 break;
             }
             }
@@ -289,18 +319,16 @@ void doTask()
         case 5: {
             switch (menu_level_2) {
             case 1: {
-                //Áö¿ø Á¤º¸ Åë°è
-                cout << "5.1. Áö¿ø Á¤º¸ Åë°è" << endl;
-                cout << "ÇöÀç user Type: " << userList.getUserTypeById(currentLoginClient) << endl;
-                //ÇöÀç À¯ÀúÀÇ Å¸ÀÔ
+                //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
+                cout << "5.1. ì§€ì› ì •ë³´ í†µê³„" << endl;
+                cout << "í˜„ìž¬ user Type: " << userList.getUserTypeById(currentLoginClient) << endl;
+                //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Å¸ï¿½ï¿½
                 int currentUserType = userList.getUserTypeById(currentLoginClient);
                 if (currentUserType == 1) {
-                    //È¸»ç È¸¿ø Áö¿ø Á¤º¸ Åë°è
-                    cout << "È¸»ç È¸¿ø Áö¿ø Á¤º¸ Åë°è" << endl;
-                    CancelApply cancelApply;
+                    cout << "5.1. íšŒì‚¬ íšŒì› ì§€ì› ì •ë³´ í†µê³„" << endl;
                 }
                 else if (currentUserType == 2) {
-                    //ÀÏ¹Ý È¸¿ø Áö¿ø Á¤º¸ Åë°è
+                    cout << "5.1. ì¼ë°˜ íšŒì› ì§€ì› ì •ë³´ í†µê³„" << endl;
                 }
                 else {
                     break;
@@ -325,4 +353,4 @@ void doTask()
     }
 }
 
-void program_exit() { cout << "6.1. Á¾·á"; }
+void program_exit() { cout << "6.1. ï¿½ï¿½ï¿½ï¿½"; }
