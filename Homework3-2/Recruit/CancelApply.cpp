@@ -2,6 +2,9 @@
 
 CancelApply::CancelApply()
 {
+    CancelApplyUI cancelApplyUI;
+
+    cancelApplyUI.startInterface(this);
 }
 
 void CancelApply::cancelApplyDetails()

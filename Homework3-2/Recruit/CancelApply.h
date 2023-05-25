@@ -15,7 +15,7 @@ class CancelApplyUI;
 class CancelApply
 {
 private:
-    CancelApplyUI *cancelApplyUI;
+//    CancelApplyUI *cancelApplyUI;
 
 public:
     CancelApply();

@@ -17,8 +17,9 @@ private:
     CancelApply *cancelApplyControl;
 
 public:
-    CancelApplyUI(CancelApply *cancelApplyControl);
+//    CancelApplyUI(CancelApply *cancelApplyControl);
     void cancelApply();
     CancelApply *showCancelApplyUI();
+    void startInterface(CancelApply*)
 };
 #endif //HOMEWORK3_2_CANCELAPPLYUI_H

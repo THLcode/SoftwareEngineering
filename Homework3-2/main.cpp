@@ -11,6 +11,8 @@
 #include "User/SignUp.h"
 #include "User/SignUpUI.h"
 #include "UserCollection.h"
+#include "Recruit/CancelApply.h"
+#include "Recruit/CancelApplyUI.h"
 using namespace std;
 
 #define MAX_STRING 32
@@ -25,6 +27,20 @@ FILE *in_fp, *out_fp;
 string currentLoginClient = "None";
 UserCollection userList;
 int currentUserType = 0;
+
+
+/*****************************
+ CancelApply UI Boundary Class
+*****************************/
+void CancelApplyUI::startInterface(CancelApply* cancelApply) {
+    int userType = 0;
+    char name[MAX_STRING], number[MAX_STRING], id[MAX_STRING], password[MAX_STRING];
+    fscanf(in_fp, "%d %s %s %s %s", &userType, name, number, id, password);  //
+    // 가입 유형 읽어오기
+    // 회원가입 2. submitInfo()
+    submitInfo(signUp, userType, name, number, id, password);
+}
+
 /*****************************
       UI Boundary Class
 *****************************/
@@ -152,6 +168,8 @@ void doTask() {
                         int currentUserType = userList.getUserTypeById(currentLoginClient);
                         if(currentUserType == 1){
                             //회사 회원 지원 정보 통계
+                            cout << "회사 회원 지원 정보 통계" << endl;
+                            CancelApply cancelApply;
                         }
                         else if (currentUserType == 2){
                             //일반 회원 지원 정보 통계
