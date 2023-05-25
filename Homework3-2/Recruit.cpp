@@ -6,9 +6,9 @@ void Recruit::setCompanyNumber(string cn) { this->companyNumber = cn; }
 void Recruit::setCompanyName(string cname) { this->companyName = cname; }
 void Recruit::setApplicantId(string id) { this->applicantId = id; }
 void Recruit::setCompanyId(string id) { this->companyId = id; }
-
-// È¸»ç È¸¿ø Áö¿ø Á¤º¸ Åë°è 2.2.1 getJob()
-// ÀÏ¹Ý È¸¿ø Áö¿ø Á¤º¸ Åë°è 2.2.1 getJob()
+// ì±„ìš©ì •ë³´ ê²€ìƒ‰ 2.1.1.1 getCompanyNumber()
+// íšŒì‚¬ íšŒì› ì§€ì› ì •ë³´ í†µê³„ 2.2.1 getJob()
+// ì¼ë°˜ íšŒì› ì§€ì› ì •ë³´ í†µê³„ 2.2.1 getJob()
 string Recruit::getJob() { return this->job; }
 int Recruit::getPeopleNum() { return this->peopleNum; }
 string Recruit::getDueDate() { return this->dueDate; }
