@@ -140,7 +140,7 @@ void AddRecruitUI::startInterface(AddRecruit *addRecruit)
     char dueDate[MAX_STRING];
     //    CompanyUser *companyUser;
 
-    fscanf(in_fp, "%s %d %s", job, peopleNum, dueDate);
+    fscanf(in_fp, "%s %d %s", job, &peopleNum, dueDate);
     // ���� ���� �� ���� ����
 
     createRecruit(addRecruit, job, peopleNum, dueDate);
@@ -151,6 +151,8 @@ void AddRecruitUI::createRecruit(AddRecruit *addRecruit, string job, int peopleN
 {
     addRecruit->addRecruit(job, peopleNum, dueDate, currentLoginClient);
     // control �Լ� ȣ��
+
+    fprintf(out_fp, "3.1. 채용 정보 등록\n");
 }
 
 /*****************************************
@@ -176,14 +178,14 @@ void ShowRecruitUI::getRecruitList(ShowRecruit *showRecruit, string companyNumbe
 /*************************************
    4.1. 채용 정보 검색 Boundary Class
 *************************************/
-void SearchRecruitInfoUI::startInterface(SearchRecruitInfo* searchRecruitInfoControl)
+void SearchRecruitInfoUI::startInterface(SearchRecruitInfo *searchRecruitInfoControl)
 {
     char companyName[MAX_STRING];
     fscanf(in_fp, "%s", companyName);
     enterCompanyName(searchRecruitInfoControl, companyName);
 }
 
-void SearchRecruitInfoUI::enterCompanyName(SearchRecruitInfo* searchRecruitInfoControl, string companyName)
+void SearchRecruitInfoUI::enterCompanyName(SearchRecruitInfo *searchRecruitInfoControl, string companyName)
 {
     cout << "채용 정보 검색하기: " << companyName << endl;
     vector<Recruit *> reList = searchRecruitInfoControl->showRecruitInfoList(companyName);
@@ -218,7 +220,8 @@ void ApplyRecruitUI::startInterface(ApplyRecruit *applyRecruit)
     printOutput(applied);
 }
 
-void ApplyRecruitUI::printOutput(Recruit* applied) {
+void ApplyRecruitUI::printOutput(Recruit *applied)
+{
     fprintf(out_fp, "4.2. 채용 지원\n");
     fprintf(out_fp, "> %s %s %s \n\n", applied->getCompanyName(), applied->getCompanyNumber(), applied->getJob());
 }
@@ -252,16 +255,17 @@ void CancelApplyUI::startInterface(CancelApply *cancelApply)
 /*************************************
    5.1. 지원 정보 통계 Boundary Class
 *************************************/
-void SelectRecruitStatisticsUI::startInterface(SelectRecruitStatistics *selectRecruitStatisticsControl) {
+void SelectRecruitStatisticsUI::startInterface(SelectRecruitStatistics *selectRecruitStatisticsControl)
+{
     selectRecruitStatistics(selectRecruitStatisticsControl, currentLoginClient);
 }
 
-void SelectRecruitStatisticsUI::selectRecruitStatistics(SelectRecruitStatistics *selectRecruitStatisticsControl, string currentLoginClient) {
-//    RecruitInfoCollection rc;
-//    vector<Recruit *> Rlist = rc.getRecruitListByCompany(currentLoginClient);
-//    selectRecruitStatisticsControl->get
+void SelectRecruitStatisticsUI::selectRecruitStatistics(SelectRecruitStatistics *selectRecruitStatisticsControl, string currentLoginClient)
+{
+    //    RecruitInfoCollection rc;
+    //    vector<Recruit *> Rlist = rc.getRecruitListByCompany(currentLoginClient);
+    //    selectRecruitStatisticsControl->get
 }
-
 
 int main()
 {
@@ -405,7 +409,6 @@ void doTask()
                 {
                     cout << "5.1. 회사 회원 지원 정보 통계" << endl;
                     SelectRecruitStatistics selectRecruitStatistics;
-
                 }
                 else if (currentUserType == 2)
                 {

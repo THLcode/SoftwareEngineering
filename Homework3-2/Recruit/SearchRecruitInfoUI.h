@@ -7,7 +7,7 @@
 #include <iostream>
 #include <string>
 #include "SearchRecruitInfo.h"
-#include "Recruit.h"
+#include "../Recruit.h"
 using namespace std;
 
 class SearchRecruitInfo;
@@ -20,7 +20,7 @@ private:
 public:
     void enterCompanyName(SearchRecruitInfo *searchRecruitInfoControl, string companyName);
     void startInterface(SearchRecruitInfo *searchRecruitInfoControl);
-    void printOutput(vector<Recruit*> reList);
-    static bool compareByCompanyName(Recruit*, Recruit*);
+    void printOutput(vector<Recruit *> reList);
+    static bool compareByCompanyName(Recruit *, Recruit *);
 };
-#endif //HOMEWORK3_2_SEARCHRECRUITINFOUI_H
+#endif // HOMEWORK3_2_SEARCHRECRUITINFOUI_H

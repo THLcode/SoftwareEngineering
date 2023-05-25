@@ -9,12 +9,6 @@ AddRecruit::AddRecruit()
     addRecruitUI.startInterface(this);
 }
 
-// AddRecruit::AddRecruit() {
-//     AddRecruitUI addRecruitUI;
-//
-//     addRecruitUI.startInterface(this);
-// }
-
 void AddRecruit::addRecruit(string job, int peopleNum, string dueDate, string currendId)
 {
     Recruit *re = new Recruit();
@@ -29,6 +23,7 @@ void AddRecruit::addRecruit(string job, int peopleNum, string dueDate, string cu
 
     RecruitInfoCollection rc;
     rc.pushRecruit(re);
+    delete re;
 }
 
 // control -> Recruit -> RecruitCollection

@@ -74,4 +74,5 @@ CompanyUser *UserCollection::getUser(string id)
             return static_cast<CompanyUser *>(userList[i]);
         }
     }
+    return nullptr;
 }
