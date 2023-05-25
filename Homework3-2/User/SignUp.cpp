@@ -1,25 +1,13 @@
-//
-// Created by 이태휘 on 2023/05/24.
-//
 #include "SignUp.h"
-
 #include "../UserCollection.h"
-// SignUp::SignUp() {
 
-// }
-// void SignUp::signUpUser(){
-
-// }
-
-// SignUpUI *SignUp::signUpUI(){
-//     return this->signupUIRef;
-// }
 SignUp::SignUp() {
     SignUpUI signUpUI;
 
     signUpUI.startInterface(this);
 }
 
+// 회원가입 2.2 signUpUser()
 void SignUp::signUpUser(UserCollection& userList, int userType, string name,
                         string number, string id, string password) {
     // 회사회원 추가

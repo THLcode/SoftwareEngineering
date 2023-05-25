@@ -11,13 +11,13 @@ SearchRecruitInfo::SearchRecruitInfo()
     searchRecruitInfoUI.startInterface(this);
 }
 
-vector<Recruit*> SearchRecruitInfo::showRecruitInfoList(string companyName){
+vector<Recruit> SearchRecruitInfo::showRecruitInfoList(string companyName) {
     RecruitInfoCollection rc;
-    vector<Recruit *> Rlist = rc.getRecruitListByCompany(companyName);
+    vector<Recruit> Rlist = rc.getRecruitListByCompany(companyName);
 
     return Rlist;
 }
 
-SearchRecruitInfoUI *SearchRecruitInfo::showSearchRecruitInfoUI()
+SearchRecruitInfoUI* SearchRecruitInfo::showSearchRecruitInfoUI()
 {
 }

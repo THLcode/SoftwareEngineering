@@ -10,8 +10,8 @@ class ShowRecruit;
 class ShowRecruitUI
 {
 public:
-    void startInterface(ShowRecruit *showRecruit, CompanyUser *companyUser);
-    void getRecruitList(ShowRecruit *, string);
+    void startInterface(ShowRecruit* showRecruit, CompanyUser* companyUser);
+    void getRecruitList(ShowRecruit*, string);
 };
 
 #endif // HOMEWORK3_2_SHOWRECRUITUI_H

@@ -16,8 +16,8 @@ class CompanyUser;
 class AddRecruitUI
 {
 public:
-    void startInterface(AddRecruit *addRecruit);
-    void createRecruit(AddRecruit *, string, int, string);
+    void startInterface(AddRecruit* addRecruit);
+    void createRecruit(AddRecruit*, string, int, string);
 };
 
 #endif // HOMEWORK3_2_ADDRECRUITUI_H

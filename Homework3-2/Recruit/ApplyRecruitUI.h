@@ -7,7 +7,7 @@
 #include <iostream>
 #include <string>
 #include "ApplyRecruit.h"
-#include "Recruit.h"
+#include "../Recruit.h"
 using namespace std;
 
 class ApplyRecruit;
@@ -15,13 +15,13 @@ class ApplyRecruit;
 class ApplyRecruitUI
 {
 private:
-    ApplyRecruit *applyRecruitControl;
+    ApplyRecruit* applyRecruitControl;
 
 public:
     ApplyRecruitUI();
-//    ApplyRecruitUI(ApplyRecruit *applyRecruitControl);
+    //    ApplyRecruitUI(ApplyRecruit *applyRecruitControl);
     void startInterface(ApplyRecruit* applyRecruit);
     void applyRecruit(); // 매개 변수 타입 변경 요망
-    void printOutput(Recruit*);
+    void printOutput(Recruit);
 };
 #endif //HOMEWORK3_2_APPLYRECRUITUI_H

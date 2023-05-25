@@ -15,11 +15,11 @@ class SelectRecruitStatisticsUI;
 class SelectRecruitStatistics
 {
 private:
-    SelectRecruitStatisticsUI *selectRecruitStatisticsUI;
+    SelectRecruitStatisticsUI* selectRecruitStatisticsUI;
 
 public:
     SelectRecruitStatistics();
     void showRecruitStatistics(); // 리턴 타입 변경
-    SelectRecruitStatisticsUI *showSelectRecruitStatisticsUI();
+    SelectRecruitStatisticsUI* showSelectRecruitStatisticsUI();
 };
 #endif //HOMEWORK3_2_SELECTRECRUITSTATISTICS_H

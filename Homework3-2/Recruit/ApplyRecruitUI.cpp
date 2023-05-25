@@ -1,5 +1,5 @@
-//#include "ApplyRecruitUI.h"
-//using namespace std;
+#include "ApplyRecruitUI.h"
+using namespace std;
 //
 //ApplyRecruitUI::ApplyRecruitUI(ApplyRecruit *applyRecruitControl)
 //{

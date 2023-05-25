@@ -16,11 +16,11 @@ class SelectRecruitStatistics;
 class SelectRecruitStatisticsUI
 {
 private:
-    SelectRecruitStatistics *selectRecruitStatisticsControl;
+    SelectRecruitStatistics* selectRecruitStatisticsControl;
 
 public:
     SelectRecruitStatisticsUI();
-    void startInterface(SelectRecruitStatistics *selectRecruitStatisticsControl);
-    void selectRecruitStatistics(SelectRecruitStatistics *, string);
+    void startInterface(SelectRecruitStatistics* selectRecruitStatisticsControl);
+    void selectRecruitStatistics(SelectRecruitStatistics*, string);
 };
 #endif //HOMEWORK3_2_SELECTRECRUITSTATISTICSUI_H

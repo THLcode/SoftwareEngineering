@@ -4,17 +4,17 @@
 #include "NormalUser.h"
 
 void UserCollection::signUpNormalUser(int userType, string name, string number, string id,
-                                      string password)
+    string password)
 {
-    User *pUser = NULL;
+    User* pUser = NULL;
     pUser = new NormalUser(userType, name, number, id, password);
     // 일반 회원을 userList에 저장
     userList[clientNumber++] = pUser;
 }
 void UserCollection::signUpCompanyUser(int userType, string name, string number, string id,
-                                       string password)
+    string password)
 {
-    User *pUser = NULL;
+    User* pUser = NULL;
     pUser = new CompanyUser(userType, name, number, id, password);
     // 회사 회원을 userList에 저장
     userList[clientNumber++] = pUser;
@@ -64,14 +64,15 @@ int UserCollection::getUserTypeById(string currentUser)
     return 0;
 }
 
-CompanyUser *UserCollection::getUser(string id)
+CompanyUser* UserCollection::getUser(string id)
 {
     for (int i = 0; i < clientNumber; i++)
     {
 
         if (userList[i]->getUserId() == id)
         {
-            return static_cast<CompanyUser *>(userList[i]);
+            return static_cast<CompanyUser*>(userList[i]);
         }
     }
+    return nullptr;
 }

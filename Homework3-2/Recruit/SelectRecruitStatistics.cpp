@@ -2,9 +2,6 @@
 
 SelectRecruitStatistics::SelectRecruitStatistics()
 {
-    SelectRecruitStatisticsUI selectRecruitStatisticsUI;
-
-    selectRecruitStatisticsUI.startInterface(this);
 }
 
 void SelectRecruitStatistics::showRecruitStatistics()

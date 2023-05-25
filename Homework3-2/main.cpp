@@ -1,4 +1,4 @@
-#define _CRT_SECURE_NO_WARNINGS
+﻿#define _CRT_SECURE_NO_WARNINGS
 // #pragma warning(disable : 4996)
 #include <cstdio>
 #include <fstream>
@@ -28,6 +28,7 @@
 #include "Recruit/SearchRecruitInfoUI.h"
 #include "Recruit/SearchRecruitInfo.h"
 #include "Recruit/ApplyRecruit.h"
+#include "ApplyInfoCollection.h"
 #include "Recruit/SelectRecruitStatistics.h"
 
 using namespace std;
@@ -39,16 +40,18 @@ using namespace std;
 void doTask();
 void program_exit();
 
-FILE *in_fp, *out_fp;
+FILE* in_fp, * out_fp;
 string currentLoginClient = "None";
 UserCollection userList;
+RecruitInfoCollection rc;
+ApplyInfoCollection ac;
 int currentUserType = 0;
 
 /*****************************
   1.1. SignUpUI Boundary Class
 *****************************/
 // ȸ������ 1. startInterface()
-void SignUpUI::startInterface(SignUp *signup)
+void SignUpUI::startInterface(SignUp* signup)
 {
     int memType = 0;
     char name[MAX_STRING], number[MAX_STRING], id[MAX_STRING],
@@ -69,8 +72,8 @@ void SignUpUI::startInterface(SignUp *signup)
         fprintf(out_fp, "> 2 %s %s %s %s\n\n", name, number, id, password);
     }
 }
-void SignUpUI::submitInfo(SignUp *signup, int memType, string name,
-                          string number, string id, string password)
+void SignUpUI::submitInfo(SignUp* signup, int memType, string name,
+    string number, string id, string password)
 {
     // ȸ������ 2.1 signUpUser()
     signup->signUpUser(userList, memType, name, number, id, password);
@@ -79,7 +82,7 @@ void SignUpUI::submitInfo(SignUp *signup, int memType, string name,
 /*****************************
  2.1. LoginUI Boundary Class
 *****************************/
-void LoginUI::startInterface(Login *login)
+void LoginUI::startInterface(Login* login)
 {
     char id[MAX_STRING], password[MAX_STRING], test1[MAX_STRING],
         test2[MAX_STRING];
@@ -97,13 +100,13 @@ void LoginUI::startInterface(Login *login)
     �α׾ƿ� UI Boundary Class
 *****************************/
 // �α׾ƿ� 1. startInterface
-void LogoutUI::startInterface(Logout *logout)
+void LogoutUI::startInterface(Logout* logout)
 {
     // �α׾ƿ� 2.1 logoutSelect()
     logoutSelect(logout);
 };
 
-void LogoutUI::logoutSelect(Logout *logout)
+void LogoutUI::logoutSelect(Logout* logout)
 {
     // 2.1.1 �α׾ƿ�
     if (logout->logoutUser())
@@ -117,7 +120,7 @@ void LogoutUI::logoutSelect(Logout *logout)
 /*****************************
     ȸ��Ż�� UI Boundary Class
 *****************************/
-void DropUserUI::startInterface(DropUser *dropUser)
+void DropUserUI::startInterface(DropUser* dropUser)
 {
     selectDropUser(dropUser, currentLoginClient);
     fprintf(out_fp, "1.2. ȸ��Ż��\n");
@@ -125,51 +128,51 @@ void DropUserUI::startInterface(DropUser *dropUser)
     fprintf(out_fp, "> %s\n\n", &currentLoginClient);
     currentLoginClient = "None";
 }
-void DropUserUI::selectDropUser(DropUser *dropUser, string id)
+void DropUserUI::selectDropUser(DropUser* dropUser, string id)
 {
     dropUser->deleteUser(userList, id);
 }
 /*************************************
     3.1. ä�� ���� ��� UI Boundary Class
 **************************************/
-void AddRecruitUI::startInterface(AddRecruit *addRecruit)
+void AddRecruitUI::startInterface(AddRecruit* addRecruit)
 {
     // companyNumber�� �ʿ��ؼ� Companyuser�� �Ű������� �Ѱܹ޽��ϴ�.
     char job[MAX_STRING];
     int peopleNum = 0;
     char dueDate[MAX_STRING];
     //    CompanyUser *companyUser;
-
-    fscanf(in_fp, "%s %d %s", job, peopleNum, dueDate);
+    int test1=0, test2=0;
+    fscanf(in_fp, "%s %d %s",job, &peopleNum, dueDate);
     // ���� ���� �� ���� ����
 
     createRecruit(addRecruit, job, peopleNum, dueDate);
     // control�� ���� ����
 }
 
-void AddRecruitUI::createRecruit(AddRecruit *addRecruit, string job, int peopleNum, string dueDate)
+void AddRecruitUI::createRecruit(AddRecruit* addRecruit, string job, int peopleNum, string dueDate)
 {
-    addRecruit->addRecruit(job, peopleNum, dueDate, currentLoginClient);
+    addRecruit->addRecruit(userList,job, peopleNum, dueDate, currentLoginClient);
     // control �Լ� ȣ��
 }
 
 /*****************************************
     3.2. ��� ä�� ���� ��ȸ UI Boundary Class
 ******************************************/
-void ShowRecruitUI::startInterface(ShowRecruit *showRecruit, CompanyUser *companyUser)
+void ShowRecruitUI::startInterface(ShowRecruit* showRecruit, CompanyUser* companyUser)
 {
     getRecruitList(showRecruit, companyUser->getCompanyNumber());
 }
 
-void ShowRecruitUI::getRecruitList(ShowRecruit *showRecruit, string companyNumber)
+void ShowRecruitUI::getRecruitList(ShowRecruit* showRecruit, string companyNumber)
 {
-    vector<Recruit *> reList = showRecruit->showRecruitList(companyNumber);
+    vector<Recruit> reList = showRecruit->showRecruitList(companyNumber);
     // control �Լ� ȣ��
 
     for (int i = 0; i < reList.size(); i++)
     {
         fprintf(out_fp, "3.2. 등록된 채용 정보 조회\n");
-        fprintf(out_fp, "> %s %d %s \n\n", reList[i]->getJob().c_str(), reList[i]->getPeopleNum(), reList[i]->getDueDate().c_str());
+        fprintf(out_fp, "> %s %d %s \n\n", reList[i].getJob().c_str(), reList[i].getPeopleNum(), reList[i].getDueDate().c_str());
     }
 }
 
@@ -186,16 +189,16 @@ void SearchRecruitInfoUI::startInterface(SearchRecruitInfo* searchRecruitInfoCon
 void SearchRecruitInfoUI::enterCompanyName(SearchRecruitInfo* searchRecruitInfoControl, string companyName)
 {
     cout << "채용 정보 검색하기: " << companyName << endl;
-    vector<Recruit *> reList = searchRecruitInfoControl->showRecruitInfoList(companyName);
+    vector<Recruit> reList = searchRecruitInfoControl->showRecruitInfoList(companyName);
     printOutput(reList);
 }
 
-bool SearchRecruitInfoUI::compareByCompanyName(Recruit *recruit1, Recruit *recruit2)
+bool SearchRecruitInfoUI::compareByCompanyName(Recruit recruit1, Recruit recruit2)
 {
-    return recruit1->getCompanyName() < recruit2->getCompanyName();
+    return recruit1.getCompanyName() < recruit2.getCompanyName();
 }
 
-void SearchRecruitInfoUI::printOutput(vector<Recruit *> reList)
+void SearchRecruitInfoUI::printOutput(vector<Recruit> reList)
 {
 
     sort(reList.begin(), reList.end(), SearchRecruitInfoUI::compareByCompanyName);
@@ -203,35 +206,35 @@ void SearchRecruitInfoUI::printOutput(vector<Recruit *> reList)
     for (int i = 0; i < reList.size(); i++)
     {
         fprintf(out_fp, "4.1. 등록된 채용 정보 조회\n");
-        fprintf(out_fp, "> %s %s %s %d %s \n\n", reList[i]->getCompanyName().c_str(), reList[i]->getCompanyNumber().c_str(), reList[i]->getJob().c_str(), reList[i]->getPeopleNum(), reList[i]->getDueDate().c_str());
+        fprintf(out_fp, "> %s %s %s %d %s \n\n", reList[i].getCompanyName().c_str(), reList[i].getCompanyNumber().c_str(), reList[i].getJob().c_str(), reList[i].getPeopleNum(), reList[i].getDueDate().c_str());
     }
 }
 
 /*************************************
      4.2. 채용 지원 Boundary Class
 *************************************/
-void ApplyRecruitUI::startInterface(ApplyRecruit *applyRecruit)
+void ApplyRecruitUI::startInterface(ApplyRecruit* applyRecruit)
 {
     char companyNumber[MAX_STRING];
     fscanf(in_fp, "%s", companyNumber);
-    Recruit *applied = applyRecruit->addApplication(companyNumber, currentLoginClient);
+    Recruit applied = applyRecruit->addApplication(companyNumber, currentLoginClient);
     printOutput(applied);
 }
 
-void ApplyRecruitUI::printOutput(Recruit* applied) {
+void ApplyRecruitUI::printOutput(Recruit applied) {
     fprintf(out_fp, "4.2. 채용 지원\n");
-    fprintf(out_fp, "> %s %s %s \n\n", applied->getCompanyName().c_str(), applied->getCompanyNumber().c_str(), applied->getJob().c_str());
+    fprintf(out_fp, "> %s %s %s \n\n", applied.getCompanyName().c_str(), applied.getCompanyNumber().c_str(), applied.getJob().c_str());
 }
 
 /*************************************
     4.3. ���� ���� ��ȸ UI Boundary Class
 **************************************/
-void ShowApplyUI::startInterface(ShowApply *showApply, NormalUser *normalUser)
+void ShowApplyUI::startInterface(ShowApply* showApply, NormalUser* normalUser)
 {
     selectApplyList(showApply, normalUser);
 }
 
-void ShowApplyUI::selectApplyList(ShowApply *showApply, NormalUser *normalUser)
+void ShowApplyUI::selectApplyList(ShowApply* showApply, NormalUser* normalUser)
 {
     showApply->showApplyList(normalUser);
 }
@@ -239,7 +242,7 @@ void ShowApplyUI::selectApplyList(ShowApply *showApply, NormalUser *normalUser)
 /*************************************
   4.4. CancelApplyUI Boundary Class
 *************************************/
-void CancelApplyUI::startInterface(CancelApply *cancelApply)
+void CancelApplyUI::startInterface(CancelApply* cancelApply)
 {
     int userType = 0;
     char name[MAX_STRING], number[MAX_STRING], id[MAX_STRING], password[MAX_STRING];
@@ -252,14 +255,14 @@ void CancelApplyUI::startInterface(CancelApply *cancelApply)
 /*************************************
    5.1. 지원 정보 통계 Boundary Class
 *************************************/
-void SelectRecruitStatisticsUI::startInterface(SelectRecruitStatistics *selectRecruitStatisticsControl) {
+void SelectRecruitStatisticsUI::startInterface(SelectRecruitStatistics* selectRecruitStatisticsControl) {
     selectRecruitStatistics(selectRecruitStatisticsControl, currentLoginClient);
 }
 
-void SelectRecruitStatisticsUI::selectRecruitStatistics(SelectRecruitStatistics *selectRecruitStatisticsControl, string currentLoginClient) {
-//    RecruitInfoCollection rc;
-//    vector<Recruit *> Rlist = rc.getRecruitListByCompany(currentLoginClient);
-//    selectRecruitStatisticsControl->get
+void SelectRecruitStatisticsUI::selectRecruitStatistics(SelectRecruitStatistics* selectRecruitStatisticsControl, string currentLoginClient) {
+    //    RecruitInfoCollection rc;
+    //    vector<Recruit *> Rlist = rc.getRecruitListByCompany(currentLoginClient);
+    //    selectRecruitStatisticsControl->get
 }
 
 
@@ -433,7 +436,7 @@ void doTask()
             }
             break;
         }
-            return;
+        return;
         }
     }
 }

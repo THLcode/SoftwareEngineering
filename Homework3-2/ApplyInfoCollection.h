@@ -10,10 +10,10 @@ class Recruit;
 
 class ApplyInfoCollection {
 private:
-    static vector<Recruit*> applyInfo;
+    static vector<Recruit> applyInfo;
 public:
-    Recruit* addApplyInfo(Recruit*, string);
-    void pushApply(Recruit* recruit);
+    Recruit addApplyInfo(Recruit, string);
+    void pushApply(Recruit recruit);
     vector<Recruit*> getApplyInfoList();
     string cancelApplyInfo(Recruit* recruit);
 };

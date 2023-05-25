@@ -7,8 +7,6 @@
 #include <iostream>
 
 #include "User.h"
-#include "RecruitInfoCollection.h"
-
 using namespace std;
 class CompanyUser : public User
 {
@@ -18,8 +16,9 @@ private:
     // RecruitInfoCollection recruitInfoCollection;
 public:
     CompanyUser(int, string, string, string, string);
-    string getCompanyNumber();
-    string getCompanyName();
+    string getCompanyNumber() { return this->companyNumber; };
+    string getCompanyName() { return this->companyName; };
+    // RecruitInfoCollection getRecruitInfoCollection();
     // Pair getCompanyUserDetails();
 };
 #endif // HOMEWORK3_2_COMPANYUSER_H

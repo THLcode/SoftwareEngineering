@@ -13,17 +13,17 @@ using namespace std;
 class UserCollection
 {
 private:
-    User *userList[MAX_COUNT];
+    User* userList[MAX_COUNT];
     int clientNumber;
 
 public:
-    UserCollection() : clientNumber(0){};
+    UserCollection() : clientNumber(0) {};
     void signUpNormalUser(int, string, string, string, string);
     void signUpCompanyUser(int, string, string, string, string);
     bool validUser(string, string);
     int getClientNumber();
     int getUserTypeById(string);
     void deleteUsers(string id);
-    CompanyUser *getUser(string id);
+    CompanyUser* getUser(string id);
 };
 #endif // HOMEWORK3_2_USERCOLLECTION_H

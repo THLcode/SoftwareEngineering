@@ -14,12 +14,12 @@ class ApplyRecruitUI;
 class ApplyRecruit
 {
 private:
-    ApplyRecruitUI *applyRecruitUI;
+    ApplyRecruitUI* applyRecruitUI;
 
 public:
     ApplyRecruit();
-    Recruit* addApplication(string, string); // 리턴 타입 매개변수 타입 지정 요망
-    ApplyRecruitUI *showApplyRecruitUI();
+    Recruit addApplication(string, string); // 리턴 타입 매개변수 타입 지정 요망
+    ApplyRecruitUI* showApplyRecruitUI();
 };
 
 #endif //HOMEWORK3_2_APPLYRECRUIT_H

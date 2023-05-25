@@ -15,17 +15,16 @@ AddRecruit::AddRecruit()
 //     addRecruitUI.startInterface(this);
 // }
 
-void AddRecruit::addRecruit(string job, int peopleNum, string dueDate, string currendId)
+void AddRecruit::addRecruit(UserCollection& userList,string job, int peopleNum, string dueDate, string currendId)
 {
-    Recruit *re = new Recruit();
-    UserCollection uc;
-    CompanyUser *u = uc.getUser(currendId);
-
-    re->setJob(job);
-    re->setPeopleNum(peopleNum);
-    re->setDueDate(dueDate);
-    re->setCompanyNumber(u->getCompanyNumber());
-    re->setCompanyName(u->getCompanyName());
+    Recruit re;
+    CompanyUser* u = userList.getUser(currendId);
+    
+    re.setJob(job);
+    re.setPeopleNum(peopleNum);
+    re.setDueDate(dueDate);
+    re.setCompanyNumber(u->getCompanyNumber());
+    re.setCompanyName(u->getCompanyName());
 
     RecruitInfoCollection rc;
     rc.pushRecruit(re);

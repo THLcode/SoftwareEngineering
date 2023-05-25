@@ -14,12 +14,12 @@ class CancelApply;
 class CancelApplyUI
 {
 private:
-    CancelApply *cancelApplyControl;
+    CancelApply* cancelApplyControl;
 
 public:
-//    CancelApplyUI(CancelApply *cancelApplyControl);
+    //    CancelApplyUI(CancelApply *cancelApplyControl);
     void cancelApply();
-    CancelApply *showCancelApplyUI();
+    CancelApply* showCancelApplyUI();
     void startInterface(CancelApply*);
 };
 #endif //HOMEWORK3_2_CANCELAPPLYUI_H

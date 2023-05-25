@@ -16,11 +16,11 @@ class SelectApplyStaticsUI;
 class SelectApplyStatics
 {
 private:
-    SelectApplyStaticsUI *selectApplyStaticsUI;
+    SelectApplyStaticsUI* selectApplyStaticsUI;
 
 public:
     SelectApplyStatics();
     void showApplyStatics(); // return type change
-    SelectApplyStaticsUI *showSelectApplyStaticsUI();
+    SelectApplyStaticsUI* showSelectApplyStaticsUI();
 };
 #endif //HOMEWORK3_2_SELECTAPPLYSTATISTICS_H

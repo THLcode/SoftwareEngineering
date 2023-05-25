@@ -14,11 +14,11 @@ class SelectApplyStatics;
 class SelectApplyStaticsUI
 {
 private:
-    SelectApplyStatics *selectApplyStaticsControl;
+    SelectApplyStatics* selectApplyStaticsControl;
 
 public:
     SelectApplyStaticsUI();
-    void startInterface(SelectApplyStatics *selectApplyStaticsControl);
+    void startInterface(SelectApplyStatics* selectApplyStaticsControl);
     void selectApplyStatics();
 };
 #endif //HOMEWORK3_2_SELECTAPPLYSTATISTICSUI_H

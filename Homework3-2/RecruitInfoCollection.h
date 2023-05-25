@@ -14,11 +14,11 @@ class Recruit;
 class RecruitInfoCollection
 {
 private:
-    static vector<Recruit *> recruitInfo;
+    static vector<Recruit> recruitInfo;
 public:
-    void pushRecruit(Recruit*);
-    vector<Recruit *> getRecruitList(string);
+    void pushRecruit(Recruit);
+    vector<Recruit> getRecruitList(string);
     tuple<string, int, string, int, string> getRecruitDetails();
-    vector<Recruit*> getRecruitListByCompany(string companyName);
+    vector<Recruit> getRecruitListByCompany(string companyName);
 };
 #endif // HOMEWORK3_2_RECRUITINFOCOLLECTION_H
