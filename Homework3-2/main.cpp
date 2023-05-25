@@ -201,7 +201,12 @@ void ApplyRecruitUI::startInterface(ApplyRecruit* applyRecruit)
 {
     char companyNumber[MAX_STRING];
     fscanf(in_fp, "%s", companyNumber);
-    applyRecruit->addApplication(companyNumber);
+    Recruit* applied = applyRecruit->addApplication(companyNumber, currentLoginClient);
+    printOutput(applied);
+}
+
+void ApplyRecruitUI::printOutput(Recruit* applied){
+    cout << "> " << applied->getCompanyName() << " " << applied->getCompanyNumber() << " " << applied->getJob() << endl;
 }
 
 /*************************************

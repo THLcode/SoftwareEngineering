@@ -2,6 +2,7 @@
 #include "../UserCollection.h"
 #include "../RecruitInfoCollection.h"
 #include "../ApplyInfoCollection.h"
+#include "../Recruit/SearchRecruitInfo.h"
 
 ApplyRecruit::ApplyRecruit()
 {
@@ -10,10 +11,14 @@ ApplyRecruit::ApplyRecruit()
     applyRecruitUI.startInterface(this);
 }
 
-void ApplyRecruit::addApplication(string companyNumber)
+Recruit* ApplyRecruit::addApplication(string companyNumber, string currentUser)
 {
     ApplyInfoCollection ac;
-    ac.addApplyInfo(companyNumber);
+    SearchRecruitInfo searchRecruitInfo;
+    vector<Recruit*> recruitList = searchRecruitInfo.showRecruitInfoList(companyNumber);
+
+    Recruit* applied = ac.addApplyInfo(recruitList[0], currentUser);
+    return applied;
 }
 
 ApplyRecruitUI *ApplyRecruit::showApplyRecruitUI()

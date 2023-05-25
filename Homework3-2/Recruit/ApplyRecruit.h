@@ -18,7 +18,7 @@ private:
 
 public:
     ApplyRecruit();
-    void addApplication(string); // 리턴 타입 매개변수 타입 지정 요망
+    Recruit* addApplication(string, string); // 리턴 타입 매개변수 타입 지정 요망
     ApplyRecruitUI *showApplyRecruitUI();
 };
 
