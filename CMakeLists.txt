@@ -24,10 +24,6 @@ add_executable(hw3
         Homework3-2/Recruit/SearchRecruitInfo.h
         Homework3-2/Recruit/SearchRecruitInfoUI.cpp
         Homework3-2/Recruit/SearchRecruitInfoUI.h
-        Homework3-2/Recruit/SelectApplyDetails.cpp
-        Homework3-2/Recruit/SelectApplyDetails.h
-        Homework3-2/Recruit/SelectApplyDetailsUI.cpp
-        Homework3-2/Recruit/SelectApplyDetailsUI.h
         Homework3-2/Recruit/SelectApplyStatistics.cpp
         Homework3-2/Recruit/SelectApplyStatistics.h
         Homework3-2/Recruit/SelectApplyStatisticsUI.cpp
@@ -70,4 +66,4 @@ add_executable(hw3
         Homework3-2/User.cpp
         Homework3-2/User.h
         Homework3-2/UserCollection.cpp
-        Homework3-2/UserCollection.h)
+        Homework3-2/UserCollection.h Homework3-2/Recruit/ShowApplyUI.cpp Homework3-2/Recruit/ShowApply.cpp Homework3-2/Recruit/ShowApply.cpp)

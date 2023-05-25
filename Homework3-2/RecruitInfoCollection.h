@@ -15,9 +15,8 @@ class RecruitInfoCollection
 {
 private:
     static vector<Recruit *> recruitInfo;
-
 public:
-    void pushRecruit(Recruit *recruit);
+    void pushRecruit(Recruit*);
     vector<Recruit *> getRecruitList(string);
     tuple<string, int, string, int, string> getRecruitDetails();
 };

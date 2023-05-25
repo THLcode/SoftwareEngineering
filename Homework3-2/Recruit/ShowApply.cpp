@@ -1,5 +1,5 @@
 #include "ShowApply.h"
 
-void ShowApply::showApplyList()
+void ShowApply::showApplyList(NormalUser *)
 {
 }

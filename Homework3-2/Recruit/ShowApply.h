@@ -8,9 +8,11 @@
 #include <string>
 #include "ShowApplyUI.h"
 #include "../UserCollection.h"
+#include "../NormalUser.h"
 using namespace std;
 
 class ShowApplyUI;
+class NormalUser;
 
 class ShowApply
 {

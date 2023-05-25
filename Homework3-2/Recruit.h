@@ -19,17 +19,17 @@ private:
     string companyName;
 
 public:
-    void setJob(string job) { this->job = job; };
-    void setPeopleNum(int n) { this->peopleNum = n; };
-    void setDueDate(string d) { this->dueDate = d; };
-    void setCompanyNumber(string cn) { this->companyNumber = cn; };
-    void setCompanyName(string cname) { this->companyName = cname; };
+    void setJob(string job);
+    void setPeopleNum(int n);
+    void setDueDate(string d);
+    void setCompanyNumber(string cn);
+    void setCompanyName(string cname);
 
-    string getJob() { return this->job; };
-    int getPeopleNum() { return this->peopleNum; };
-    string getDueDate() { return this->dueDate; };
-    string getCompanyNumber() { return this->companyNumber; };
-    string getCompanyName() { return this->companyName; };
+    string getJob();
+    int getPeopleNum();
+    string getDueDate();
+    string getCompanyNumber();
+    string getCompanyName();
 };
 
 #endif // HOMEWORK3_2_RECRUIT_H
