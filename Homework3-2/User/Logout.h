@@ -16,8 +16,9 @@ private:
     LogoutUI* logOutUIRef; // UI Class를 저장할 변수
 public:
     Logout(); // 생성자
-    void userLogout(); // UI가 이용하는 Control의 로그아웃 함수
-    LogoutUI* logoutUI();
+    bool logoutUser();
+    // void userLogout(); // UI가 이용하는 Control의 로그아웃 함수
+    // LogoutUI* logoutUI();
 
 };
 #endif //HOMEWORK3_2_LOGOUT_H

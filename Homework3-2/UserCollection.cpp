@@ -27,6 +27,20 @@ bool UserCollection::validUser(string id, string password) {
     }
     return false;
 }
+
+void UserCollection::deleteUsers(string id) {
+    for (int i = 0; i < clientNumber; i++) {
+        if (userList[i]->getUserId() == id) {
+            delete userList[i];  // 메모리 해제
+            // 삭제된 회원 다음의 회원들을 앞으로 한 칸씩 이동
+            for (int j = i; j < clientNumber - 1; j++) {
+                userList[j] = userList[j + 1];
+            }
+            clientNumber--;  // 클라이언트 수 감소
+            break;  // 회원을 찾았으므로 반복문 종료
+        }
+    }
+}
 int UserCollection::getClientNumber() { return clientNumber; }
 
 int UserCollection::getUserTypeById(string currentUser){

@@ -7,10 +7,10 @@ LogoutUI::LogoutUI(Logout* logoutControl){
 
 }
 
-void LogoutUI::logoutSelect(){
+// void LogoutUI::logoutSelect(){
 
-}
+// }
 
-Logout* LogoutUI::LogoutControl(){
-    return logoutControlRef;
-}
+// Logout* LogoutUI::sLogoutControl(){
+//     return logoutControlRef;
+// }

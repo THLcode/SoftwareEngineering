@@ -16,8 +16,8 @@ private:
     DropUserUI* dropUserUiRef;
 public:
     DropUser();
-    void dropUser();
-    DropUserUI* DropUserUI();
+    void deleteUser(UserList&, string);
+    // DropUserUI* DropUserUI();
 };
 
 #endif //HOMEWORK3_2_DROPUSER_H

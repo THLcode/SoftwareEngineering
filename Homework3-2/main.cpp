@@ -40,50 +40,77 @@ int currentUserType = 0;
   1.1. SignUpUI Boundary Class
 *****************************/
 // 회원가입 1. startInterface()
-void SignUpUI::startInterface(SignUp *signUp)
-{
-    int userType = 0;
-    char name[MAX_STRING], id[MAX_STRING], password[MAX_STRING], number[MAX_STRING];
-    fscanf(in_fp, "%d %s %s %s %s", &userType, name, number, id, password); //
+void SignupUI::startInterface(Signup* signup) {
+    int memType = 0;
+    char name[MAX_STRING], number[MAX_STRING], id[MAX_STRING],
+        password[MAX_STRING];
+
+    fscanf(in_fp, "%d %s %s %s %s", &memType, name, number, id, password);  //
     // 가입 유형 읽어오기
     // 회원가입 2. submitInfo()
-    submitInfo(signUp, userType, name, number, id, password);
+    submitInfo(signup, memType, name, number, id, password);
+    if (memType == 1) {
+        fprintf(out_fp, "1.1. 회원가입\n");
+        fprintf(out_fp, "> 1 %s %s %s %s\n\n",name,number,id,password);
+    }
+    else if (memType == 2) {
+        fprintf(out_fp, "1.1. 회원가입\n");
+        fprintf(out_fp, "> 2 %s %s %s %s\n\n", name, number, id, password);
+    }
 }
-void SignUpUI::submitInfo(SignUp *signUp, int userType, string name,
-                          string number, string id, string password)
-{
+void SignupUI::submitInfo(Signup* signup, int memType, string name,
+    string number, string id, string password) {
     // 회원가입 2.1 signUpUser()
-    signUp->signUpUser(userList, userType, name, number, id, password);
+    signup->signUpUser(userList, memType, name, number, id, password);
+
 }
 
 /*****************************
  2.1. LoginUI Boundary Class
 *****************************/
-void LoginUI::startInterface(Login *login)
-{
+void LoginUI::startInterface(Login* login) {
     char id[MAX_STRING], password[MAX_STRING], test1[MAX_STRING],
         test2[MAX_STRING];
-    fscanf(in_fp, "%s %s %s %s", test1, test2, id, password);
+    fscanf(in_fp, "%s %s",id, password);
     // 정보 저장
-    currentLoginClient = id;
+    currentLoginClient = std::string(id);
     // 로그인 2.1 validUser()
-    if (login->validUser(userList, id, password))
-    { // true
-        std::cout << "로그인성공" << endl;
-    }
-    else
-    {
-        std::cout << "로그인실패" << endl;
+    if (login->validUser(userList, id, password)) {  // true
+        fprintf(out_fp, "2.1. 로그인\n");
+        fprintf(out_fp, "> %s %s\n\n",id, password);
     }
 };
 /*****************************
-    �α��� UI Boundary Class
+    로그아웃 UI Boundary Class
 *****************************/
+//로그아웃 1. startInterface
+void LogoutUI::startInterface(Logout* logout) {
+    // 로그아웃 2.1 logoutSelect()
+    logoutSelect(logout);
+};
+
+void LogoutUI::logoutSelect(Logout* logout) {
+    //2.1.1 로그아웃
+    if (logout->logoutUser()) { //로그아웃(무조건 성공)
+        fprintf(out_fp, "2.2. 로그아웃\n");
+        fprintf(out_fp, "> %s\n\n", currentLoginClient.c_str());
+        currentLoginClient = "None";
+    }    
+}
 
 /*****************************
-    �α׾ƿ� UI Boundary Class
+    회원탈퇴 UI Boundary Class
 *****************************/
-
+void DropUserUI::startInterface(DropUser* dropUser) {
+    selectDropUser(dropUser, currentLoginClient);
+    fprintf(out_fp, "1.2. 회원탈퇴\n");
+    cout << currentLoginClient << endl;
+    fprintf(out_fp, "> %s\n\n", currentLoginClient);
+    currentLoginClient = "None";
+}
+void DropUserUI::selectDropUser(DropUser* dropUser,string id) {
+    dropUser->deleteUser(userList,id);
+}
 /*************************************
     3.1. 채용 정보 등록 UI Boundary Class
 **************************************/
@@ -189,47 +216,60 @@ void doTask()
                     }
                     case 2: {
                         // 회원 탈퇴
+                        DropUser dropUser;
                         break;
                     }
                 }
+                break;
             }
             case 2: {
                 switch (menu_level_2) {
                     case 1: {
                         // 로그인
                         Login login;
+                        break;
                     }
                     case 2: {
                         // 로그아웃
+                        break;
                     }
                 }
+                break;
             }
             case 3: {
                 switch (menu_level_2) {
                     case 1: {
                         // 채용 정보 등록
+                        break;
                     }
                     case 2: {
                         // 등록된 채용 정보 조회
+                        break;
                     }
                 }
+                break;
             }
             case 4: {
                 switch (menu_level_2) {
                     case 1: {
                         // 채용 정보 검색
+                        break;
                     }
                     case 2: {
                         // 채용 지원
+                        break;
                     }
                     case 3: {
                         // 지원 정보 조회
+                        break;
                     }
                     case 4: {
                         // 지원 취소
                         cout << "현재 로그인 된 고객" << currentLoginClient << endl;
+                        break;
                     }
                 }
+                break;
             }
             case 5: {
                 switch (menu_level_2) {
@@ -247,9 +287,10 @@ void doTask()
                         } else {
                             break;
                         }
+                        break;
                     }
                 }
-
+                break;
             }
             case 6: {
                 switch (menu_level_2) {
@@ -259,7 +300,9 @@ void doTask()
                         break;
                     }
                 }
+                break;
             }
+            return;
         }
     }
 }

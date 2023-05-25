@@ -17,9 +17,9 @@ private:
     DropUser* DropUserControlRef;
 public:
     DropUserUI(DropUser* DropUserControlRef);
-    void startInterface();
-    void selectDropUser();
-    DropUser* DropUserControl();
+    void startInterface(DropUser*);
+    void selectDropUser(DropUser*,string);
+    // DropUser* DropUserControl();
 };
 
 #endif //HOMEWORK3_2_DROPUSERUI_H

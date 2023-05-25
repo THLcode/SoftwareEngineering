@@ -3,14 +3,20 @@
 //
 #include "Logout.h"
 
-Logout::Logout(){
+Logout::Logout() {
+    LogoutUI logoutUI;
 
-} // 생성자
-
-void Logout::userLogout(){
-
-} // UI가 이용하는 Control의 로그아웃 함수
-
-LogoutUI* Logout::logoutUI(){
-    return this->logOutUIRef;
+    logoutUI.startInterface(this);
 }
+
+bool Logout::logoutUser() {
+    return true;
+}
+
+// void Logout::userLogout(){
+
+// } // UI가 이용하는 Control의 로그아웃 함수
+
+// LogoutUI* Logout::logoutUI(){
+//     return this->logOutUIRef;
+// }

@@ -21,5 +21,6 @@ class UserCollection {
     bool validUser(string, string);
     int getClientNumber();
     int getUserTypeById(string);
+    void deleteUsers(string id);
 };
 #endif  // HOMEWORK3_2_USERCOLLECTION_H

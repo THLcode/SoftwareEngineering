@@ -3,12 +3,15 @@
 //
 #include "DropUser.h"
 
-DropUser::DropUser(){
+DropUser::DropUser() {
+    DropUserUI dropUserUI;
 
+    dropUserUI.startInterface(this);
 }
-void DropUser::dropUser(){
 
+void DropUser::deleteUser(UserList& userList, string id) {
+    userList.deleteUsers(id);
 }
-DropUserUI* DropUser::DropUserUI(){
-    return this->dropUserUiRef;
-}
+// DropUserUI* DropUser::DropUserUI(){
+//     return this->dropUserUiRef;
+// }
