@@ -323,7 +323,7 @@ void doTask()
             case 2: {
                 // ä�� ����
                 cout << "4.2. 채용 지원" << endl;
-//                ApplyRecruit applyRecruit;
+                ApplyRecruit applyRecruit;
                 break;
             }
             case 3: {
