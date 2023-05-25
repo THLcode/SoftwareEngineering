@@ -34,6 +34,7 @@ vector<Recruit> RecruitInfoCollection::getRecruitListByCompany(string companyNam
 
     return resultList;
 }
+//ì±„ìš©ì •ë³´ ê²€ìƒ‰ 2.1.1. getRecruitListByCompany()
 vector<Recruit> RecruitInfoCollection::getRecruitListByCompanyNumber(string companyNumber) {
     vector<Recruit> resultList;
 
@@ -47,7 +48,7 @@ vector<Recruit> RecruitInfoCollection::getRecruitListByCompanyNumber(string comp
 
     return resultList;
 }
-// È¸»ç È¸¿ø Áö¿ø Á¤º¸ Åë°è 2.1.1 getRecruitListById()
+// ÃˆÂ¸Â»Ã§ ÃˆÂ¸Â¿Ã¸ ÃÃ¶Â¿Ã¸ ÃÂ¤ÂºÂ¸ Ã…Ã«Â°Ã¨ 2.1.1 getRecruitListById()
 vector<Recruit> RecruitInfoCollection::getRecruitListById(string companyId)
 {
     vector<Recruit> resultList;
