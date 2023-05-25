@@ -19,7 +19,8 @@ private:
     SelectRecruitStatistics *selectRecruitStatisticsControl;
 
 public:
-    SelectRecruitStatisticsUI(SelectRecruitStatistics *selectRecruitStatisticsControl);
-    void selectRecruitStatistics();
+    SelectRecruitStatisticsUI();
+    void startInterface(SelectRecruitStatistics *selectRecruitStatisticsControl);
+    void selectRecruitStatistics(SelectRecruitStatistics *, string);
 };
 #endif //HOMEWORK3_2_SELECTRECRUITSTATISTICSUI_H

@@ -17,7 +17,8 @@ private:
     SelectApplyStatics *selectApplyStaticsControl;
 
 public:
-    SelectApplyStaticsUI(SelectApplyStatics *selectApplyStaticsControl);
+    SelectApplyStaticsUI();
+    void startInterface(SelectApplyStatics *selectApplyStaticsControl);
     void selectApplyStatics();
 };
 #endif //HOMEWORK3_2_SELECTAPPLYSTATISTICSUI_H

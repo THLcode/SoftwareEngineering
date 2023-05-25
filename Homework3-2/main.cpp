@@ -28,6 +28,7 @@
 #include "Recruit/SearchRecruitInfoUI.h"
 #include "Recruit/SearchRecruitInfo.h"
 #include "Recruit/ApplyRecruit.h"
+#include "Recruit/SelectRecruitStatistics.h"
 
 using namespace std;
 
@@ -234,6 +235,20 @@ void CancelApplyUI::startInterface(CancelApply* cancelApply) {
 //    submitInfo(signUp, userType, name, number, id, password);
 }
 
+/*************************************
+   5.1. 지원 정보 통계 Boundary Class
+*************************************/
+void SelectRecruitStatisticsUI::startInterface(SelectRecruitStatistics *selectRecruitStatisticsControl) {
+    selectRecruitStatistics(selectRecruitStatisticsControl, currentLoginClient);
+}
+
+void SelectRecruitStatisticsUI::selectRecruitStatistics(SelectRecruitStatistics *selectRecruitStatisticsControl, string currentLoginClient) {
+//    RecruitInfoCollection rc;
+//    vector<Recruit *> Rlist = rc.getRecruitListByCompany(currentLoginClient);
+//    selectRecruitStatisticsControl->get
+}
+
+
 int main()
 {
     in_fp = fopen(INPUT_FILE_NAME, "r+");
@@ -351,6 +366,8 @@ void doTask()
                 int currentUserType = userList.getUserTypeById(currentLoginClient);
                 if (currentUserType == 1) {
                     cout << "5.1. 회사 회원 지원 정보 통계" << endl;
+                    SelectRecruitStatistics selectRecruitStatistics;
+
                 }
                 else if (currentUserType == 2) {
                     cout << "5.1. 일반 회원 지원 정보 통계" << endl;
