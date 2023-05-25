@@ -227,6 +227,7 @@ void SearchRecruitInfoUI::printOutput(vector<Recruit> reList)
 /*************************************
      4.2. 채용 지원 Boundary Class
 *************************************/
+// 채용 지원 1. startInterface()
 void ApplyRecruitUI::startInterface(ApplyRecruit *applyRecruit)
 {
     char companyNumber[MAX_STRING];

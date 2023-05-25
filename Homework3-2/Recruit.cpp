@@ -7,11 +7,12 @@ void Recruit::setCompanyName(string cname) { this->companyName = cname; }
 void Recruit::setApplicantId(string id) { this->applicantId = id; }
 void Recruit::setCompanyId(string id) { this->companyId = id; }
 
-// È¸»ç È¸¿ø Áö¿ø Á¤º¸ Åë°è 2.2.1 getJob()
-// ÀÏ¹Ý È¸¿ø Áö¿ø Á¤º¸ Åë°è 2.2.1 getJob()
+// È¸ï¿½ï¿½ È¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ 2.2.1 getJob()
+// ï¿½Ï¹ï¿½ È¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ 2.2.1 getJob()
 string Recruit::getJob() { return this->job; }
 int Recruit::getPeopleNum() { return this->peopleNum; }
 string Recruit::getDueDate() { return this->dueDate; }
+// ì±„ìš© ì§€ì› 2.1.1.1 getCompanyNumber()
 string Recruit::getCompanyNumber() { return this->companyNumber; }
 string Recruit::getCompanyName() { return this->companyName; }
 string Recruit::getApplicantId() { return this->applicantId; }
