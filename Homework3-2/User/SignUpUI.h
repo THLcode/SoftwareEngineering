@@ -1,5 +1,6 @@
+#pragma once
 //
-// Created by ì´íƒœíœ˜ on 2023/05/24.
+// Created by ÀÌÅÂÈÖ on 2023/05/24.
 //
 
 #ifndef HOMEWORK3_2_SINGUPUI_H
@@ -12,13 +13,13 @@ class SignUp;
 using namespace std;
 
 class SignUpUI {
-   private:
-    // Control í´ë˜ìŠ¤ í¬ì¸í„°
+private:
+    // Control Å¬·¡½º Æ÷ÀÎÅÍ
     // SignUp* signUpControlRef;
 
-   public:
-    // SignUpUI(SignUp* signupControlRef);  // ìƒì„±ìë¥¼ í†µí•´ Control Classì™€
-    // ë ˆí¼ëŸ°ìŠ¤ êµí™˜
+public:
+    // SignUpUI(SignUp* signupControlRef);  // »ı¼ºÀÚ¸¦ ÅëÇØ Control Class¿Í
+    // ·¹ÆÛ·±½º ±³È¯
     void startInterface(SignUp* signUp);
     void submitInfo(SignUp* signUp, int, string, string, string, string);
     // SignUp* signUpControl();

@@ -3,7 +3,7 @@
 //
 #include "LogoutUI.h"
 
-LogoutUI::LogoutUI(Logout* logoutControl){
+LogoutUI::LogoutUI(){
 
 }
 

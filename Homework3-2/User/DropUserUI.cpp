@@ -3,7 +3,7 @@
 //
 #include "DropUserUI.h"
 
-DropUserUI::DropUserUI(DropUser* DropUserControlRef){
+DropUserUI::DropUserUI(){
 
 }
 // void DropUserUI::startInterface(){

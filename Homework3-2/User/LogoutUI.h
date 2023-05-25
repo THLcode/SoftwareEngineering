@@ -15,7 +15,7 @@ class LogoutUI {
 private:
     Logout *logoutControlRef; // Control Class의 레퍼런스를 저장할 변수
 public:
-    LogoutUI(Logout* logoutControl);
+    LogoutUI();
     void startInterface(Logout*);
     void logoutSelect(Logout*);
     // Logout* LogoutControl(); // getter

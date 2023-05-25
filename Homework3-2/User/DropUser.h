@@ -5,6 +5,7 @@
 #ifndef HOMEWORK3_2_DROPUSER_H
 #define HOMEWORK3_2_DROPUSER_H
 #include "DropUserUI.h"
+#include "../UserCollection.h"
 #include <iostream>
 
 using namespace std;
@@ -16,7 +17,7 @@ private:
     DropUserUI* dropUserUiRef;
 public:
     DropUser();
-    void deleteUser(UserList&, string);
+    void deleteUser(UserCollection&, string);
     // DropUserUI* DropUserUI();
 };
 

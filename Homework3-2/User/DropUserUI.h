@@ -16,7 +16,7 @@ class DropUserUI{
 private:
     DropUser* DropUserControlRef;
 public:
-    DropUserUI(DropUser* DropUserControlRef);
+    DropUserUI();
     void startInterface(DropUser*);
     void selectDropUser(DropUser*,string);
     // DropUser* DropUserControl();
