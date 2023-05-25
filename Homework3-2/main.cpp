@@ -246,12 +246,17 @@ void ShowApplyUI::selectApplyList(ShowApply *showApply, NormalUser *normalUser)
 *************************************/
 void CancelApplyUI::startInterface(CancelApply *cancelApply)
 {
-    int userType = 0;
-    char name[MAX_STRING], number[MAX_STRING], id[MAX_STRING], password[MAX_STRING];
-    fscanf(in_fp, "%d %s %s %s %s", &userType, name, number, id, password); //
-    // ���� ���� �о����
-    // ȸ������ 2. submitInfo()
-    //    submitInfo(signUp, userType, name, number, id, password);
+    char companyNumber[MAX_STRING];
+    fscanf(in_fp, "%s", companyNumber);
+    tuple<string, string, string> canceled = cancelApply->cancelApply(currentLoginClient, companyNumber);
+    printOutput(canceled);
+}
+
+void CancelApplyUI::printOutput(tuple<string, string, string> canceled){
+    string companyName = get<0>(canceled);
+    string companyNumber = get<1>(canceled);
+    string job = get<2>(canceled);
+    cout << "> " << companyName << " " << companyNumber << " " << job << endl;
 }
 
 /******************************************

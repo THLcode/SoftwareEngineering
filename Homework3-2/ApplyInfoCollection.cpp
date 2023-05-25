@@ -22,6 +22,7 @@ void ApplyInfoCollection::pushApply(Recruit* recruit)
     applyInfo.push_back(recruit);
 }
 
+
 vector<Recruit*> ApplyInfoCollection::getApplyListById(string applicantId) {
     vector<Recruit*> resultList;
 

@@ -19,8 +19,8 @@ private:
 
 public:
     CancelApply();
-    void cancelApplyDetails(); // 리턴 타입, 매개 변수 타입 변경 요망
-    CancelApplyUI *showCancelApplyUI();
+    tuple<string, string, string> cancelApply(string, string); // 리턴 타입, 매개 변수 타입 변경 요망
+    //    CancelApplyUI *showCancelApplyUI();
 };
 
 #endif //HOMEWORK3_2_CANCELAPPLY_H

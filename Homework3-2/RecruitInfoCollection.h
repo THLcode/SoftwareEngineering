@@ -21,5 +21,6 @@ public:
     tuple<string, int, string, int, string> getRecruitDetails();
     vector<Recruit*> getRecruitListById(string companyId);
     vector<Recruit*> getRecruitListByCompany(string companyName);
+    vector<Recruit*> getRecruitListByCompanyNumber(string);
 };
 #endif // HOMEWORK3_2_RECRUITINFOCOLLECTION_H

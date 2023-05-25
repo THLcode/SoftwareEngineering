@@ -16,6 +16,7 @@ public:
     void pushApply(Recruit* recruit);
     vector<Recruit*> getApplyListById(string);
     string cancelApplyInfo(Recruit* recruit);
+    vector<Recruit*> showRecruitInfoList(string);
 };
 
 #endif //HOMEWORK3_2_APPLYINFOCOLLECTION_H

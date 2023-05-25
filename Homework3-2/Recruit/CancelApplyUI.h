@@ -21,5 +21,6 @@ public:
     void cancelApply();
     CancelApply *showCancelApplyUI();
     void startInterface(CancelApply*);
+    void printOutput(tuple<string, string, string>);
 };
 #endif //HOMEWORK3_2_CANCELAPPLYUI_H
