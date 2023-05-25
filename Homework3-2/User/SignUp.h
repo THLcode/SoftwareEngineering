@@ -1,7 +1,3 @@
-//
-// Created by 이태휘 on 2023/05/24.
-//
-
 #ifndef HOMEWORK3_2_SIGNUP_H
 #define HOMEWORK3_2_SIGNUP_H
 #include <iostream>
@@ -12,13 +8,9 @@ using namespace std;
 //class SignUpUI;
 
 class SignUp {
-   private:
-    // UI 클래스 포인터
-    //  SignUpUI* signupUIRef;
    public:
     SignUp();  // 생성자
     void signUpUser(UserCollection&, int, string, string, string, string);
-    // SignUpUI * signUpUI();
 };
 
-#endif  // HOMEWORK3_2_SIGNUP_H
+#endif

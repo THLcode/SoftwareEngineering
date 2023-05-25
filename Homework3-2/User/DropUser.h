@@ -1,7 +1,3 @@
-//
-// Created by 이태휘 on 2023/05/24.
-//
-
 #ifndef HOMEWORK3_2_DROPUSER_H
 #define HOMEWORK3_2_DROPUSER_H
 #include "DropUserUI.h"
@@ -18,7 +14,6 @@ private:
 public:
     DropUser();
     void deleteUser(UserCollection&, string);
-    // DropUserUI* DropUserUI();
 };
 
-#endif //HOMEWORK3_2_DROPUSER_H
+#endif 

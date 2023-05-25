@@ -1,6 +1,3 @@
-//
-// Created by 이태휘 on 2023/05/24.
-//
 #include "Logout.h"
 
 Logout::Logout() {
@@ -9,6 +6,7 @@ Logout::Logout() {
     logoutUI.startInterface(this);
 }
 
+// 로그아웃 2.1 logoutUser
 bool Logout::logoutUser() {
     return true;
 }

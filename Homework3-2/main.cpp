@@ -53,6 +53,8 @@ int currentUserType = 0;
 /*****************************
   1.1. 회원가입 Boundary Class
 *****************************/
+
+// 회원가입 1. startInterface()
 void SignUpUI::startInterface(SignUp* signup)
 {
     int memType = 0;
@@ -72,6 +74,8 @@ void SignUpUI::startInterface(SignUp* signup)
         fprintf(out_fp, "> 2 %s %s %s %s\n\n", name, number, id, password);
     }
 }
+
+// 회원가입 2. submitInfo()
 void SignUpUI::submitInfo(SignUp* signup, int memType, string name,
     string number, string id, string password)
 {
@@ -81,6 +85,8 @@ void SignUpUI::submitInfo(SignUp* signup, int memType, string name,
 /*****************************
 1.2. 회원탈퇴 UI Boundary Class
 *****************************/
+
+// 회원탈퇴 1. startInterface()
 void DropUserUI::startInterface(DropUser* dropUser)
 {
     selectDropUser(dropUser, currentLoginClient);
@@ -88,34 +94,46 @@ void DropUserUI::startInterface(DropUser* dropUser)
     fprintf(out_fp, "> %s\n\n", &currentLoginClient);
     currentLoginClient = "None";
 }
+
+// 회원탈퇴 2. selectDropUser()
 void DropUserUI::selectDropUser(DropUser* dropUser, string id)
 {
     dropUser->deleteUser(userList, id);
 }
+
 /*****************************
  2.1. 로그인 Boundary Class
 *****************************/
+
+// 로그인 1. startInterface()
 void LoginUI::startInterface(Login* login)
 {
-    char id[MAX_STRING], password[MAX_STRING], test1[MAX_STRING],
-        test2[MAX_STRING];
+    loginUser(login);
+}
+
+// 로그인 2. loginUser()
+void LoginUI::loginUser(Login* login) {
+    char id[MAX_STRING], password[MAX_STRING];
     fscanf(in_fp, "%s %s", id, password);
-    // ���� ����
+
     currentLoginClient = std::string(id);
     if (login->validUser(userList, id, password))
     { // true
         fprintf(out_fp, "2.1. 로그인\n");
         fprintf(out_fp, "> %s %s\n\n", id, password);
     }
-};
+}
 /*****************************
  2.2. 로그아웃 UI Boundary Class
 *****************************/
+
+// 로그아웃 1. startInterface()
 void LogoutUI::startInterface(Logout* logout)
 {
     logoutSelect(logout);
-};
+}
 
+// 로그아웃 2. logoutSelect()
 void LogoutUI::logoutSelect(Logout* logout)
 {
     if (logout->logoutUser()){

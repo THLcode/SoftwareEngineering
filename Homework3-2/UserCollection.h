@@ -15,8 +15,7 @@ private:
 
 public:
     UserCollection();
-    void signUpNormalUser(int, string, string, string, string);
-    void signUpCompanyUser(int, string, string, string, string);
+    void signUpUser(int, string, string, string, string);
     bool validUser(string, string);
     int getClientNumber();
     int getUserTypeById(string);
