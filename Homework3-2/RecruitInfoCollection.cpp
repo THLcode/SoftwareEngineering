@@ -19,7 +19,7 @@ vector<Recruit> RecruitInfoCollection::getRecruitList(string companyNumber)
 
     return recruitList;
 }
-
+//채용정보 검색 2.1.1. getRecruitListByCompany()
 vector<Recruit> RecruitInfoCollection::getRecruitListByCompany(string companyName)
 {
     vector<Recruit> resultList;
@@ -34,7 +34,7 @@ vector<Recruit> RecruitInfoCollection::getRecruitListByCompany(string companyNam
 
     return resultList;
 }
-//채용정보 검색 2.1.1. getRecruitListByCompany()
+
 vector<Recruit> RecruitInfoCollection::getRecruitListByCompanyNumber(string companyNumber) {
     vector<Recruit> resultList;
 
