@@ -47,6 +47,7 @@ vector<Recruit> RecruitInfoCollection::getRecruitListByCompanyNumber(string comp
 
     return resultList;
 }
+// 회사 회원 지원 정보 통계 2.1.1 getRecruitListById()
 vector<Recruit> RecruitInfoCollection::getRecruitListById(string companyId)
 {
     vector<Recruit> resultList;

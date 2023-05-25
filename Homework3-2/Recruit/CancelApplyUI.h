@@ -15,5 +15,6 @@ private:
 public:
     void startInterface(CancelApply*);
     void printOutput(tuple<string, string, string>);
+    void cancelApply(CancelApply*);
 };
 #endif

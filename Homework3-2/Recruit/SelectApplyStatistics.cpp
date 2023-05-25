@@ -8,6 +8,7 @@ SelectApplyStatistics::SelectApplyStatistics()
 
     selectApplyStatisticsUI.startInterface(this);
 }
+// 일반 회원 지원 정보 통계 2.1 showApplyStatistics()
 vector<Recruit> SelectApplyStatistics::showApplyStatistics(string currentLoginClient)
 {
     ApplyInfoCollection ac;
@@ -15,6 +16,7 @@ vector<Recruit> SelectApplyStatistics::showApplyStatistics(string currentLoginCl
 
     return RList;
 }
+// 일반 회원 지원 정보 통계 2.2 getApplyNumByJob()
 map<string, int> SelectApplyStatistics::getApplyNumByJob(vector<Recruit> rList) {
     map<string, int> jobCount;
 

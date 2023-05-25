@@ -261,14 +261,20 @@ void ShowApplyUI::selectApplyList(ShowApply* showApply)
 /*************************************
   4.4. 지원 취소 Boundary Class
 *************************************/
-void CancelApplyUI::startInterface(CancelApply* cancelApply)
+
+// 지원 취소 1. startInterface()
+void CancelApplyUI::startInterface(CancelApply* cancelApp)
 {
+    cancelApply(cancelApp);
+}
+
+// 지원 취소 2. cancelApply()
+void CancelApplyUI::cancelApply(CancelApply* cancelApply) {
     char companyNumber[MAX_STRING];
     fscanf(in_fp, "%s", companyNumber);
     tuple<string, string, string> canceled = cancelApply->cancelApply(currentLoginClient, companyNumber);
     printOutput(canceled);
 }
-
 void CancelApplyUI::printOutput(tuple<string, string, string> canceled) {
     string companyName = get<0>(canceled);
     string companyNumber = get<1>(canceled);
@@ -280,10 +286,13 @@ void CancelApplyUI::printOutput(tuple<string, string, string> canceled) {
 /*************************************
    5.1. 회사 회원 지원 정보 통계 Boundary Class
 *************************************/
+
+// 회사 회원 지원 정보 통계 1. startInterface()
 void SelectRecruitStatisticsUI::startInterface(SelectRecruitStatistics* selectRecruitStatisticsControl) {
     selectRecruitStatistics(selectRecruitStatisticsControl, currentLoginClient);
 }
 
+// 회사 회원 지원 정보 통계 2. selectRecruitStatistics()
 void SelectRecruitStatisticsUI::selectRecruitStatistics(SelectRecruitStatistics* selectRecruitStatisticsControl, string currentLoginClient) {
     vector<Recruit> rList = selectRecruitStatisticsControl->showRecruitStatistics(currentLoginClient);
     map<string, int> jobCount = selectRecruitStatisticsControl->getRecruitNumByJob(rList);

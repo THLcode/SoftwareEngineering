@@ -22,6 +22,8 @@ void ApplyInfoCollection::pushApply(Recruit recruit)
     applyInfo.push_back(recruit);
 }
 
+// 지원 취소 2.1.1 getApplyListById()
+// 일반 회원 지원 정보 통계 2.1.1 showApplyStatistics()
 vector<Recruit> ApplyInfoCollection::getApplyListById(string applicantId) {
     vector<Recruit> resultList;
 
@@ -48,6 +50,8 @@ vector<Recruit> ApplyInfoCollection::getApplyInfoList(string id)
 
     return applyList;
 }
+
+// 지원 취소 2.1.2 cancelApplyInfo()
 void ApplyInfoCollection::cancelApplyInfo(string id, string companyNumber) {
     for (auto it = applyInfo.begin(); it != applyInfo.end();) {
         if (it->getCompanyNumber() == companyNumber) {

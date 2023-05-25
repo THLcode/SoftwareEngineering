@@ -8,6 +8,7 @@ CancelApply::CancelApply()
     cancelApplyUI.startInterface(this);
 }
 
+// 지원 취소 2.1 cancelApply()
 tuple<string, string, string> CancelApply::cancelApply(string currentLoginClient, string companyNumber)
 {
     ApplyInfoCollection ac;

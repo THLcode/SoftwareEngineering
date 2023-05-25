@@ -7,6 +7,8 @@ void Recruit::setCompanyName(string cname) { this->companyName = cname; }
 void Recruit::setApplicantId(string id) { this->applicantId = id; }
 void Recruit::setCompanyId(string id) { this->companyId = id; }
 
+// 회사 회원 지원 정보 통계 2.2.1 getJob()
+// 일반 회원 지원 정보 통계 2.2.1 getJob()
 string Recruit::getJob() { return this->job; }
 int Recruit::getPeopleNum() { return this->peopleNum; }
 string Recruit::getDueDate() { return this->dueDate; }
