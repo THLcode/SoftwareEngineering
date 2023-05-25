@@ -4,6 +4,7 @@
 #include <fstream>
 #include <iostream>
 #include <string>
+#include <algorithm>
 
 #include "User.h"
 #include "User/Login.h"
@@ -24,8 +25,9 @@
 #include "Recruit/ShowApplyUI.h"
 #include "Recruit/ShowApply.h"
 #include "CompanyUser.h"
-#include "SearchRecruitInfoUI.h"
-#include "SearchRecruitInfo.h"
+#include "Recruit/SearchRecruitInfoUI.h"
+#include "Recruit/SearchRecruitInfo.h"
+#include "Recruit/ApplyRecruit.h"
 
 using namespace std;
 
@@ -178,11 +180,28 @@ void SearchRecruitInfoUI::enterCompanyName(SearchRecruitInfo *searchRecruitInfoC
     printOutput(reList);
 }
 
+bool SearchRecruitInfoUI::compareByCompanyName(Recruit* recruit1, Recruit* recruit2){
+    return recruit1->getCompanyName() < recruit2->getCompanyName();
+}
+
 void SearchRecruitInfoUI::printOutput(vector<Recruit*> reList){
+
+    sort(reList.begin(), reList.end(), SearchRecruitInfoUI::compareByCompanyName);
+
     for (int i = 0; i < reList.size(); i++)
     {
         cout << "> " << reList[i]->getCompanyName() << " " << reList[i]->getCompanyNumber() << " " << reList[i]->getJob() << " " << reList[i]->getPeopleNum() << " " << reList[i]->getDueDate() << endl;
     }
+}
+
+/*************************************
+     4.2. 채용 지원 Boundary Class
+*************************************/
+void ApplyRecruitUI::startInterface(ApplyRecruit* applyRecruit)
+{
+    char companyNumber[MAX_STRING];
+    fscanf(in_fp, "%s", companyNumber);
+    applyRecruit->addApplication(companyNumber);
 }
 
 /*************************************
@@ -299,6 +318,7 @@ void doTask()
             case 2: {
                 // ä�� ����
                 cout << "4.2. 채용 지원" << endl;
+//                ApplyRecruit applyRecruit;
                 break;
             }
             case 3: {

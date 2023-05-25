@@ -17,7 +17,9 @@ private:
     ApplyRecruit *applyRecruitControl;
 
 public:
-    ApplyRecruitUI(ApplyRecruit *applyRecruitControl);
+    ApplyRecruitUI();
+//    ApplyRecruitUI(ApplyRecruit *applyRecruitControl);
+    void startInterface(ApplyRecruit* applyRecruit);
     void applyRecruit(); // 매개 변수 타입 변경 요망
 };
 #endif //HOMEWORK3_2_APPLYRECRUITUI_H

@@ -10,9 +10,9 @@ class Recruit;
 
 class ApplyInfoCollection {
 private:
-    Recruit* applyInfo;
+    vector<Recruit*> applyInfo;
 public:
-    void addApplyInfo(Recruit* recruit);
+    void addApplyInfo(string companyNumber);
     vector<Recruit*> getApplyInfoList();
     string cancelApplyInfo(Recruit* recruit);
 };

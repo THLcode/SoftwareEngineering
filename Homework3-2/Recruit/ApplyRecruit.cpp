@@ -5,10 +5,15 @@
 
 ApplyRecruit::ApplyRecruit()
 {
+    ApplyRecruitUI applyRecruitUI;
+
+    applyRecruitUI.startInterface(this);
 }
 
-void ApplyRecruit::addApplication()
+void ApplyRecruit::addApplication(string companyNumber)
 {
+    ApplyInfoCollection ac;
+    ac.addApplyInfo(companyNumber);
 }
 
 ApplyRecruitUI *ApplyRecruit::showApplyRecruitUI()

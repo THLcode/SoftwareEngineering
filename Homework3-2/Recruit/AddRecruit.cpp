@@ -8,11 +8,11 @@ AddRecruit::AddRecruit(AddRecruit *addRecruit, CompanyUser *companyUser)
     addRecruitUI.startInterface(addRecruit, companyUser);
 }
 
-AddRecruit::AddRecruit() {
-    AddRecruitUI addRecruitUI;
-
-    addRecruitUI.startInterface(this);
-}
+//AddRecruit::AddRecruit() {
+//    AddRecruitUI addRecruitUI;
+//
+//    addRecruitUI.startInterface(this);
+//}
 
 void AddRecruit::addRecruit(string job, int peopleNum, string dueDate, CompanyUser *companyUser)
 {
