@@ -23,4 +23,4 @@ public:
     void printOutput(vector<Recruit> reList);
     static bool compareByCompanyName(Recruit, Recruit);
 };
-#endif //HOMEWORK3_2_SEARCHRECRUITINFOUI_H
+#endif

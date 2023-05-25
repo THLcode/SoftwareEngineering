@@ -1,7 +1,3 @@
-//
-// Created by 이태휘 on 2023/05/24.
-//
-
 #ifndef HOMEWORK3_2_SHOWRECRUIT_H
 #define HOMEWORK3_2_SHOWRECRUIT_H
 #include <iostream>
@@ -18,8 +14,8 @@ private:
     ShowRecruitUI* showRecruitUI;
 
 public:
-    ShowRecruit(ShowRecruit* showRecruit, CompanyUser* companyUser);
-    vector<Recruit> showRecruitList(string); // return type 변경 요망
+    ShowRecruit();
+    vector<Recruit> showRecruitList(string);
 };
 
-#endif // HOMEWORK3_2_SHOWRECRUIT_H
+#endif

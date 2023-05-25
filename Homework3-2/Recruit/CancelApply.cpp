@@ -1,4 +1,5 @@
 #include "CancelApply.h"
+#include "../ApplyInfoCollection.h"
 
 CancelApply::CancelApply()
 {
@@ -7,10 +8,22 @@ CancelApply::CancelApply()
     cancelApplyUI.startInterface(this);
 }
 
-void CancelApply::cancelApplyDetails()
+tuple<string, string, string> CancelApply::cancelApply(string currentLoginClient, string companyNumber)
 {
-}
-
-CancelApplyUI* CancelApply::showCancelApplyUI()
-{
+    ApplyInfoCollection ac;
+    vector<Recruit> applyList = ac.getApplyListById(currentLoginClient);
+    string companyName = "";
+    string job = "";
+    for (auto it = applyList.begin(); it != applyList.end();) {
+        if (it->getCompanyNumber() == companyNumber) {
+            ac.cancelApplyInfo(currentLoginClient, companyNumber);
+            companyName = it->getCompanyName();
+            job = it->getJob();
+            it = applyList.erase(it);
+        }
+        else {
+            ++it;
+        }
+    }
+    return make_tuple(companyName, companyNumber, job);
 }

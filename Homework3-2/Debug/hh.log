@@ -1,0 +1,8 @@
+﻿  main.cpp
+C:\Users\Every\source\repos\hh\main.cpp(88,21): warning C4477: 'fprintf' : 서식 문자열 '%s'에 'char *' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 'std::string *'입니다.
+C:\Users\Every\source\repos\hh\main.cpp(100,48): warning C4101: 'test1' :참조되지 않은 지역 변수입니다.
+C:\Users\Every\source\repos\hh\main.cpp(101,9): warning C4101: 'test2' :참조되지 않은 지역 변수입니다.
+C:\Users\Every\source\repos\hh\main.cpp(162,23): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\Every\source\repos\hh\main.cpp(196,23): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\Every\source\repos\hh\main.cpp(237,23): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+  hh.vcxproj -> C:\Users\Every\source\repos\hh\Debug\hh.exe

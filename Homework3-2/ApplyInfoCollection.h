@@ -13,9 +13,10 @@ private:
     static vector<Recruit> applyInfo;
 public:
     Recruit addApplyInfo(Recruit, string);
-    void pushApply(Recruit recruit);
-    vector<Recruit*> getApplyInfoList();
-    string cancelApplyInfo(Recruit* recruit);
+    void pushApply(Recruit);
+    vector<Recruit> getApplyListById(string);
+    vector<Recruit> getApplyInfoList(string);
+    void cancelApplyInfo(string,string);
 };
 
-#endif //HOMEWORK3_2_APPLYINFOCOLLECTION_H
+#endif

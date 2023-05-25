@@ -1,7 +1,3 @@
-//
-// Created by 이태휘 on 2023/05/24.
-//
-
 #ifndef HOMEWORK3_2_CANCELAPPLYUI_H
 #define HOMEWORK3_2_CANCELAPPLYUI_H
 #include <iostream>
@@ -17,9 +13,7 @@ private:
     CancelApply* cancelApplyControl;
 
 public:
-    //    CancelApplyUI(CancelApply *cancelApplyControl);
-    void cancelApply();
-    CancelApply* showCancelApplyUI();
     void startInterface(CancelApply*);
+    void printOutput(tuple<string, string, string>);
 };
-#endif //HOMEWORK3_2_CANCELAPPLYUI_H
+#endif

@@ -9,6 +9,8 @@
 #include "ShowApplyUI.h"
 #include "../UserCollection.h"
 #include "../NormalUser.h"
+#include <vector>
+#include "../Recruit.h"
 using namespace std;
 
 class ShowApplyUI;
@@ -21,7 +23,7 @@ private:
 
 public:
     ShowApply();
-    void showApplyList(NormalUser *); // 리턴 타입
+    vector<Recruit> showApplyList(string); // 리턴 타입
 };
 
-#endif // HOMEWORK3_2_SHOWAPPLY_H
+#endif

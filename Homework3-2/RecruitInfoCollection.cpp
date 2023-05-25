@@ -34,7 +34,33 @@ vector<Recruit> RecruitInfoCollection::getRecruitListByCompany(string companyNam
 
     return resultList;
 }
+vector<Recruit> RecruitInfoCollection::getRecruitListByCompanyNumber(string companyNumber) {
+    vector<Recruit> resultList;
 
+    for (Recruit recruit : recruitInfo)
+    {
+        if (recruit.getCompanyNumber() == companyNumber)
+        {
+            resultList.push_back(recruit);
+        }
+    }
+
+    return resultList;
+}
+vector<Recruit> RecruitInfoCollection::getRecruitListById(string companyId)
+{
+    vector<Recruit> resultList;
+
+    for (Recruit recruit : recruitInfo)
+    {
+        if (recruit.getCompanyId() == companyId)
+        {
+            resultList.push_back(recruit);
+        }
+    }
+
+    return resultList;
+}
 
 tuple<string, int, string, int, string> RecruitInfoCollection::getRecruitDetails()
 {

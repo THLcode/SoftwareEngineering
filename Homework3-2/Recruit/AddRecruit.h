@@ -3,20 +3,17 @@
 #include "AddRecruitUI.h"
 #include "../CompanyUser.h"
 #include "../UserCollection.h"
+#include "../Recruit.h"
 #include <string>
 using namespace std;
-class AddRecruitUI;
 
 class AddRecruit
 {
 private:
-    AddRecruitUI* addRecruitUI;
 
 public:
     AddRecruit();
-    AddRecruit(AddRecruit*, CompanyUser*);
-    void addRecruit(UserCollection&, string, int, string, string); // 매개변수 채워야합니다
-    // AddRecruitUI *showAddRecruitUI();
+    Recruit addRecruit(string, int, string, string);
 };
 
-#endif // HOMEWORK3_2_ADDRECRUIT_
+#endif 

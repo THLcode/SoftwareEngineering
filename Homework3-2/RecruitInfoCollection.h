@@ -1,7 +1,3 @@
-//
-// Created by 이태휘 on 2023/05/24.
-//
-
 #ifndef HOMEWORK3_2_RECRUITINFOCOLLECTION_H
 #define HOMEWORK3_2_RECRUITINFOCOLLECTION_H
 #include <iostream>
@@ -19,6 +15,8 @@ public:
     void pushRecruit(Recruit);
     vector<Recruit> getRecruitList(string);
     tuple<string, int, string, int, string> getRecruitDetails();
-    vector<Recruit> getRecruitListByCompany(string companyName);
+    vector<Recruit> getRecruitListByCompany(string);
+    vector<Recruit> getRecruitListByCompanyNumber(string);
+    vector<Recruit> getRecruitListById(string companyId);
 };
-#endif // HOMEWORK3_2_RECRUITINFOCOLLECTION_H
+#endif

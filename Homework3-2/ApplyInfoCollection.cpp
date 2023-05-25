@@ -1,6 +1,6 @@
 #include "ApplyInfoCollection.h"
 
-//하는 사람이 채워넣어야함
+vector<Recruit> ApplyInfoCollection::applyInfo;
 Recruit ApplyInfoCollection::addApplyInfo(Recruit recruit, string currentUser) {
 
     Recruit re;
@@ -19,13 +19,42 @@ Recruit ApplyInfoCollection::addApplyInfo(Recruit recruit, string currentUser) {
 
 void ApplyInfoCollection::pushApply(Recruit recruit)
 {
-    //applyInfo.push_back(recruit);
+    applyInfo.push_back(recruit);
 }
 
-vector<Recruit*> ApplyInfoCollection::getApplyInfoList() {
+vector<Recruit> ApplyInfoCollection::getApplyListById(string applicantId) {
+    vector<Recruit> resultList;
 
+    for (Recruit recruit : applyInfo)
+    {
+        if (recruit.getApplicantId() == applicantId)
+        {
+            resultList.push_back(recruit);
+        }
+    }
+
+    return resultList;
 }
+vector<Recruit> ApplyInfoCollection::getApplyInfoList(string id)
+{
+    vector<Recruit> applyList;
+    for (int i = 0; i < applyInfo.size(); i++)
+    {
+        if (applyInfo[i].getApplicantId() == id)
+        {
+            applyList.push_back(applyInfo[i]);
+        }
+    }
 
-string ApplyInfoCollection::cancelApplyInfo(Recruit* recruit) {
-
+    return applyList;
+}
+void ApplyInfoCollection::cancelApplyInfo(string id, string companyNumber) {
+    for (auto it = applyInfo.begin(); it != applyInfo.end();) {
+        if (it->getCompanyNumber() == companyNumber) {
+            it = applyInfo.erase(it);  // erase() 함수로 요소 삭제 후 다음 유효한 요소로 이동
+        }
+        else {
+            ++it;  // 다음 요소로 이동
+        }
+    }
 }

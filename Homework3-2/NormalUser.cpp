@@ -1,6 +1,3 @@
-//
-// Created by 이태휘 on 2023/05/24.
-//
 #include "NormalUser.h"
 
 NormalUser::NormalUser(int userType, string name, string number, string id, string password)

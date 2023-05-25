@@ -1,7 +1,3 @@
-//
-// Created by 이태휘 on 2023/05/24.
-//
-
 #ifndef HOMEWORK3_2_NORMALUSER_H
 #define HOMEWORK3_2_NORMALUSER_H
 #pragma once
@@ -15,10 +11,8 @@ class NormalUser : public User
 private:
     string normalName;
     string securityNumber;
-    // ApplyInfoCollection applyInfoCollection;
 public:
     NormalUser(int, string, string, string, string);
     string getSecurityNumber() { return this->securityNumber; };
-    // ApplyInfoCollection getApplyInfoCollection();
 };
-#endif // HOMEWORK3_2_NORMALUSER_H
+#endif

@@ -1,7 +1,3 @@
-//
-// Created by 이태휘 on 2023/05/24.
-//
-
 #ifndef HOMEWORK3_2_USERCOLLECTION_H
 #define HOMEWORK3_2_USERCOLLECTION_H
 
@@ -9,15 +5,16 @@
 #define MAX_COUNT 100
 #include "User.h"
 #include "CompanyUser.h"
+#include "NormalUser.h"
 using namespace std;
 class UserCollection
 {
 private:
-    User* userList[MAX_COUNT];
-    int clientNumber;
+    static User* userList[MAX_COUNT];
+    static int clientNumber;
 
 public:
-    UserCollection() : clientNumber(0) {};
+    UserCollection();
     void signUpNormalUser(int, string, string, string, string);
     void signUpCompanyUser(int, string, string, string, string);
     bool validUser(string, string);
@@ -25,5 +22,6 @@ public:
     int getUserTypeById(string);
     void deleteUsers(string id);
     CompanyUser* getUser(string id);
+    NormalUser* getNormalUser(string id);
 };
-#endif // HOMEWORK3_2_USERCOLLECTION_H
+#endif

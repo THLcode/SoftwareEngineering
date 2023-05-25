@@ -3,6 +3,7 @@
 #include "CompanyUser.h"
 #include "NormalUser.h"
 
+UserCollection::UserCollection(){}
 void UserCollection::signUpNormalUser(int userType, string name, string number, string id,
     string password)
 {
@@ -68,10 +69,22 @@ CompanyUser* UserCollection::getUser(string id)
 {
     for (int i = 0; i < clientNumber; i++)
     {
-
         if (userList[i]->getUserId() == id)
         {
             return static_cast<CompanyUser*>(userList[i]);
+        }
+    }
+    return nullptr;
+}
+
+NormalUser* UserCollection::getNormalUser(string id)
+{
+    for (int i = 0; i < clientNumber; i++)
+    {
+
+        if (userList[i]->getUserId() == id)
+        {
+            return static_cast<NormalUser*>(userList[i]);
         }
     }
     return nullptr;

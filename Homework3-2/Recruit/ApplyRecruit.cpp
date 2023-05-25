@@ -13,12 +13,9 @@ ApplyRecruit::ApplyRecruit()
 
 Recruit ApplyRecruit::addApplication(string companyNumber, string currentUser)
 {
-    extern RecruitInfoCollection rc;
     ApplyInfoCollection ac;
-    SearchRecruitInfo searchRecruitInfo;
-    vector<Recruit> recruitList = searchRecruitInfo.showRecruitInfoList(companyNumber);
-    //vector<Recruit> recruitList = rc.getRecruitListByCompany(companyName)
-
+    RecruitInfoCollection rc;
+    vector<Recruit> recruitList = rc.getRecruitListByCompanyNumber(companyNumber);
     Recruit applied = ac.addApplyInfo(recruitList[0], currentUser);
     return applied;
 }
